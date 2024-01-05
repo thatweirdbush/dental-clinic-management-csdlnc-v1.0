@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\
+C:\Users\Dell\Desktop\CSDLNC\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\
 DentalClinicManagement
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\App.xaml
-24-703212492
+C:\Users\Dell\Desktop\CSDLNC\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\App.xaml
+261804825173
 
-32267990829
-195-900021980
-Account\Home.xaml;Account\PasswordSignUp.xaml;Account\SignIn.xaml;Account\SignUp.xaml;Account\SignUpSuccess.xaml;Admin\AccountManagement.xaml;Admin\DashBoard.xaml;Admin\MedicalManagement.xaml;Customer\CheckAppoinment.xaml;Customer\DashBoard.xaml;Customer\MakeAppointment.xaml;Customer\ViewProfile.xaml;Customer\ViewRecord.xaml;Dentist\AddRecord.xaml;Dentist\DashBoard.xaml;Dentist\ReceivePatient.xaml;Dentist\SearchCustomerRecord.xaml;Dentist\ViewAppointment.xaml;Employee\CheckAppoinment.xaml;Employee\CheckBill.xaml;Employee\Dashboard.xaml;Employee\MakeAppointment.xaml;Employee\SearchCustomerRecord.xaml;MainWindow.xaml;
+342045133225
+1951887138775
+Account\Home.xaml;Account\PasswordSignUp.xaml;Account\SignIn.xaml;Account\SignUp.xaml;Account\SignUpSuccess.xaml;Admin\AccountManagement.xaml;Admin\CheckAppointment.xaml;Admin\DashBoard.xaml;Admin\MedicalManagement.xaml;Customer\CheckAppoinment.xaml;Customer\DashBoard.xaml;Customer\MakeAppointment.xaml;Customer\ViewProfile.xaml;Customer\ViewRecord.xaml;Dentist\AddRecord.xaml;Dentist\DashBoard.xaml;Dentist\ReceivePatient.xaml;Dentist\SearchCustomerRecord.xaml;Dentist\ViewAppointment.xaml;Employee\CheckAppoinment.xaml;Employee\CheckBill.xaml;Employee\Dashboard.xaml;Employee\MakeAppointment.xaml;Employee\SearchCustomerRecord.xaml;Employee\ViewSchedule.xaml;MainWindow.xaml;
 
-False
+True
 
