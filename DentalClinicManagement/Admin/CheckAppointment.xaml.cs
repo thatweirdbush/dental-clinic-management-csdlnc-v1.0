@@ -34,5 +34,10 @@ namespace DentalClinicManagement.Admin
                 mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
             }
         }
+
+        private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

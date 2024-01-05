@@ -35,7 +35,7 @@
                 <TextBlock Name="txtPhone" Text="{Binding PatientInfo.Phone}" FontSize="20" Width="330" Height="26" Canvas.Left="656" Canvas.Top="194" HorizontalAlignment="Center" VerticalAlignment="Top"></TextBlock>
                 <TextBlock x:Name="address" Text="Địa chỉ:" FontSize="20" Canvas.Left="479" Canvas.Top="240"></TextBlock>
                 <TextBlock Name="txtAddress" Text="{Binding PatientInfo.Address}" FontSize="20" Width="330" Height="26" Canvas.Left="656" Canvas.Top="240" HorizontalAlignment="Center" VerticalAlignment="Top"></TextBlock>
-                
+
                 <ListView MouseDoubleClick="CheckBill_btn" ItemsSource="{Binding MedicalRecords}" Name="listView" Height="209" Width="635" Canvas.Left="479" Canvas.Top="272" HorizontalAlignment="Left" VerticalAlignment="Center">
                     <ListView.View>
                         <GridView>

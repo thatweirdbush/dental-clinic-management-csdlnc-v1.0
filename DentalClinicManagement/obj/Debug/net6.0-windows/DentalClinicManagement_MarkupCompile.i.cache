@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Dell\Desktop\CSDLNC\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\App.xaml
-261804825173
+282003316569
 
-342045133225
+362127175940
 1951887138775
-Account\Home.xaml;Account\PasswordSignUp.xaml;Account\SignIn.xaml;Account\SignUp.xaml;Account\SignUpSuccess.xaml;Admin\AccountManagement.xaml;Admin\CheckAppointment.xaml;Admin\DashBoard.xaml;Admin\MedicalManagement.xaml;Customer\CheckAppoinment.xaml;Customer\DashBoard.xaml;Customer\MakeAppointment.xaml;Customer\ViewProfile.xaml;Customer\ViewRecord.xaml;Dentist\AddRecord.xaml;Dentist\DashBoard.xaml;Dentist\ReceivePatient.xaml;Dentist\SearchCustomerRecord.xaml;Dentist\ViewAppointment.xaml;Employee\CheckAppoinment.xaml;Employee\CheckBill.xaml;Employee\Dashboard.xaml;Employee\MakeAppointment.xaml;Employee\SearchCustomerRecord.xaml;Employee\ViewSchedule.xaml;MainWindow.xaml;
+Account\Home.xaml;Account\PasswordSignUp.xaml;Account\SignIn.xaml;Account\SignUp.xaml;Account\SignUpSuccess.xaml;Admin\AccountManagement.xaml;Admin\CheckAppointment.xaml;Admin\DashBoard.xaml;Admin\MedicalManagement.xaml;Admin\ViewPatient.xaml;Admin\ViewRecord.xaml;Customer\CheckAppoinment.xaml;Customer\DashBoard.xaml;Customer\MakeAppointment.xaml;Customer\ViewProfile.xaml;Customer\ViewRecord.xaml;Dentist\AddRecord.xaml;Dentist\DashBoard.xaml;Dentist\ReceivePatient.xaml;Dentist\SearchCustomerRecord.xaml;Dentist\ViewAppointment.xaml;Employee\CheckAppoinment.xaml;Employee\CheckBill.xaml;Employee\Dashboard.xaml;Employee\MakeAppointment.xaml;Employee\SearchCustomerRecord.xaml;Employee\ViewSchedule.xaml;MainWindow.xaml;
 
 True
 
