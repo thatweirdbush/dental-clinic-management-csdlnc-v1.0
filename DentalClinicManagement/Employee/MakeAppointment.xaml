@@ -1,0 +1,41 @@
+﻿<Page x:Class="DentalClinicManagement.Employee.MakeAppointment"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DentalClinicManagement.Customer"
+      xmlns:converters="clr-namespace:DentalClinicManagement.Converter"
+      mc:Ignorable="d" 
+      d:DesignHeight="730" d:DesignWidth="1200"
+      Title="Make Appointment">
+    <Page.Resources>
+        <converters:AbsoluteConverter x:Key="absoluteConverter"/>
+    </Page.Resources>
+    <Canvas Background="White">
+        <Button Width="83" Height="39" Click="OnBackButtonClick" HorizontalAlignment="Left" Canvas.Top="24" VerticalAlignment="Top" Background="White" BorderBrush="White" Canvas.Left="1083">
+            <Path Data="M3,12 L9,18 L9,14 L21,14 L21,10 L9,10 L9,6 L3,12 Z" Fill="Black" Stretch="Fill" Width="79" />
+        </Button>
+        <TextBlock Name="makeAppoiment" Text="Đặt lịch hẹn" FontSize="50" Canvas.Left="10" Canvas.Top="10"/>
+        <TextBlock x:Name="doctorOpinion" TextWrapping="Wrap" FontSize="30" TextAlignment="Left" Canvas.Left="798" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Center"><Run Text="Tham khảo ý kiến"/><LineBreak/><Run Text="bác sĩ của chúng tôi"/></TextBlock>
+        <Image Source="../images/makeAppoinment.jpg" Width="400" Height="265" Canvas.Left="36" Canvas.Top="212" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Name="fullname" Text="Họ và tên: " FontSize="20" Canvas.Left="472" Canvas.Top="128"/>
+        <TextBox Name="txtFullname" Width="300" Height="30" Canvas.Left="472" Canvas.Top="160"/>
+        <TextBlock Name="phone" Text="Số điện thoại: " FontSize="20" Canvas.Left="866" Canvas.Top="133" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox Name="txtPhone" Width="300" Height="30" Canvas.Left="866" Canvas.Top="160"/>
+        <TextBlock Name="date" Text="Ngày hẹn: " FontSize="20" Canvas.Left="472" Canvas.Top="212"/>
+        <DatePicker Name="datePicker" Width="300" Height="30" Canvas.Left="472" Canvas.Top="240"/>
+        <TextBlock Name="doctor" Text="Bác sĩ: " FontSize="20" Canvas.Left="866" Canvas.Top="212"/>
+        <TextBox Name="txtDoctor" Width="300" Height="30" Canvas.Left="866" Canvas.Top="240"/>
+        <TextBlock Name="message" Text="Lời nhắn: " FontSize="20" Canvas.Left="472" Canvas.Top="292"/>
+        <TextBox Name="txtMessage" Width="694" Height="142" Canvas.Left="472" Canvas.Top="320"/>
+        <CheckBox Name="agree" Content="Tôi đồng ý với điều khoản của nha khoa" FontSize="20" Canvas.Left="472" Canvas.Top="480"/>
+        <Button Name="submitButton" Click="submitButton_Click" Content="Đặt lịch hẹn" Width="254" Height="49" IsDefault="True" FontSize="24" Background="#39A7FF" Canvas.Left="692" Canvas.Top="552" HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock Text="Dentistry Plus" FontSize="36" FontFamily="Bookman Old Style" FontWeight="Bold" Height="50" Canvas.Left="36" Foreground="Black" Canvas.Top="643" HorizontalAlignment="Center" VerticalAlignment="Top" Width="355"/>
+    </Canvas>
+</Page>

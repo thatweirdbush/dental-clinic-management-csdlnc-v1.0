@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Account\Home.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Account\PasswordSignUp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Account\SignIn.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Account\SignUp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Account\SignUpSuccess.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\AccountManagement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\DashBoard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\MedicalManagement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Customer\DashBoard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Customer\MakeAppointment.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Dentist\DashBoard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Dentist\ViewAppointment.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Customer\ViewProfile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Customer\ViewRecord.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Dentist\AddRecord.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Customer\CheckAppoinment.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Employee\CheckBill.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Employee\Dashboard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Dentist\ReceivePatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Employee\SearchCustomerRecord.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Account\Home.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Account\PasswordSignUp.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Account\SignIn.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Account\SignUp.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Account\SignUpSuccess.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\AccountManagement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\DashBoard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\MedicalManagement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Customer\DashBoard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Customer\MakeAppointment.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dentist\DashBoard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dentist\SearchCustomerRecord.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dentist\ViewAppointment.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Customer\ViewProfile.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Customer\ViewRecord.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dentist\AddRecord.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Customer\CheckAppoinment.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Employee\CheckAppoinment.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Employee\CheckBill.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Employee\Dashboard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dentist\ReceivePatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Employee\MakeAppointment.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Employee\SearchCustomerRecord.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

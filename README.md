@@ -1,0 +1,2 @@
+Ngày nay mọi người có nhu cầu làm đẹp và chăm sóc sức khỏe răng miệng dân số ngày càng tăng. Đồng thời, cùng với sự phát triển mạnh mẽ về công nghệ trong Những năm gần đây nhiều phòng khám nha khoa bắt đầu chuyển sang sử dụng.
+Phần mềm quản lý thay thế phương pháp quản lý thủ công. Nhờ đó mà làm việc Quản lý phòng khám nha khoa trở nên hiệu quả hơn, dễ dàng hơn và mang lại nhiều kinh nghiệm hơn tốt hơn, chuyên nghiệp hơn và thuận tiện hơn cho cả bác sĩ và khách hàng đến khám, chữa bệnh.

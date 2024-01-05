@@ -1,0 +1,65 @@
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\bin\Debug\net6.0-windows\images\recTeeth.PNG
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\bin\Debug\net6.0-windows\images\teeth.jpg
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\bin\Debug\net6.0-windows\HomeSignUpSignIn.exe
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\bin\Debug\net6.0-windows\HomeSignUpSignIn.deps.json
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\bin\Debug\net6.0-windows\HomeSignUpSignIn.runtimeconfig.json
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\bin\Debug\net6.0-windows\HomeSignUpSignIn.dll
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\bin\Debug\net6.0-windows\HomeSignUpSignIn.pdb
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn.csproj.AssemblyReference.cache
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\MainWindow.g.cs
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\SignIn.g.cs
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\SignUp.g.cs
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\App.g.cs
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn_MarkupCompile.cache
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn_MarkupCompile.lref
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\MainWindow.baml
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\SignIn.baml
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\SignUp.baml
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn.g.resources
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn.GeneratedMSBuildEditorConfig.editorconfig
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn.AssemblyInfoInputs.cache
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn.AssemblyInfo.cs
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn.csproj.CoreCompileInputs.cache
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn.dll
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\refint\HomeSignUpSignIn.dll
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn.pdb
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn.genruntimeconfig.cache
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\ref\HomeSignUpSignIn.dll
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\PasswordSignUp.g.cs
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\PasswordSignUp.baml
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\SignUpSuccess.g.cs
+D:\TRUONG TAN DAT\DAI HOC DUNG HOC DAI\Senior_3\Database Management System\TH\HQTCSDL-DentalClinicManagement\DentalClinicManagement\obj\Debug\net6.0-windows\SignUpSuccess.baml
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\bin\Debug\net6.0-windows\images\recTeeth.PNG
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\bin\Debug\net6.0-windows\images\teeth.jpg
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\bin\Debug\net6.0-windows\HomeSignUpSignIn.exe
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\bin\Debug\net6.0-windows\HomeSignUpSignIn.deps.json
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\bin\Debug\net6.0-windows\HomeSignUpSignIn.runtimeconfig.json
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\bin\Debug\net6.0-windows\HomeSignUpSignIn.dll
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\bin\Debug\net6.0-windows\HomeSignUpSignIn.pdb
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\MainWindow.g.cs
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\App.g.cs
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn_MarkupCompile.cache
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn_MarkupCompile.lref
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\MainWindow.baml
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn.g.resources
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn.GeneratedMSBuildEditorConfig.editorconfig
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn.AssemblyInfoInputs.cache
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn.AssemblyInfo.cs
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn.csproj.CoreCompileInputs.cache
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn.dll
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\refint\HomeSignUpSignIn.dll
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn.pdb
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\HomeSignUpSignIn.genruntimeconfig.cache
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\ref\HomeSignUpSignIn.dll
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\Account\Home.g.cs
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\Account\Home.baml
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\Account\SignIn.g.cs
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\Account\SignIn.baml
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\Account\SignUp.g.cs
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\Account\SignUp.baml
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\Account\PasswordSignUp.g.cs
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\Account\PasswordSignUp.baml
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\Account\SignUpSuccess.g.cs
+D:\BaohocDH\MonDaiCuong\HQTCSDL\FullApp\DentalClinicManagement\obj\Debug\net6.0-windows\Account\SignUpSuccess.baml

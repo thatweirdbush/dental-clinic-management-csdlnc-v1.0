@@ -1,0 +1,62 @@
+﻿<Page x:Class="DentalClinicManagement.Employee.SearchCustomerRecord"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DentalClinicManagement.Employee"
+      xmlns:converters="clr-namespace:DentalClinicManagement.Converter"
+      mc:Ignorable="d" 
+      d:DesignHeight="730" d:DesignWidth="1200"
+      Title="Customer Record">
+    <Page.Resources>
+        <converters:AbsoluteConverter x:Key="absoluteConverter"/>
+    </Page.Resources>
+    <Page.DataContext>
+        <local:MainViewModel />
+    </Page.DataContext>
+    <Canvas Background="White">
+        <StackPanel Orientation="Vertical">
+            <Canvas Height="100" Width="1200" Background="#39A7FF">
+                <TextBlock Text="Tìm kiếm hồ sơ" FontSize="40" FontWeight="Bold" HorizontalAlignment="Left" Height="53" Canvas.Left="69" Foreground="White" Canvas.Top="23" VerticalAlignment="Center" Width="331"/>
+                <Image Source="../images/teeth.jpg" Width="127" Height="112" Canvas.Left="1063" Canvas.Top="-6"/>
+            </Canvas>
+            <Canvas Height="650" Width="1200" Background="White">
+                <Image Source="../images/find.png" Width="341" Height="303" Canvas.Left="44" Canvas.Top="173" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBlock x:Name="phoneSearch" Text="Số điện thoại:" FontSize="20" Canvas.Left="479" Canvas.Top="56"></TextBlock>
+                <TextBox Name="txtPhoneSearch" Width="330" Height="26" Canvas.Left="656" Canvas.Top="52" HorizontalAlignment="Center" VerticalAlignment="Top"></TextBox>
+                <Button Name="btnSearch" Content="Tìm kiếm" Width="100" Height="30" Canvas.Left="1014" Canvas.Top="50" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnSearch_Click"></Button>
+                <TextBlock x:Name="fullname" Text="Họ và tên:" FontSize="20" Canvas.Left="479" Canvas.Top="102"></TextBlock>
+                <TextBlock Name="txtFullname" Text="{Binding PatientInfo.Fullname}" FontSize="20" Width="330" Height="26" Canvas.Left="656" Canvas.Top="98" HorizontalAlignment="Center" VerticalAlignment="Top"></TextBlock>
+                <TextBlock x:Name="birthday" Text="Năm sinh:" FontSize="20" Canvas.Left="479" Canvas.Top="148"></TextBlock>
+                <TextBlock Name="txtBirthday" Text="{Binding PatientInfo.Year}" FontSize="20" Width="90" Height="26" Canvas.Left="656" Canvas.Top="149" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Name="gender" Text="Giới tính:" FontSize="20" Canvas.Left="779" Canvas.Top="148"></TextBlock>
+                <TextBlock Name="txtGender" Text="{Binding PatientInfo.Gender}" FontSize="20" Width="90" Height="26" Canvas.Left="879" Canvas.Top="149" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBlock x:Name="phone" Text="Điện thoại:" FontSize="20" Canvas.Left="479" Canvas.Top="194"></TextBlock>
+                <TextBlock Name="txtPhone" Text="{Binding PatientInfo.Phone}" FontSize="20" Width="330" Height="26" Canvas.Left="656" Canvas.Top="194" HorizontalAlignment="Center" VerticalAlignment="Top"></TextBlock>
+                <TextBlock x:Name="address" Text="Địa chỉ:" FontSize="20" Canvas.Left="479" Canvas.Top="240"></TextBlock>
+                <TextBlock Name="txtAddress" Text="{Binding PatientInfo.Address}" FontSize="20" Width="330" Height="26" Canvas.Left="656" Canvas.Top="240" HorizontalAlignment="Center" VerticalAlignment="Top"></TextBlock>
+                
+                <ListView MouseDoubleClick="CheckBill_btn" ItemsSource="{Binding MedicalRecords}" Name="listView" Height="209" Width="635" Canvas.Left="479" Canvas.Top="272" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Ngày khám" Width="85" DisplayMemberBinding="{Binding Date}"/>
+                            <GridViewColumn Header="Tình trạng" Width="120" DisplayMemberBinding="{Binding Condition}"/>
+                            <GridViewColumn Header="Thuốc" Width="100" DisplayMemberBinding="{Binding Medicine}"/>
+                            <GridViewColumn Header="Ngày tái khám" Width="85" DisplayMemberBinding="{Binding ReDate}"/>
+                            <GridViewColumn Header="Bác sĩ điều trị" Width="115" DisplayMemberBinding="{Binding Doctor}"/>
+                            <GridViewColumn Header="Tình trạng thanh toán" Width="130" DisplayMemberBinding="{Binding Payment}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Canvas>
+        </StackPanel>
+        <Button Name="backButton" Content="Trở về" Width="176" Height="49" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="backButton_Click" Canvas.Left="733" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock Text="Dentistry Plus" FontSize="36" FontFamily="Bookman Old Style" FontWeight="Bold" Height="50" Canvas.Left="10" Foreground="Black" Canvas.Top="641" HorizontalAlignment="Center" VerticalAlignment="Top" Width="355"/>
+    </Canvas>
+</Page>

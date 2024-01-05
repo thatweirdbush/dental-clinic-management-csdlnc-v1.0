@@ -1,0 +1,156 @@
+﻿<Page x:Class="DentalClinicManagement.Customer.DashBoard"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DentalClinicManagement.Customer"
+      mc:Ignorable="d" 
+      d:DesignHeight="730" d:DesignWidth="1200"
+      Title="DashBoard">
+
+    <Grid Background="White">
+        <!-- Cột đầu tiên chiếm 2/5 chiều rộng của Grid với nền màu xanh -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle Grid.Column="0" Fill="#39a7ff"/>
+        <Ellipse Stroke="Black" StrokeThickness="1" Margin="0,33,0,433" HorizontalAlignment="Center" Width="250">
+            <!-- Hình ảnh bên trong Ellipse -->
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="../images/user-avatar.jpg" Stretch="Fill"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Dentistry Plus" VerticalAlignment="Top" Foreground="#FFF9F9F9" FontWeight="Bold" FontSize="20" Width="142"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,306,0,0" TextWrapping="Wrap" Text="Nguyễn Văn A" VerticalAlignment="Top" Cursor="No" Foreground="#FFF3F3F3" FontSize="30"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,346,0,0" TextWrapping="Wrap" Text="Khách hàng" VerticalAlignment="Top" Foreground="White" FontSize="20" RenderTransformOrigin="0.858,-2.367"/>
+        <Line X1="0" Y1="50" X2="400" Y2="50" Stroke="Black" StrokeThickness="1" Grid.ColumnSpan="2" Margin="21,336,729,-336"/>
+        <Canvas>
+            <Image Source="../images/telephone.png" RenderTransformOrigin="1.155,5.357" Panel.ZIndex="10" Width="20" Canvas.Left="25" Canvas.Top="400" HorizontalAlignment="Center" VerticalAlignment="Top" />
+            <TextBlock x:Name="phone" HorizontalAlignment="Left" TextWrapping="Wrap" Text="0123456789" VerticalAlignment="Top" FontSize="18" Foreground="#FFFDFDFD" RenderTransformOrigin="1.223,0.679" Canvas.Left="63" Canvas.Top="398" FontStyle="Italic"/>
+        </Canvas>
+        <Canvas>
+            <Image Source="../images/email.png" RenderTransformOrigin="1.155,5.357" Panel.ZIndex="10" Width="20" Canvas.Left="24" Canvas.Top="434" HorizontalAlignment="Center" VerticalAlignment="Top" />
+            <TextBlock x:Name="email" HorizontalAlignment="Center" TextWrapping="Wrap" Text="example@gmail.com" VerticalAlignment="Top" FontSize="18" Foreground="#FFFDFDFD" RenderTransformOrigin="1.223,0.679" Canvas.Left="64" Canvas.Top="430" FontStyle="Italic"/>
+        </Canvas>
+        <Canvas>
+            <Image Source="../images/location.png" RenderTransformOrigin="1.155,5.357" Panel.ZIndex="10" Width="20" Canvas.Left="23" Canvas.Top="471" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <TextBlock x:Name="address" HorizontalAlignment="Left" TextWrapping="Wrap" Text="123 Lý Thường Kiệt, Phường 10, Quận 10, Thành phố Hồ Chí Minh" VerticalAlignment="Top" FontSize="18" Foreground="#FFFDFDFD" RenderTransformOrigin="1.223,0.679" Canvas.Left="61" Canvas.Top="467" FontStyle="Italic" Width="350"/>
+        </Canvas>
+        <Line X1="0" Y1="50" X2="400" Y2="50" Stroke="Black" StrokeThickness="1" Grid.ColumnSpan="2" Margin="21,490,729,-554"/>
+        <Button x:Name="setting_btn" HorizontalAlignment="Left" Margin="21,551,0,0" VerticalAlignment="Top" Width="404" Height="38" BorderBrush="#FFF6F6F6" Foreground="#FF1C0303" Background="White" Cursor="Hand" FontSize="18" >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="../images/setting.png" Width="20" Height="20" Margin="0,2,10,0"/>
+                <TextBlock Text="Cài đặt" FontWeight="Bold"/>
+            </StackPanel>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" Background="White" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="LightSkyBlue"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- Button Đăng xuất -->
+        <Button Click="LogOut" x:Name="logout_btn" HorizontalAlignment="Left" Margin="21,606,0,0" VerticalAlignment="Top" Width="404" Height="38" BorderBrush="#FFF6F6F6" Foreground="#FF1C0303" Background="White" Cursor="Hand" FontSize="18" >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="../images/log-out.png" Width="20" Height="20" Margin="0,2,10,0"/>
+                <TextBlock Text="Đăng xuất" FontWeight="Bold"/>
+            </StackPanel>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" Background="White" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="LightSkyBlue"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- Button Thoát -->
+
+
+        <!-- Nội dung của cửa sổ ở cột thứ hai -->
+        <Grid Grid.Column="1">
+            <!-- Nội dung của cửa sổ ở đây -->
+            <TextBlock HorizontalAlignment="Left" Margin="29,81,0,0" TextWrapping="Wrap" Text="Dentistry Plus cung cấp các dịch vụ nha khoa đảm bảo chất lượng" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Width="397"/>
+            <TextBlock HorizontalAlignment="Left" Margin="29,222,0,0" TextWrapping="Wrap" Text="Chúng tôi luôn cố gắng hết mình để nâng niu nụ cười Việt!" VerticalAlignment="Top" Width="397" FontSize="15" Foreground="#FFB59393"/>
+            <Image Source="../images/banner.jpg" HorizontalAlignment="Left" Height="289" Margin="431,0,0,0" VerticalAlignment="Top" Width="338"/>
+            <!-- Button thêm hồ bệnh nhân -->
+            <Canvas>
+                <Button Click="ViewProfileButton_Click" x:Name="ViewProfileButton" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="#FFF6F6F6" Foreground="#FF1C0303" Background="White" Cursor="Hand" FontSize="18" Height="215" Canvas.Top="285" Width="224" Canvas.Left="102" >
+                    <StackPanel Height="171" Width="218">
+                        <Image Source="../images/view-profile.png" Width="140" Height="135"/>
+                        <TextBlock Text="Xem thông tin cá nhân" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </StackPanel>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="border" Background="White" CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="LightSkyBlue"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <!-- Button đặt lịch hẹn -->
+                <Button Click="CheckAppointment" x:Name="view_appointment_btn" BorderBrush="#FFF6F6F6" Foreground="#FF1C0303" Background="White" Cursor="Hand" FontSize="18" Height="215" Canvas.Left="406" Canvas.Top="285" Width="225" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" Background="White" CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="LightSkyBlue"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <StackPanel>
+                        <Image Source="../images/calendar.png" Width="140" Height="135"/>
+                        <TextBlock Text="Xem lịch rảnh nha sĩ" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Button>
+                <!-- Button xem bệnh án -->
+                <Button Click="ViewRecord" x:Name="add_patient_btn" BorderBrush="#FFF6F6F6" Foreground="#FF1C0303" Background="White" Cursor="Hand" FontSize="18" Height="215" Canvas.Left="102" Canvas.Top="505" Width="225" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" Background="White" CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="LightSkyBlue"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <StackPanel>
+                        <Image Source="../images/patient.png" Width="140" Height="135"/>
+                        <TextBlock Text="Xem hồ sơ bệnh án" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Button>
+                <!-- Button thêm lịch hẹn -->
+                <!-- Button cập nhật lịch hẹn -->
+                <!-- Button thêm lịch rảnh -->
+            </Canvas>
+
+        </Grid>
+
+    </Grid>
+</Page>

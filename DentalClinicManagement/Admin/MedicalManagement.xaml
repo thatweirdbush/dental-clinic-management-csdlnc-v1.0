@@ -1,0 +1,116 @@
+﻿<Page x:Class="DentalClinicManagement.Admin.MedicalManagement"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DentalClinicManagement.Admin"
+      xmlns:converters="clr-namespace:DentalClinicManagement.Converter"
+      mc:Ignorable="d" 
+      d:DesignHeight="730" d:DesignWidth="1200"
+      Title="Medical">
+    <Page.Resources>
+        <converters:AbsoluteConverter x:Key="absoluteConverter"/>
+    </Page.Resources>
+    <DockPanel>
+        <Canvas Background="#FF40A5F5" Height="150" DockPanel.Dock="Top">
+            <Button Width="118" Height="75" Click="OnBackButtonClick" HorizontalAlignment="Left" Canvas.Top="36" VerticalAlignment="Center" BorderBrush="White" Canvas.Left="1072" Background="{x:Null}" BorderThickness="0,0,0,0">
+                <Path Data="M3,12 L9,18 L9,14 L21,14 L21,10 L9,10 L9,6 L3,12 Z" Fill="Black" Stretch="Fill" Width="102" Height="29" />
+            </Button>
+            <TextBlock Text="Thông tin thuốc" FontSize="48" FontFamily="Bookman Old Style" FontWeight="Bold" Height="76" Canvas.Left="10" Foreground="White" Canvas.Top="45" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Canvas>
+        <Canvas Background="#FFFEE6B7" Width="400" DockPanel.Dock="Left">
+
+            <TextBlock Text="Thông tin thuốc" FontSize="18" FontFamily="Bookman Old Style" FontWeight="Bold" Height="23" Canvas.Left="10" Foreground="Black" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Top" Width="159"/>
+            <Border BorderBrush="Black" BorderThickness="4,4,4,4" DockPanel.Dock="Left" Width="380" Background="Gray" Height="391" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="10" Canvas.Top="38">
+                <DockPanel >
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Height="41">
+                        <Label Margin="100,0,0,0" Content="Search" Canvas.Left="343" Canvas.Top="28" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="1.203,0.636"/>
+                        <TextBox x:Name="SearchTextBox" Width="234" TextChanged="SearchTextBox_TextChanged" RenderTransformOrigin="0.515,1.728" Height="30" FontSize="16"/>
+                    </StackPanel>
+                    <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+                        <Button Margin="100,0,0,0" Content="Previous" Width="67" Click="btnPrevious_Click"/>
+                        <ComboBox Name="comboPage" SelectionChanged="comboPage_Selected" Width="36">
+
+                        </ComboBox>
+                        <Button Content="Next" Width="60" Click="btnNext_Click"/>
+                    </StackPanel>
+                    <DataGrid Name="ListMedical" FontSize="15px" SelectionChanged="DataGrid_SelectionChanged" CanUserAddRows="False">
+
+                    </DataGrid>
+                </DockPanel>
+            </Border>
+            <Button Content="Thêm thuốc mới" Width="296" Height="49" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="addMedical" Canvas.Left="52" Canvas.Top="447" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <TextBlock Text="Dentistry Plus" FontSize="36" FontFamily="Bookman Old Style" FontWeight="Bold" Height="50" Canvas.Left="10" Foreground="Black" Canvas.Top="518" HorizontalAlignment="Center" VerticalAlignment="Top" Width="355"/>
+        </Canvas>
+        <Canvas>
+            <Canvas Name="ViewMedicalDetail">
+                <TextBlock Text="Thông tin chi tiết" FontSize="20" FontFamily="Bookman Old Style" FontWeight="Bold" Height="23" Canvas.Left="10" Foreground="Black" Canvas.Top="10" Width="197" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="Tên thuốc:" FontWeight="Bold" RenderTransformOrigin="1.203,0.636" Canvas.Left="10" Canvas.Top="56" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding name}" FontSize="20" FontFamily="Bookman Old Style" FontWeight="Bold" Height="23" Canvas.Left="123" Foreground="Black" Canvas.Top="64" Width="179" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Label Content="Đơn vị tính:" FontWeight="Bold" RenderTransformOrigin="1.203,0.636" Canvas.Left="10" Canvas.Top="129" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBlock Text="{Binding id}" FontSize="20" FontFamily="Bookman Old Style" FontWeight="Bold" Height="23" Canvas.Left="466" Foreground="Black" Canvas.Top="64" Width="179" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Label Content="ID:" FontWeight="Bold" RenderTransformOrigin="1.203,0.636" Canvas.Left="424" Canvas.Top="56" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding price }" FontSize="20" FontFamily="Bookman Old Style" FontWeight="Bold" Height="23" Canvas.Left="135" Foreground="Black" Canvas.Top="136" Width="179" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="Số lượng:" FontWeight="Bold" RenderTransformOrigin="1.203,0.636" Canvas.Left="10" Canvas.Top="207" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBlock Text="{Binding validDate }" FontSize="20" FontFamily="Bookman Old Style" FontWeight="Bold" Height="23" Canvas.Left="565" Foreground="Black" Canvas.Top="139" Width="179" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Label Content="Hạn sử dụng:" FontWeight="Bold" RenderTransformOrigin="1.203,0.636" Canvas.Left="424" Canvas.Top="129" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBlock Text="{Binding number}" FontSize="20" FontFamily="Bookman Old Style" FontWeight="Bold" Height="23" Canvas.Left="123" Foreground="Black" Canvas.Top="214" Width="179" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="Chỉ định:" FontWeight="Bold" RenderTransformOrigin="1.203,0.636" Canvas.Left="10" Canvas.Top="274" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <ListView  Name="ListBook" Width="773" Height="143" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Canvas.Left="10" Canvas.Top="308" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <TextBlock Margin="10, 0, 0, 0" FontSize="12">
+                <Run Text="{Binding detail}"/>
+                                </TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button Content="Chỉnh sửa" Width="254" Height="49" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="editMedical" Canvas.Left="102" Canvas.Top="471" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Content="Xóa thuốc" Width="250" Height="48" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="deletemedical" Canvas.Left="442" Canvas.Top="472" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Canvas>
+            <Canvas Name="EditMedicalDetail" Visibility="Collapsed">
+                <TextBlock Text="Thêm/Chỉnh sửa" FontSize="20" FontFamily="Bookman Old Style" FontWeight="Bold" Height="23" Canvas.Left="10" Foreground="Black" Canvas.Top="10" Width="197" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="Tên thuốc:" FontWeight="Bold" RenderTransformOrigin="1.203,0.636" Canvas.Left="10" Canvas.Top="56" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBox FontSize="20" FontFamily="Bookman Old Style" FontWeight="Bold" Height="23" Canvas.Left="123" Foreground="Black" Canvas.Top="64" Width="179" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Label Content="Đơn vị tính:" FontWeight="Bold" RenderTransformOrigin="1.203,0.636" Canvas.Left="10" Canvas.Top="129" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBox FontSize="20" FontFamily="Bookman Old Style" FontWeight="Bold" Height="23" Canvas.Left="466" Foreground="Black" Canvas.Top="64" Width="179" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Label Content="ID:" FontWeight="Bold" RenderTransformOrigin="1.203,0.636" Canvas.Left="424" Canvas.Top="56" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox FontSize="20" FontFamily="Bookman Old Style" FontWeight="Bold" Height="23" Canvas.Left="135" Foreground="Black" Canvas.Top="136" Width="179" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="Số lượng:" FontWeight="Bold" RenderTransformOrigin="1.203,0.636" Canvas.Left="10" Canvas.Top="207" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBox FontSize="20" FontFamily="Bookman Old Style" FontWeight="Bold" Height="23" Canvas.Left="565" Foreground="Black" Canvas.Top="139" Width="179" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Label Content="Hạn sử dụng:" FontWeight="Bold" RenderTransformOrigin="1.203,0.636" Canvas.Left="424" Canvas.Top="129" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBox FontSize="20" FontFamily="Bookman Old Style" FontWeight="Bold" Height="23" Canvas.Left="123" Foreground="Black" Canvas.Top="214" Width="179" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="Chỉ định:" FontWeight="Bold" RenderTransformOrigin="1.203,0.636" Canvas.Left="10" Canvas.Top="274" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBox FontSize="20" FontFamily="Bookman Old Style" FontWeight="Bold" Height="96" Canvas.Left="10" Foreground="Black" Canvas.Top="309" Width="780" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button Content="Hoàn tất" Width="296" Height="49" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="completeMedical" Canvas.Left="252" Canvas.Top="448" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Canvas>
+
+        </Canvas>
+    </DockPanel>
+</Page>
