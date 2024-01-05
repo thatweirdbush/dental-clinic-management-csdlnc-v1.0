@@ -47,6 +47,13 @@
                         </Style>
                     </Button.Resources>
                 </Button>
+                <Button x:Name="ScheduleButton" Content="Lịch hẹn" Width="305" Height="50" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="ScheduleButton_Click" Canvas.Left="33" Canvas.Top="594" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
             </Canvas>
         </StackPanel>
     </Canvas>

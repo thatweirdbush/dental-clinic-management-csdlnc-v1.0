@@ -40,6 +40,9 @@
     <Compile Update="Dentist\DashBoard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Dentist\MedicalManagement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Dentist\ViewAppointment.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -55,6 +58,9 @@
     <Compile Update="Customer\CheckAppoinment.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Employee\AddNewAppointment.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Employee\CheckBill.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -64,7 +70,13 @@
     <Compile Update="Dentist\ReceivePatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Employee\ManageAppointment.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Employee\SearchCustomerRecord.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Employee\ViewAppointmentRequest.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -102,6 +114,9 @@
     <Page Update="Dentist\DashBoard.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Dentist\MedicalManagement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Dentist\SearchCustomerRecord.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -120,6 +135,9 @@
     <Page Update="Customer\CheckAppoinment.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Employee\AddNewAppointment.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Employee\CheckAppoinment.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -135,7 +153,13 @@
     <Page Update="Employee\MakeAppointment.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Employee\ManageAppointment.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Employee\SearchCustomerRecord.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Employee\ViewAppointmentRequest.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

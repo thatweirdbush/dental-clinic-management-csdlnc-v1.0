@@ -138,5 +138,10 @@ namespace DentalClinicManagement.Employee
                 mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.CheckBill());
             }
         }
+
+        private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -29,7 +29,6 @@ namespace DentalClinicManagement.Dentist
         {
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
 
-
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
                 mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewAppointment());
@@ -39,7 +38,6 @@ namespace DentalClinicManagement.Dentist
         private void logOut(object sender, RoutedEventArgs e)
         {
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
-
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
@@ -55,7 +53,6 @@ namespace DentalClinicManagement.Dentist
         {
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
 
-
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
                 mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ReceivePatient());
@@ -66,10 +63,19 @@ namespace DentalClinicManagement.Dentist
         {
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
 
-
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
                 mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.SearchCustomerRecord());
+            }
+        }
+
+        private void MedicalManagementButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+
+            if (mainWindow != null && mainWindow.MainFrame != null)
+            {
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.MedicalManagement());
             }
         }
     }

@@ -102,7 +102,7 @@ namespace DentalClinicManagement.Account {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DentalClinicManagement;V1.0.0.0;component/account/signup.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DentalClinicManagement;component/account/signup.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Account\SignUp.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

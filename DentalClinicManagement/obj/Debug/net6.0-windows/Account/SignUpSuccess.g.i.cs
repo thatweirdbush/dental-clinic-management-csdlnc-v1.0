@@ -61,7 +61,7 @@ namespace DentalClinicManagement.Account {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DentalClinicManagement;V1.0.0.0;component/account/signupsuccess.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DentalClinicManagement;component/account/signupsuccess.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Account\SignUpSuccess.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SJRyzobcyFaeX2eyJO58skHdM6hycW+BErg+9tVj37nppHF6cneh27nNY+O/nfxmj3Ig0eXN3PwjBKJk9/qlqQ==",
+  "dgSpecHash": "S9T1QWtWeSDKyZyl8nEPKr0kBScxztkrBZ4yoho12aKs7utKm+F7sMSnj8HUiYoX38Ll61gEpuSP4QP7W/3shA==",
   "success": true,
-  "projectFilePath": "D:\\Visual Studio Solutions\\CSDL NC\\dental-clinic-management-csdlnc-v1.0\\DentalClinicManagement\\DentalClinicManagement.csproj",
+  "projectFilePath": "D:\\Visual Studio Solutions\\CSDL NC\\dental-clinic-management-csdlnc_ver1_branch_huy\\dental-clinic-management-csdlnc-v1.0\\DentalClinicManagement\\DentalClinicManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\huyph\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\huyph\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
