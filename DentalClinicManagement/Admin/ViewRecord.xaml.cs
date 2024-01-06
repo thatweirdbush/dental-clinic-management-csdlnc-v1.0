@@ -23,14 +23,11 @@ namespace DentalClinicManagement.Admin
     /// </summary>
     public partial class ViewRecord : Page
     {
-        private CustomerClass user;
-
         public ObservableCollection<KhamBenh> KhamBenhList { get; set; }
 
         public ViewRecord()
         {
             InitializeComponent();
-            this.user = new CustomerClass(user);
 
             // Khởi tạo danh sách và thêm dữ liệu mẫu
             KhamBenhList = new ObservableCollection<KhamBenh>
@@ -60,7 +57,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Customer.DashBoard(user));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
             }
         }
 

@@ -79,25 +79,8 @@
 
             <!-- Canvas bên phải -->
             <Canvas Background="White" Grid.Column="1">
-                <!-- Button "Lưu thay đổi" -->
-
-                <!-- Patient Label -->
-                <Label Content="Họ và tên:" Canvas.Left="51" Canvas.Top="50" FontSize="20" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" VerticalAlignment="Center" Width="155"/>
-                <Label Content="Năm sinh:" Canvas.Left="51" Canvas.Top="111" FontSize="20" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" VerticalAlignment="Center" Width="155"/>
-                <Label Content="Giới tính:" Canvas.Left="371" Canvas.Top="111" FontSize="20" FontFamily="Segoe UI Semibold" HorizontalAlignment="Center" VerticalAlignment="Center" Width="110"/>
-                <Label Content="Số điện thoại:" Canvas.Left="51" Canvas.Top="168" FontSize="20" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" VerticalAlignment="Center" Width="155"/>
-                <Label Content="Địa chỉ:" Canvas.Left="51" Canvas.Top="224" FontSize="20" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" VerticalAlignment="Center" Width="155"/>
-
-                <!-- Patient Information -->
-                <TextBlock Canvas.Left="211" TextWrapping="Wrap" Text="Trương Tấn Đạt" Canvas.Top="55" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Width="460"/>
-                <TextBlock Canvas.Left="211" TextWrapping="Wrap" Text="2003" Canvas.Top="116" FontSize="20" Width="155" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Canvas.Left="486" TextWrapping="Wrap" Text="Nam" Canvas.Top="116" FontSize="20" Width="155" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Canvas.Left="211" TextWrapping="Wrap" Text="0902474761" Canvas.Top="173" FontSize="20" Width="460" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                <TextBlock Canvas.Left="206" TextWrapping="Wrap" Text="123/321 Lê Văn Duyệt, P. 3, Q. Bình Thạnh" Canvas.Top="229" FontSize="20" Width="460" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-
-
                 <!-- Record Data -->
-                <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Canvas.Left="51" Canvas.Top="292" HorizontalAlignment="Left" Height="170" VerticalAlignment="Center" Width="620" HorizontalScrollBarVisibility="Disabled">
+                <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Canvas.Left="50" Canvas.Top="57" HorizontalAlignment="Left" Height="425" VerticalAlignment="Top" Width="630" HorizontalScrollBarVisibility="Disabled">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Ngày khám" Binding="{Binding NgayKham}" Width="90">
                             <DataGridTextColumn.ElementStyle>

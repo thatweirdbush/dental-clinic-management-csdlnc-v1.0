@@ -61,7 +61,7 @@
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button Content="Báo cáo cuộc hẹn" Width="364" Height="49" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="reportAppointment" Canvas.Left="33" Canvas.Top="675" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <Button Content="Báo cáo cuộc hẹn" Width="364" Height="49" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="reportAppointment" Canvas.Left="33" Canvas.Top="659" HorizontalAlignment="Center" VerticalAlignment="Top" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="20"/>

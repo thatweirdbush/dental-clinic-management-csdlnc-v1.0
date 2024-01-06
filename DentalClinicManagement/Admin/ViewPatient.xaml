@@ -8,9 +8,6 @@
       mc:Ignorable="d" 
       d:DesignHeight="730" d:DesignWidth="1200"
       Title="ViewPatient">
-    <Page.Resources>
-        <converters:AbsoluteConverter x:Key="absoluteConverter"/>
-    </Page.Resources>
 
     <Canvas Background="White">
         <StackPanel Orientation="Vertical">
@@ -21,16 +18,24 @@
             <Canvas Height="650" Width="1200" Background="White">
                 <Image Source="../images/find.png" Width="341" Height="303" Canvas.Left="42" Canvas.Top="110" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
-                <ListView MouseDoubleClick="CheckRecord_btn" ItemsSource="{Binding PatientInfo}" Name="listView" Height="337" Width="638" Canvas.Left="504" Canvas.Top="110" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <ListView MouseDoubleClick="checkRecord_btn" ItemsSource="{Binding PatientInfos}" Name="listView" Height="337" Width="638" Canvas.Left="504" Canvas.Top="110" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="listView_SelectionChanged">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Mã bệnh nhân" Width="120" />
-                            <GridViewColumn Header="Tên bệnh nhân" Width="120" />
-                            <GridViewColumn Header="Giới tính" Width="120" />
-                            <GridViewColumn Header="Địa chỉ" Width="120" />
+                            <GridViewColumn Header="Mã bệnh nhân" Width="120" DisplayMemberBinding="{Binding Id}" />
+                            <GridViewColumn Header="Tên bệnh nhân" Width="120" DisplayMemberBinding="{Binding Name}"/>
+                            <GridViewColumn Header="Giới tính" Width="120" DisplayMemberBinding="{Binding Sex}"/>
+                            <GridViewColumn Header="Địa chỉ" Width="120" DisplayMemberBinding="{Binding Address}"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
+                
+                <Button x:Name="backButton_Copy" Content="Lọc" Width="176" Height="49" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="search_click" Canvas.Left="966" Canvas.Top="28" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
             </Canvas>
         </StackPanel>
         <Button Name="backButton" Content="Trở về" Width="176" Height="49" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="backButton_Click" Canvas.Left="733" Canvas.Top="640" HorizontalAlignment="Left" VerticalAlignment="Top" >
