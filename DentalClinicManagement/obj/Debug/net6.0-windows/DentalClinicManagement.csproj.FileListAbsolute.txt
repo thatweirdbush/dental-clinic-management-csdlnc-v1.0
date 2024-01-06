@@ -258,3 +258,5 @@ C:\Users\Dell\Desktop\CSDLNC\dental-clinic-management-csdlnc-v1.0\DentalClinicMa
 C:\Users\Dell\Desktop\CSDLNC\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewRecord.g.cs
 C:\Users\Dell\Desktop\CSDLNC\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewPatient.baml
 C:\Users\Dell\Desktop\CSDLNC\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewRecord.baml
+C:\Users\Dell\Desktop\CSDLNC\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ReportAppointment.g.cs
+C:\Users\Dell\Desktop\CSDLNC\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ReportAppointment.baml

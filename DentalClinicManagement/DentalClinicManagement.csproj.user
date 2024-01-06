@@ -34,6 +34,9 @@
     <Compile Update="Admin\MedicalManagement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Admin\ReportAppointment.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Admin\ViewPatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -106,6 +109,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Admin\MedicalManagement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\ReportAppointment.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Admin\ViewPatient.xaml">
