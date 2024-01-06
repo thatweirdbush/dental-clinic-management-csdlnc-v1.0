@@ -58,7 +58,7 @@
                 <Button Click="ReceivePatient" x:Name="add_profile_btn" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#FFF6F6F6" Foreground="#FF1C0303" Background="White" Cursor="Hand" FontSize="18" Height="175" Canvas.Top="280" Width="215" Canvas.Left="29" >
                     <StackPanel>
                         <Image Source="../images/add-profile.png" Width="115" Height="108"/>
-                        <TextBlock Text="Thêm hồ sơ bệnh nhân" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                        <TextBlock FontWeight="Bold" Margin="0,9.8,0,0" HorizontalAlignment="Center" TextWrapping="Wrap" Width="119" UseLayoutRounding="False"><Run Text="Quản lý hồ sơ"/><LineBreak/><Run Text="   bệnh nhân"/></TextBlock>
                     </StackPanel>
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -89,7 +89,7 @@
                     </Button.Template>
                     <StackPanel>
                         <Image Source="../images/calendar.png" Width="115" Height="108"/>
-                        <TextBlock Text="Xem lịch hẹn" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                        <TextBlock Text="Quản lý cuộc hẹn" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,0"/>
                     </StackPanel>
                 </Button>
                 <!-- Button thêm bệnh án -->

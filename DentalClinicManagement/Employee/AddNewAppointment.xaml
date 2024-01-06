@@ -89,15 +89,12 @@
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
                     </TextBox.BorderBrush>
                 </TextBox>
-                <Button x:Name="FinishButton" Content="Hoàn tất" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="63" Canvas.Left="486" Canvas.Top="455" Width="228" Click="FinishButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <Button x:Name="FinishButton" Content="Hoàn tất" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="63" Canvas.Left="486" Canvas.Top="455" Width="228" Click="FinishButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FF2CE61B" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="24"/>
                         </Style>
                     </Button.Resources>
-                    <Button.Background>
-                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
-                    </Button.Background>
                     <Button.Effect>
                         <DropShadowEffect ShadowDepth="3" BlurRadius="10" Color="Gray"/>
                     </Button.Effect>

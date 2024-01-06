@@ -6,17 +6,11 @@
         xmlns:local="clr-namespace:DentalClinicManagement"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="750" Width="1200" Loaded="WindowLoaded">
+        Title="MainWindow" Height="800" Width="1200" Loaded="WindowLoaded">
     <Window.Resources>
 
     </Window.Resources>
-    <Grid Background="#FFF1E919">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="730"/>
-        </Grid.RowDefinitions>
-        <StackPanel Background="AliceBlue" Grid.RowSpan="2">
-            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
-        </StackPanel>
+    <Grid>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

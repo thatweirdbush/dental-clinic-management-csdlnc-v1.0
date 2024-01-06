@@ -27,7 +27,7 @@
         </Canvas>
 
         <!-- Row phía dưới của Grid còn lại -->
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Background="AliceBlue">
             <!-- Tạo Column Grid -->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="480"/>

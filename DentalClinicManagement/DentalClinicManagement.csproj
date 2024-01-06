@@ -35,6 +35,7 @@
     <None Remove="images\update-appointment.png" />
     <None Remove="images\user-avatar.jpg" />
     <None Remove="images\UserAvatar.png" />
+    <None Remove="images\UserProfileImage.png" />
     <None Remove="images\view-profile.png" />
     <None Remove="images\view.png" />
   </ItemGroup>
@@ -117,6 +118,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\UserAvatar.png" />
+    <Resource Include="images\UserProfileImage.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="images\view-profile.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
