@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DentalClinicManagement.Employee"
       mc:Ignorable="d" 
-      d:DesignHeight="730" d:DesignWidth="1200"
+      d:DesignHeight="750" d:DesignWidth="1200"
       Title="Appointment Requests">
 
     <Grid Background="White">
@@ -29,52 +29,52 @@
         <!-- Row phía dưới của Grid còn lại -->
         <Grid Grid.Row="1">
             <Canvas Background="White">
-                <!-- Button "Lưu thay đổi" -->
-
-                <!-- Patient Label -->
-
-                <!-- Patient Information -->
-
-
                 <!-- Record Data -->
-                <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Canvas.Left="74" Canvas.Top="108" HorizontalAlignment="Center" Height="400" VerticalAlignment="Top" Width="1052" HorizontalScrollBarVisibility="Disabled">
+                <DataGrid x:Name="AppointmentRequestDataGrid" AutoGenerateColumns="False" Canvas.Left="74" Canvas.Top="108" HorizontalAlignment="Center" Height="400" VerticalAlignment="Top" Width="1052" HorizontalScrollBarVisibility="Disabled" FontSize="14" FontWeight="Medium">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Ngày khám" Binding="{Binding NgayKham}" Width="180">
+                        <DataGridTextColumn Header="ID Lịch hẹn" Binding="{Binding ScheduleID}" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style>
                                     <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Ca" Binding="{Binding TinhTrang}" Width="180">
+                        <DataGridTextColumn Header="ID Bệnh nhân" Binding="{Binding PatientID}" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style>
                                     <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Tên bệnh nhân" Binding="{Binding Thuoc}" Width="180">
+                        <DataGridTextColumn Header="ID Nha sĩ" Binding="{Binding DentistID}" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style>
                                     <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Nha sĩ" Binding="{Binding NgayTaiKham}" Width="180">
+                        <DataGridTextColumn Header="Phòng" Binding="{Binding Room}" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style>
                                     <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Ghi chú" Binding="{Binding BacSi}" Width="180">
+                        <DataGridTextColumn Header="Ghi chú" Binding="{Binding Note}" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style>
                                     <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Thời gian gửi yêu cầu" Binding="{Binding ThanhToan}" Width="180">
+                        <DataGridTextColumn Header="Thời gian yêu cầu" Binding="{Binding TimeOfRequest}" Width="*">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style>
+                                    <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Trạng thái" Binding="{Binding Status}" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style>
                                     <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>

@@ -58,7 +58,16 @@
     <Compile Update="Customer\CheckAppoinment.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Dentist\ViewContraindicatedMedicationList.xaml.cs">
+    <Compile Update="Dentist\ViewAppointmentRequest.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Dentist\ViewMedication.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Dentist\ViewPaymentDetail.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Dentist\ViewRestrictedMedicationList.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Dentist\ViewDetailTreatmentPlan.xaml.cs">
@@ -91,13 +100,19 @@
     <Compile Update="Dentist\ReceivePatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Employee\ManageAppointment.xaml.cs">
+    <Compile Update="Employee\ManageSchedule.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Employee\SearchCustomerRecord.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Employee\ViewAppointmentRequest.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Employee\ViewPaymentDetail.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Employee\ViewPaymentList.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -156,7 +171,16 @@
     <Page Update="Customer\CheckAppoinment.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Dentist\ViewContraindicatedMedicationList.xaml">
+    <Page Update="Dentist\ViewAppointmentRequest.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dentist\ViewMedication.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dentist\ViewPaymentDetail.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dentist\ViewRestrictedMedicationList.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Dentist\ViewDetailTreatmentPlan.xaml">
@@ -195,13 +219,19 @@
     <Page Update="Employee\MakeAppointment.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Employee\ManageAppointment.xaml">
+    <Page Update="Employee\ManageSchedule.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Employee\SearchCustomerRecord.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Employee\ViewAppointmentRequest.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Employee\ViewPaymentDetail.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Employee\ViewPaymentList.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

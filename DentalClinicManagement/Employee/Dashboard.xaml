@@ -54,6 +54,13 @@
                         </Style>
                     </Button.Resources>
                 </Button>
+                <Button x:Name="PaymentListButton" Content="Danh sách thanh toán" Width="305" Height="50" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="PaymentListButton_Click" Canvas.Left="468" Canvas.Top="594" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
             </Canvas>
         </StackPanel>
     </Canvas>

@@ -28,10 +28,10 @@
 
         <!-- Row phía dưới của Grid còn lại -->
         <Grid Grid.Row="1">
-            <Canvas Background="White">
+            <Canvas x:Name="MainCanvas" Background="White">
                 <!-- Record Data -->
                 <Label Content="Mã điều trị" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="74" Canvas.Top="110" Width="454" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <Label Content="Nha sĩ thực hiện" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="74" Canvas.Top="210" Width="454" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="ID Nha sĩ thực hiện" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="74" Canvas.Top="210" Width="454" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <Label Content="Mô tả" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="658" Canvas.Top="210" Width="142" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <Label Content="Ngày điều trị" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="658" Canvas.Top="110" Width="352" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <Label Content="Trợ khám" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="74" Canvas.Top="310" Width="118" HorizontalAlignment="Left" VerticalAlignment="Top"/>
@@ -39,6 +39,7 @@
                     <Border.BorderBrush>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
                     </Border.BorderBrush>
+                    <TextBlock x:Name="AssistantTextBlock" TextWrapping="Wrap" Text="{Binding Assistant}" Margin="0,0,8,0" VerticalAlignment="Center" FontSize="16" Padding="10,0,0,0"/>
                 </Border>
                 <Button x:Name="TreatingToothListButton" Content="Danh sách các răng cần điều trị" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="52" Canvas.Left="727" Canvas.Top="442" Width="316" Click="TreatingToothListButton_Click" HorizontalAlignment="Center" VerticalAlignment="Center" >
                     <Button.Resources>
@@ -57,27 +58,32 @@
                     <Border.BorderBrush>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
                     </Border.BorderBrush>
+                    <TextBlock x:Name="StatusTextBlock" TextWrapping="Wrap" Text="{Binding Status}" Margin="0,0,8,0" FontSize="16" Padding="10,0,0,0" VerticalAlignment="Center"/>
                 </Border>
                 <Label Content="Trạng thái" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="74" Canvas.Top="410" Width="118" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 <Border BorderThickness="2.5" CornerRadius="10" Width="454" Height="40" Canvas.Left="74" Canvas.Top="248" HorizontalAlignment="Left" VerticalAlignment="Center">
                     <Border.BorderBrush>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
                     </Border.BorderBrush>
+                    <TextBlock x:Name="DentistIDTextBlock" TextWrapping="{Binding DentistID}" Text="{Binding DentistID}" VerticalAlignment="Center" FontSize="16" Padding="10,0,0,0" Margin="0,0,8,0"/>
                 </Border>
-                <Border BorderThickness="2.5" CornerRadius="10" Width="454" Height="40" Canvas.Left="74" Canvas.Top="148" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Border BorderThickness="2.5" CornerRadius="10" Width="454" Height="40" Canvas.Left="74" Canvas.Top="148" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="10,0,0,0">
                     <Border.BorderBrush>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
                     </Border.BorderBrush>
+                    <TextBlock x:Name="TreatmentIDTextBlock" TextWrapping="Wrap" Text="{Binding TreatmentID}" Margin="0,0,8,0" FontSize="16" VerticalAlignment="Center"/>
                 </Border>
                 <Border BorderThickness="2.5" CornerRadius="10" Width="454" Height="40" Canvas.Left="658" Canvas.Top="148" HorizontalAlignment="Left" VerticalAlignment="Center">
                     <Border.BorderBrush>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
                     </Border.BorderBrush>
+                    <TextBlock x:Name="DateTextBlock" TextWrapping="Wrap" Text="{Binding Date}" Margin="0,0,8,0" Padding="10,0,0,0" VerticalAlignment="Center" FontSize="16"/>
                 </Border>
                 <Border BorderThickness="2.5" CornerRadius="10" Width="454" Height="140" Canvas.Left="658" Canvas.Top="248" HorizontalAlignment="Center" VerticalAlignment="Top">
                     <Border.BorderBrush>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
                     </Border.BorderBrush>
+                    <TextBlock x:Name="DescriptionTextBlock" TextWrapping="Wrap" Text="{Binding Description}" Margin="0,0,8,0" FontSize="16" VerticalAlignment="Top" Padding="10,0,0,0"/>
                 </Border>
                 <Button x:Name="HomeButton_Copy" Content="⩠ Trang chủ" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Canvas.Left="200" Canvas.Top="35" Width="158" Click="HomeButton_Click" HorizontalAlignment="Center" VerticalAlignment="Center" >
                     <Button.Resources>

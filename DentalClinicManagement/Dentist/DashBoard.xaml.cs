@@ -75,7 +75,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.MedicalManagement());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewMedication());
             }
         }
     }

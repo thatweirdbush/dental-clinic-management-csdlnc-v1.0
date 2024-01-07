@@ -1,5 +1,8 @@
-﻿using System;
+﻿using DentalClinicManagement.Employee.Class;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DentalClinicManagement.Dentist.Class;
 
 namespace DentalClinicManagement.Dentist
 {
@@ -20,19 +24,26 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class ViewPaymentList : Page
     {
-        public ViewPaymentList()
+        Patient patient;
+        public ObservableCollection<Payment> paymentList { get; set; } = new ObservableCollection<Payment>();
+        public ObservableCollection<PaymentDetail> paymentDetailList { get; set; } = new ObservableCollection<PaymentDetail>();
+
+        public ViewPaymentList(Patient patient)
         {
             InitializeComponent();
+            this.patient = new Patient(patient);
+            LoadPayment(patient.PatientID);
+            LoadPaymentDetailList();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+            //MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
 
-            if (mainWindow != null && mainWindow.MainFrame != null)
-            {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPatientRecord());
-            }
+            //if (mainWindow != null && mainWindow.MainFrame != null)
+            //{
+            //    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPatientRecord());
+            //}
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
@@ -52,7 +63,93 @@ namespace DentalClinicManagement.Dentist
 
         private void PaymentList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            if (sender is DataGrid dataGrid && dataGrid.SelectedItem is PaymentDetail paymentDetail)
+            {
+                MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
 
+                if (mainWindow != null && mainWindow.MainFrame != null)
+                {
+                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPaymentDetail(patient, paymentDetail));
+                }
+            }
+        }
+
+        private void LoadPayment(int? patientID)
+        {
+            try
+            {
+                // Câu truy vấn SQL để lấy thông tin AppointmentRequest từ database
+                string query = "SELECT * FROM [Payment] " +
+                    "WHERE @PatientID = PatientID";
+
+                // Tạo và mở kết nối
+                DB dB = new DB();
+                using (SqlConnection connection = dB.Connection)
+                {
+                    // Tạo đối tượng SqlCommand
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        // Thêm tham số cho câu truy vấn
+                        command.Parameters.AddWithValue("@PatientID", patientID);
+
+                        // Thực hiện truy vấn SQL và lấy dữ liệu
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Payment payment = new Payment(reader);
+                                paymentList.Add(payment);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void LoadPaymentDetailList()
+        {
+            foreach (Payment payment in paymentList)
+            {
+                int? paymentID = payment.PaymentID;
+                try
+                {
+                    // Câu truy vấn SQL để lấy thông tin AppointmentRequest từ database
+                    string query = "SELECT * FROM [Payment Detail] " +
+                        "WHERE @PaymentID = PaymentID";
+
+                    // Tạo và mở kết nối
+                    DB dB = new DB();
+                    using (SqlConnection connection = dB.Connection)
+                    {
+                        // Tạo đối tượng SqlCommand
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            // Thêm tham số cho câu truy vấn
+                            command.Parameters.AddWithValue("@PaymentID", paymentID);
+
+                            // Thực hiện truy vấn SQL và lấy dữ liệu
+                            using (SqlDataReader reader = command.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    PaymentDetail paymentDetail = new PaymentDetail(reader);
+                                    paymentDetailList.Add(paymentDetail);
+                                }
+                                // Gán ObservableCollection làm nguồn dữ liệu cho DataGrid
+                                PaymentListDataGrid.ItemsSource = paymentDetailList;
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }           
         }
     }
 }

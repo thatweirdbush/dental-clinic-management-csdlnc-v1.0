@@ -30,23 +30,23 @@
         <Grid Grid.Row="1">
             <Canvas Background="White">
                 <!-- Record Data -->
-                <DataGrid x:Name="PatientListDataGrid" MouseDoubleClick="PatientList_MouseDoubleClick" AutoGenerateColumns="False" Canvas.Left="74" Canvas.Top="150" HorizontalAlignment="Center" Height="316" VerticalAlignment="Top" Width="1052" HorizontalScrollBarVisibility="Disabled">
+                <DataGrid x:Name="PatientListDataGrid" MouseDoubleClick="PatientList_MouseDoubleClick" AutoGenerateColumns="False" Canvas.Left="74" Canvas.Top="150" HorizontalAlignment="Center" Height="316" VerticalAlignment="Top" Width="1052" HorizontalScrollBarVisibility="Disabled" FontSize="14" FontWeight="SemiBold">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Mã bệnh nhân" Binding="{Binding NgayKham}" Width="*">
+                        <DataGridTextColumn Header="Mã bệnh nhân" Binding="{Binding PatientID}" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style>
                                     <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Họ và tên" Binding="{Binding TinhTrang}" Width="*">
+                        <DataGridTextColumn Header="Họ và tên" Binding="{Binding Name}" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style>
                                     <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Số điện thoại" Binding="{Binding Thuoc}" Width="*">
+                        <DataGridTextColumn Header="Số điện thoại" Binding="{Binding PhoneNo}" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style>
                                     <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
@@ -55,32 +55,6 @@
                         </DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
-                <Button x:Name="HomeButton" Content="⩠ Trang chủ" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="66" Canvas.Left="200" Canvas.Top="51" Width="158" Click="HomeButton_Click" HorizontalAlignment="Left" VerticalAlignment="Center" >
-                    <Button.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="24"/>
-                        </Style>
-                    </Button.Resources>
-                    <Button.Background>
-                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
-                    </Button.Background>
-                    <Button.Effect>
-                        <DropShadowEffect ShadowDepth="3" BlurRadius="10" Color="Gray"/>
-                    </Button.Effect>
-                </Button>
-                <Button x:Name="BackButton" Content="◀ Trở về" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="66" Canvas.Left="74" Canvas.Top="51" Width="102" Click="BackButton_Click" HorizontalAlignment="Left" VerticalAlignment="Center" >
-                    <Button.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="24"/>
-                        </Style>
-                    </Button.Resources>
-                    <Button.Background>
-                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
-                    </Button.Background>
-                    <Button.Effect>
-                        <DropShadowEffect ShadowDepth="3" BlurRadius="10" Color="Gray"/>
-                    </Button.Effect>
-                </Button>
                 <Label Content="Tên bệnh nhân" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="456" Canvas.Top="26" Width="352" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <Button x:Name="AppointmentRequestButton" Content="Các yêu cầu hẹn từ bệnh nhân" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Canvas.Left="235" Canvas.Top="497" Width="328" Click="AppointmentRequestButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" >
                     <Button.Resources>
@@ -118,7 +92,33 @@
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
                     </TextBox.BorderBrush>
                 </TextBox>
-                <Button x:Name="SearchButton" Content="Tìm kiếm" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="66" Canvas.Left="1024" Canvas.Top="44" Width="102" Click="SearchButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                <Button x:Name="SearchButton" Content="Tìm kiếm" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Canvas.Left="1024" Canvas.Top="60" Width="102" Click="SearchButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="24"/>
+                        </Style>
+                    </Button.Resources>
+                    <Button.Background>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
+                    </Button.Background>
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="3" BlurRadius="10" Color="Gray"/>
+                    </Button.Effect>
+                </Button>
+                <Button x:Name="HomeButton" Content="⩠ Trang chủ" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Canvas.Left="200" Canvas.Top="60" Width="158" Click="HomeButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="24"/>
+                        </Style>
+                    </Button.Resources>
+                    <Button.Background>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
+                    </Button.Background>
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="3" BlurRadius="10" Color="Gray"/>
+                    </Button.Effect>
+                </Button>
+                <Button x:Name="BackButton" Content="◀ Trở về" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Canvas.Left="74" Canvas.Top="60" Width="102" Click="BackButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="24"/>

@@ -36,7 +36,7 @@
             </Grid.ColumnDefinitions>
 
             <!-- Canvas bên trái -->
-            <Canvas>
+            <Canvas x:Name="LeftCanvas">
                 <Canvas.Background>
                     <SolidColorBrush Color="#FFFFEED9"/>
                 </Canvas.Background>
@@ -56,9 +56,9 @@
                 <Label Content="Số điện thoại:" FontSize="20" FontFamily="Segoe UI Semibold" Height="36" Canvas.Left="73" Canvas.Top="320" Width="186" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
                 <!-- User Information -->
-                <TextBlock Canvas.Left="279" TextWrapping="Wrap" Text="1101100110101110" Canvas.Top="238" Height="24" Width="191" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Canvas.Left="279" TextWrapping="Wrap" Text="Nguyễn Văn A" Canvas.Top="284" Height="22" Width="191" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Canvas.Left="279" TextWrapping="Wrap" Text="0902474761" Canvas.Top="328" Height="24" Width="191" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBlock x:Name="PatientIDTextBlock" Canvas.Left="279" TextWrapping="Wrap" Text="{Binding PatientID}" Canvas.Top="235" Height="27" Width="191" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                <TextBlock x:Name="PatientFullNameTextBlock" Canvas.Left="279" TextWrapping="Wrap" Text="{Binding Name}" Canvas.Top="278" Height="26" Width="191" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBlock x:Name="PhoneNoTextBlock" Canvas.Left="279" TextWrapping="Wrap" Text="{Binding PhoneNo}" Canvas.Top="325" Height="31" Width="191" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 <Button x:Name="ViewTreatmentPlanButton" Content="Thông tin kế hoạch điều trị" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="50" Canvas.Left="90" Canvas.Top="459" Width="300" Click="ViewTreatmentPlanButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
@@ -101,7 +101,7 @@
             </Canvas>
 
             <!-- Canvas bên phải -->
-            <Canvas Background="White" Grid.Column="1" Grid.ColumnSpan="2">
+            <Canvas x:Name="RightCanvas" Background="White" Grid.Column="1" Grid.ColumnSpan="2">
                 <!-- Button "Lưu thay đổi" -->
                 <Button x:Name="SaveChangesButton" Content="Lưu thay đổi" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Width="180" Canvas.Left="491" Canvas.Top="527" Background="#FF2CE61B" HorizontalAlignment="Left" VerticalAlignment="Center" Click="SaveChangesButton_Click" >
                     <Button.Resources>
@@ -114,7 +114,7 @@
                     </Button.Effect>
                 </Button>
                 <!-- Label và TextBox -->
-                <TextBox x:Name="TeethHealthStatusTextBox" Text="Tại cửa sổ Hồ sơ chi tiết của bệnh nhân, nha sĩ thực hiện cập nhật thông tin tình trạng sức khỏe răng miệng của bệnh nhân mà mình được giao khám tại mục Sức khoẻ răng miệng." Width="624" Height="68" FontSize="18" Canvas.Left="46" Canvas.Top="318" BorderThickness="2.5,2.5,2.5,2.5" HorizontalAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Padding="10,0,0,0" TextWrapping="Wrap" >
+                <TextBox x:Name="TeethHealthStatusTextBox" Text="{Binding GeneralInformation}" Width="624" Height="68" FontSize="18" Canvas.Left="46" Canvas.Top="318" BorderThickness="2.5,2.5,2.5,2.5" HorizontalAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Padding="10,0,0,0" TextWrapping="Wrap" >
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>
@@ -129,6 +129,7 @@
                     <Border.BorderBrush>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
                     </Border.BorderBrush>
+                    <TextBlock x:Name="TotalTreatmentFeeTextBlock" TextWrapping="Wrap" Text="{Binding TotalTreatmentFee}" FontSize="16" VerticalAlignment="Center" Margin="0,0,8,0"/>
                     <!-- Đặt văn bản mặc định hoặc Binding với thuộc tính Text-->
                 </Border>
 
@@ -136,7 +137,7 @@
                     <Border.BorderBrush>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
                     </Border.BorderBrush>
-                    <!-- Đặt văn bản mặc định hoặc Binding với thuộc tính Text-->
+                    <TextBlock x:Name="FullnameTextBlock" TextWrapping="Wrap" Text="{Binding Name}" Margin="-2,0,8,0" FontSize="16" VerticalAlignment="Center"/>
                 </Border>
 
 
@@ -147,15 +148,12 @@
                 <Label Content="Giới tính" Canvas.Left="373" Canvas.Top="107" FontSize="20" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
                 <!-- Check box giới tính -->
-                <CheckBox x:Name="MaleCheckBox" Content="Nam" Canvas.Left="380.887" Canvas.Top="149" FontSize="18" Width="80" Height="30" HorizontalAlignment="Left" 
-                      Background="#FFB4B4B4" BorderThickness="3,3,3,3" UseLayoutRounding="False" VerticalAlignment="Top" VerticalContentAlignment="Center" IsEnabled="False"/>
-                <CheckBox x:Name="FemaleCheckBox" Content="Nữ" Canvas.Left="525" Canvas.Top="149" FontSize="18" Width="80" Height="30" 
-                      Background="#FFB4B4B4" BorderThickness="3,3,3,3" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" IsEnabled="False"/>
 
                 <Border BorderThickness="2.5" CornerRadius="10" Width="290" Height="40" Canvas.Left="380" Canvas.Top="232" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="10,0,0,0">
                     <Border.BorderBrush>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
                     </Border.BorderBrush>
+                    <TextBlock x:Name="TotalPaidTextBlock" TextWrapping="Wrap" Text="{Binding TotalPaid}" FontSize="16" VerticalAlignment="Center" Margin="0,0,8,0"/>
                     <!-- Đặt văn bản mặc định hoặc Binding với thuộc tính Text-->
                 </Border>
 
@@ -164,14 +162,16 @@
                     <Border.BorderBrush>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
                     </Border.BorderBrush>
+                    <TextBlock x:Name="AgeTextBlock" TextWrapping="Wrap" Text="{Binding Age}" Margin="0,0,8,0" FontSize="16" VerticalAlignment="Center"/>
                     <!-- Đặt văn bản mặc định hoặc Binding với thuộc tính Text-->
                 </Border>
                 <Label Content="Tuổi" Canvas.Left="47" Canvas.Top="107" FontSize="20" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
-                <Border BorderThickness="2.5" CornerRadius="10" Width="624" Height="68" Canvas.Left="47" Canvas.Top="437" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="10,0,0,0">
+                <Border x:Name="AllergyStatusTextBlock" BorderThickness="2.5" CornerRadius="10" Width="624" Height="68" Canvas.Left="47" Canvas.Top="437" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="10,0,0,0">
                     <Border.BorderBrush>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
                     </Border.BorderBrush>
+                    <TextBlock TextWrapping="Wrap" Text="{Binding AllergyStatus}" FontSize="16" VerticalAlignment="Center" Margin="0,0,8,0"/>
                     <!-- Đặt văn bản mặc định hoặc Binding với thuộc tính Text-->
                 </Border>
 
@@ -202,6 +202,13 @@
                         <DropShadowEffect ShadowDepth="3" BlurRadius="10" Color="Gray"/>
                     </Button.Effect>
                 </Button>
+                <Border BorderThickness="2.5" CornerRadius="10" Width="290" Height="40" Canvas.Left="381" Canvas.Top="144" Padding="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Border.BorderBrush>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+                    </Border.BorderBrush>
+                    <TextBlock x:Name="GenderTextBlock" TextWrapping="Wrap" Text="{Binding Sex}" FontSize="16" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <!-- Đặt văn bản mặc định hoặc Binding với thuộc tính Text-->
+                </Border>
             </Canvas>
         </Grid>
     </Grid>

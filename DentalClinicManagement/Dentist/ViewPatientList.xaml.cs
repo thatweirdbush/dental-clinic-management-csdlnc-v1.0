@@ -1,5 +1,9 @@
-﻿using System;
+﻿using DentalClinicManagement.Dentist.Class;
+using DentalClinicManagement.Employee.Class;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,19 +24,18 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class ViewPatientList : Page
     {
+        public ObservableCollection<Patient> patientList { get; set; } = new ObservableCollection<Patient>();
+
         public ViewPatientList()
         {
             InitializeComponent();
+            LoadPatientList();
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+            MessageBox.Show("Tìm kiếm.");
 
-            if (mainWindow != null && mainWindow.MainFrame != null)
-            {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
-            }
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -57,16 +60,20 @@ namespace DentalClinicManagement.Dentist
 
         private void PatientList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
-
-            if (mainWindow != null && mainWindow.MainFrame != null)
+            if (sender is DataGrid dataGrid && dataGrid.SelectedItem is Patient selectedPatient)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPatientRecord());
+                MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+
+                if (mainWindow != null && mainWindow.MainFrame != null)
+                {
+                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPatientRecord(selectedPatient));
+                }
             }
         }
 
         private void AddNewPatientButton_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Thêm bệnh nhân.");
 
         }
 
@@ -76,7 +83,41 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPatientRecord());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewAppointmentRequest());
+            }
+        }
+
+        private void LoadPatientList()
+        {
+            try
+            {
+                // Câu truy vấn SQL để lấy thông tin AppointmentRequest từ database
+                string query = "SELECT * FROM [Patient]";
+
+                // Tạo và mở kết nối
+                DB dB = new DB();
+                using (SqlConnection connection = dB.Connection)
+                {
+                    // Tạo đối tượng SqlCommand
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        // Thực hiện truy vấn SQL và lấy dữ liệu
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Patient patient = new Patient(reader);
+                                patientList.Add(patient);
+                            }
+                            // Gán ObservableCollection làm nguồn dữ liệu cho DataGrid
+                            PatientListDataGrid.ItemsSource = patientList;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
     }

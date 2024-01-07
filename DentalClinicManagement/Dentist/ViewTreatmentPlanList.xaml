@@ -30,44 +30,44 @@
         <Grid Grid.Row="1">
             <Canvas Background="White">
                 <!-- Record Data -->
-                <DataGrid x:Name="TreatmentPlanListDataGrid" MouseDoubleClick="TreatmentPlanList_MouseDoubleClick" AutoGenerateColumns="False" Canvas.Left="74" Canvas.Top="118" HorizontalAlignment="Center" Height="436" VerticalAlignment="Top" Width="1052" HorizontalScrollBarVisibility="Disabled">
+                <DataGrid x:Name="TreatmentPlanListDataGrid" MouseDoubleClick="TreatmentPlanList_MouseDoubleClick" AutoGenerateColumns="False" Canvas.Left="74" Canvas.Top="118" HorizontalAlignment="Center" Height="436" VerticalAlignment="Top" Width="1052" HorizontalScrollBarVisibility="Disabled" FontSize="14" FontWeight="Medium">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Mã điều trị" Binding="{Binding NgayKham}" Width="*">
+                        <DataGridTextColumn Header="Mã điều trị" Binding="{Binding ConductedTreatmentID}" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style>
                                     <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Tên điều trị" Binding="{Binding Thuoc}" Width="*">
+                        <DataGridTextColumn Header="ID Kế hoạch điều trị" Binding="{Binding TreatmentID}" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style>
                                     <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Ngày điều trị" Binding="{Binding TinhTrang}" Width="*">
+                        <DataGridTextColumn Header="Ngày điều trị" Binding="{Binding Date}" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style>
                                     <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Nha sĩ thực hiện" Binding="{Binding Thuoc}" Width="*">
+                        <DataGridTextColumn Header="ID Nha sĩ thực hiện" Binding="{Binding DentistID}" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style>
                                     <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Trợ khám" Binding="{Binding Thuoc}" Width="*">
+                        <DataGridTextColumn Header="Trợ khám" Binding="{Binding Assistant}" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style>
                                     <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Trạng thái" Binding="{Binding Thuoc}" Width="*">
+                        <DataGridTextColumn Header="Trạng thái" Binding="{Binding Status}" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style>
                                     <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>

@@ -67,8 +67,8 @@
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
                     </TextBox.BorderBrush>
                 </TextBox>
-                <Label Content="Nha sĩ" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="74" Canvas.Top="210" Width="142" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                <TextBox x:Name="DentistTextBox" FontSize="18" BorderThickness="2.5,2.5,2.5,2.5" VerticalContentAlignment="Center" Height="40" Canvas.Left="74" Canvas.Top="248" Width="454" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Label Content="Mã nha sĩ" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="74" Canvas.Top="210" Width="142" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBox x:Name="DentistIDTextBox" FontSize="18" BorderThickness="2.5,2.5,2.5,2.5" VerticalContentAlignment="Center" Height="40" Canvas.Left="74" Canvas.Top="248" Width="454" HorizontalAlignment="Left" VerticalAlignment="Center" >
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>
@@ -79,7 +79,7 @@
                     </TextBox.BorderBrush>
                 </TextBox>
                 <Label Content="Ghi chú" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="658" Canvas.Top="210" Width="142" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox x:Name="NoteTextBox" FontSize="18" BorderThickness="2.5,2.5,2.5,2.5" VerticalContentAlignment="Center" Height="140" Canvas.Left="658" Canvas.Top="248" Width="454" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <TextBox x:Name="NoteTextBox" FontSize="18" BorderThickness="2.5,2.5,2.5,2.5" Height="140" Canvas.Left="658" Canvas.Top="248" Width="454" HorizontalAlignment="Center" VerticalAlignment="Top" >
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>
@@ -99,9 +99,9 @@
                         <DropShadowEffect ShadowDepth="3" BlurRadius="10" Color="Gray"/>
                     </Button.Effect>
                 </Button>
-                <Label Content="Tên bệnh nhân" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="658" Canvas.Top="110" Width="352" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <Label Content="Ca" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="360" Canvas.Top="310" Width="142" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                <TextBox x:Name="PatientNameTextBox" FontSize="18" BorderThickness="2.5,2.5,2.5,2.5" VerticalContentAlignment="Center" Height="40" Canvas.Left="658" Canvas.Top="148" Width="454" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <Label Content="Mã lịch khám" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="658" Canvas.Top="110" Width="352" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="Trạng thái" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="360" Canvas.Top="310" Width="142" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBox x:Name="ScheduleIDTextBox" FontSize="18" BorderThickness="2.5,2.5,2.5,2.5" VerticalContentAlignment="Center" Height="40" Canvas.Left="658" Canvas.Top="148" Width="454" HorizontalAlignment="Center" VerticalAlignment="Top" >
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>
@@ -118,15 +118,15 @@
                     </Border.BorderBrush>
                     <DatePicker x:Name="ExaminationDatePicker" Width="227" Height="28" Background="{x:Null}" BorderBrush="{x:Null}" FirstDayOfWeek="Monday" Text="ccc" FontSize="18" HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" Margin="10,4,0,4"/>
                 </Border>
-                <ComboBox x:Name="ShiftComboBox" Width="168" Height="40" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="360" Canvas.Top="348" FontSize="18">
+                <ComboBox x:Name="StatusComboBox" Width="168" Height="40" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="360" Canvas.Top="348" FontSize="18">
                     <ComboBox.Background>
                         <LinearGradientBrush EndPoint="0,1">
                             <GradientStop Color="#FFF0F0F0"/>
                             <GradientStop Color="#FFE5E5E5" Offset="1"/>
                         </LinearGradientBrush>
                     </ComboBox.Background>
-                    <ComboBoxItem Content="Sáng"/>
-                    <ComboBoxItem Content="Chiều"/>
+                    <ComboBoxItem Content="Cuộc hẹn mới"/>
+                    <ComboBoxItem Content="Tái khám"/>
                 </ComboBox>
             </Canvas>
         </Grid>

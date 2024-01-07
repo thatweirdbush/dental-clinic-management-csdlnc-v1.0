@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DentalClinicManagement.Dentist.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,16 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class ViewDetailTreatmentPlan : Page
     {
-        public ViewDetailTreatmentPlan()
+        private DetailedTreatmentPlan plan;
+        private Patient patient;
+        public ViewDetailTreatmentPlan(DetailedTreatmentPlan plan, Patient patient)
         {
             InitializeComponent();
+            this.plan = new DetailedTreatmentPlan(plan);
+            this.patient = new Patient(patient);
+
+            // Thiết lập DataContext cho Canvas chinhs, tất cả các TextBlock con sẽ kế thừa DataContext này
+            MainCanvas.DataContext = plan;
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
@@ -41,7 +49,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewTreatmentPlanList());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewTreatmentPlanList(patient));
             }
         }
 
@@ -51,7 +59,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewTreatingTeethList());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewTreatingTeethList(plan, patient));
             }
         }
     }

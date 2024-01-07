@@ -30,37 +30,30 @@
         <Grid Grid.Row="1">
             <Canvas Background="White">
                 <!-- Record Data -->
-                <DataGrid x:Name="PaymentListDataGrid" MouseDoubleClick="PaymentList_MouseDoubleClick" AutoGenerateColumns="False" Canvas.Left="74" Canvas.Top="118" HorizontalAlignment="Center" Height="436" VerticalAlignment="Top" Width="1052" HorizontalScrollBarVisibility="Disabled">
+                <DataGrid x:Name="PaymentListDataGrid" MouseDoubleClick="PaymentList_MouseDoubleClick" AutoGenerateColumns="False" Canvas.Left="74" Canvas.Top="118" HorizontalAlignment="Center" Height="436" VerticalAlignment="Top" Width="1052" HorizontalScrollBarVisibility="Disabled" FontSize="14" FontWeight="Medium">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Người thanh toán" Binding="{Binding NgayKham}" Width="*">
+                        <DataGridTextColumn Header="Người thanh toán" Binding="{Binding Payer}" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style>
                                     <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Tổng tiền cần thanh toán" Binding="{Binding Thuoc}" Width="*">
+                        <DataGridTextColumn Header="Tổng tiền cần thanh toán" Binding="{Binding TotalPayment}" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style>
                                     <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Ngày giao dịch" Binding="{Binding TinhTrang}" Width="*">
+                        <DataGridTextColumn Header="Ngày giao dịch" Binding="{Binding Date}" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style>
                                     <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Số tiền đã trả" Binding="{Binding Thuoc}" Width="*">
-                            <DataGridTextColumn.ElementStyle>
-                                <Style>
-                                    <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
-                                </Style>
-                            </DataGridTextColumn.ElementStyle>
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Header="Tiền thối" Binding="{Binding Thuoc}" Width="*">
+                        <DataGridTextColumn Header="Số tiền đã trả" Binding="{Binding TotalPaid}" Width="*">
                             <DataGridTextColumn.ElementStyle>
                                 <Style>
                                     <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>

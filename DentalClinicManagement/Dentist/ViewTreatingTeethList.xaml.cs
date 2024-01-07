@@ -1,5 +1,8 @@
-﻿using System;
+﻿using DentalClinicManagement.Dentist.Class;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +23,16 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class ViewTreatingTeethList : Page
     {
-        public ViewTreatingTeethList()
+        private DetailedTreatmentPlan plan;
+        private Patient patient;
+        public ObservableCollection<DetailedTreatmentTooth> treatingToothList { get; set; } = new ObservableCollection<DetailedTreatmentTooth>();
+
+        public ViewTreatingTeethList(DetailedTreatmentPlan plan, Patient patient)
         {
             InitializeComponent();
+            this.plan = new DetailedTreatmentPlan(plan);
+            this.patient = new Patient(patient);
+            LoadTreatingToothList();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -31,7 +41,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewDetailTreatmentPlan());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewDetailTreatmentPlan(plan, patient));
             }
         }
 
@@ -48,6 +58,43 @@ namespace DentalClinicManagement.Dentist
         private void TreatingTeethList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             // For later
+        }
+
+        private void LoadTreatingToothList()
+        {
+            int? patientID = patient.PatientID;
+            try
+            {
+                // Câu truy vấn SQL để lấy thông tin Detailed Treatment Plan từ database
+                string query = "SELECT * FROM [Detailed Treatment Tooth]" +
+                    "WHERE @PatientID = PatientID";
+
+                // Tạo và mở kết nối
+                DB dB = new DB();
+                using (SqlConnection connection = dB.Connection)
+                {
+                    // Tạo đối tượng SqlCommand
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@PatientID", patientID);
+                        // Thực hiện truy vấn SQL và lấy dữ liệu
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                DetailedTreatmentTooth detail = new DetailedTreatmentTooth(reader);
+                                treatingToothList.Add(detail);
+                            }
+                            // Gán ObservableCollection làm nguồn dữ liệu cho DataGrid
+                            TreatingTeethListDataGrid.ItemsSource = treatingToothList;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
     }
 }

@@ -91,38 +91,5 @@ namespace DentalClinicManagement.Account
                 mainWindow.MainFrame.Navigate(new DentalClinicManagement.Account.Home());
             }
         }
-    }
-
-    public class RegistryHelpers
-    {
-        public bool RegisterCustomer(CustomerClass customer)
-        {
-            try
-            {
-                DB dB = new DB();
-                using (SqlConnection connection = dB.Connection)
-                {
-                    // Thực hiện thêm dữ liệu vào database
-                    string query = "INSERT INTO Customer (Name, DateOfBirth, Address, PhoneNo) " +
-                                   "VALUES (@Name, @DateOfBirth, @Address, @PhoneNo)";
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@Name", customer.Name);
-                        command.Parameters.AddWithValue("@DateOfBirth", customer.DayOfBirth);
-                        command.Parameters.AddWithValue("@Address", customer.Address);
-                        command.Parameters.AddWithValue("@PhoneNo", customer.PhoneNo);
-
-                        command.ExecuteNonQuery();
-                    }
-                    return true;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-                return false;
-            }
-        }
-    }
+    } 
 }

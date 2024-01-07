@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\App.xaml
-35-99416862
+40-439364819
 
-41282062338
-195-900021980
-Account\Home.xaml;Account\PasswordSignUp.xaml;Account\SignIn.xaml;Account\SignUp.xaml;Account\SignUpSuccess.xaml;Admin\AccountManagement.xaml;Admin\DashBoard.xaml;Admin\MedicalManagement.xaml;Customer\CheckAppoinment.xaml;Customer\DashBoard.xaml;Customer\MakeAppointment.xaml;Customer\ViewProfile.xaml;Customer\ViewRecord.xaml;Dentist\AddRecord.xaml;Dentist\DashBoard.xaml;Dentist\MedicalManagement.xaml;Dentist\ReceivePatient.xaml;Dentist\SearchCustomerRecord.xaml;Dentist\ViewAppointment.xaml;Dentist\ViewContraindicatedMedicationList.xaml;Dentist\ViewDetailTreatmentPlan.xaml;Dentist\ViewPatientList.xaml;Dentist\ViewPatientRecord.xaml;Dentist\ViewPaymentList.xaml;Dentist\ViewTreatingTeethList.xaml;Dentist\ViewTreatmentPlanList.xaml;Employee\AddNewAppointment.xaml;Employee\CheckAppoinment.xaml;Employee\CheckBill.xaml;Employee\Dashboard.xaml;Employee\MakeAppointment.xaml;Employee\ManageAppointment.xaml;Employee\SearchCustomerRecord.xaml;Employee\ViewAppointmentRequest.xaml;MainWindow.xaml;
+57-1869929749
+197-1436468536
+Account\Home.xaml;Account\PasswordSignUp.xaml;Account\SignIn.xaml;Account\SignUp.xaml;Account\SignUpSuccess.xaml;Admin\AccountManagement.xaml;Admin\DashBoard.xaml;Admin\MedicalManagement.xaml;Customer\CheckAppoinment.xaml;Customer\DashBoard.xaml;Customer\MakeAppointment.xaml;Customer\ViewProfile.xaml;Customer\ViewRecord.xaml;Dentist\AddRecord.xaml;Dentist\DashBoard.xaml;Dentist\MedicalManagement.xaml;Dentist\ReceivePatient.xaml;Dentist\SearchCustomerRecord.xaml;Dentist\ViewAppointment.xaml;Dentist\ViewAppointmentRequest.xaml;Dentist\ViewDetailTreatmentPlan.xaml;Dentist\ViewMedication.xaml;Dentist\ViewPatientList.xaml;Dentist\ViewPatientRecord.xaml;Dentist\ViewPaymentDetail.xaml;Dentist\ViewPaymentList.xaml;Dentist\ViewRestrictedMedicationList.xaml;Dentist\ViewTreatingTeethList.xaml;Dentist\ViewTreatmentPlanList.xaml;Employee\AddNewAppointment.xaml;Employee\CheckAppoinment.xaml;Employee\CheckBill.xaml;Employee\Dashboard.xaml;Employee\MakeAppointment.xaml;Employee\ManageSchedule.xaml;Employee\SearchCustomerRecord.xaml;Employee\ViewAppointmentRequest.xaml;Employee\ViewPaymentDetail.xaml;Employee\ViewPaymentList.xaml;MainWindow.xaml;
 
 False
 
