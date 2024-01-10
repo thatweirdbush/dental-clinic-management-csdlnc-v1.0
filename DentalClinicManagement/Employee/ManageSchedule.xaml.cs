@@ -18,6 +18,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DentalClinicManagement.Employee.Class;
+using DentalClinicManagement.Account.Class;
 
 namespace DentalClinicManagement.Employee
 {
@@ -27,11 +28,14 @@ namespace DentalClinicManagement.Employee
 
     public partial class ManageSchedule : Page
     {
+        StaffClass staff;
+
         public ObservableCollection<Schedule> schedules { get; set; } = new ObservableCollection<Schedule>();
 
-        public ManageSchedule()
+        public ManageSchedule(StaffClass staff)
         {
             InitializeComponent();
+            this.staff = new StaffClass(staff);
             LoadSchedules();
         }
 
@@ -41,7 +45,7 @@ namespace DentalClinicManagement.Employee
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard(staff));
             }
         }
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -50,7 +54,7 @@ namespace DentalClinicManagement.Employee
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard(staff));
             }
         }
         private void AddNewScheduleButton_Click(object sender, RoutedEventArgs e)
@@ -59,7 +63,7 @@ namespace DentalClinicManagement.Employee
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.AddNewAppointment());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.AddNewAppointment(staff));
             }
         }
 
@@ -69,7 +73,7 @@ namespace DentalClinicManagement.Employee
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.ViewAppointmentRequest());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.ViewAppointmentRequest(staff));
             }
         }
 

@@ -1,5 +1,6 @@
 ﻿using DentalClinicManagement.Dentist.Class;
 using DentalClinicManagement.Employee.Class;
+using DentalClinicManagement.Account.Class;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -23,12 +24,14 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class ViewPaymentDetail : Page
     {
+        DentistClass dentist;
         Patient patient;
         Payment payment;
         PaymentDetail paymentDetail;
-        public ViewPaymentDetail(Patient patient, Payment payment, PaymentDetail paymentDetail)
+        public ViewPaymentDetail(DentistClass dentist, Patient patient, Payment payment, PaymentDetail paymentDetail)
         {
             InitializeComponent();
+            this.dentist = new DentistClass(dentist);
             this.patient = new Patient(patient);
             this.payment = new Payment(payment);
             this.paymentDetail = new PaymentDetail(paymentDetail);
@@ -43,7 +46,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewNeedPaymentList(patient, payment, paymentDetail));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewNeedPaymentList(dentist, patient, payment, paymentDetail));
             }
         }
 
@@ -53,7 +56,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 
@@ -63,7 +66,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPatientRecord(patient));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPatientRecord(dentist, patient));
             }
         }     
     }

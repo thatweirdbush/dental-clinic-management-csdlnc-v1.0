@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DentalClinicManagement.Dentist.Class;
+using DentalClinicManagement.Account.Class;
 
 namespace DentalClinicManagement.Dentist
 {
@@ -24,13 +25,16 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class ViewPaymentList : Page
     {
+        DentistClass dentist;
         Patient patient;
+
         public ObservableCollection<Payment> paymentList { get; set; } = new ObservableCollection<Payment>();
         public ObservableCollection<PaymentDetail> paymentDetailList { get; set; } = new ObservableCollection<PaymentDetail>();
 
-        public ViewPaymentList(Patient patient)
+        public ViewPaymentList(DentistClass dentist, Patient patient)
         {
             InitializeComponent();
+            this.dentist = new DentistClass(dentist);
             this.patient = new Patient(patient);
             LoadPaymentListByPatient(patient);
             LoadPaymentDetailList();
@@ -42,7 +46,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPatientRecord(patient));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPatientRecord(dentist, patient));
             }
         }
 
@@ -52,7 +56,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 
@@ -71,7 +75,7 @@ namespace DentalClinicManagement.Dentist
                 if (mainWindow != null && mainWindow.MainFrame != null)
                 {
                     Payment payment = LoadPaymentByPaymentDetail(paymentDetail);
-                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPaymentDetail(patient, payment, paymentDetail));
+                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPaymentDetail(dentist, patient, payment, paymentDetail));
                 }
             }
         }

@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DentalClinicManagement.Account.Class;
 using DentalClinicManagement.Employee.Class;
 
 namespace DentalClinicManagement.Employee
@@ -23,11 +24,14 @@ namespace DentalClinicManagement.Employee
     /// </summary>
     public partial class ViewAppointmentRequest : Page
     {
+        StaffClass staff;
+
         public ObservableCollection<AppointmentRequest> appointments { get; set; } = new ObservableCollection<AppointmentRequest>();
 
-        public ViewAppointmentRequest()
+        public ViewAppointmentRequest(StaffClass staff)
         {
             InitializeComponent();
+            this.staff = new StaffClass(staff);
             LoadAppointmentRequests();
         }
 
@@ -37,7 +41,7 @@ namespace DentalClinicManagement.Employee
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.ManageSchedule());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.ManageSchedule(staff));
             }
         }
 
@@ -47,7 +51,7 @@ namespace DentalClinicManagement.Employee
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard(staff));
             }
         }
 

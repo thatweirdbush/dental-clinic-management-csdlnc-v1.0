@@ -1,4 +1,5 @@
-﻿using DentalClinicManagement.Dentist.Class;
+﻿using DentalClinicManagement.Account.Class;
+using DentalClinicManagement.Dentist.Class;
 using DentalClinicManagement.Employee.Class;
 using System;
 using System.Collections.Generic;
@@ -23,10 +24,13 @@ namespace DentalClinicManagement.Employee
     /// </summary>
     public partial class ViewPaymentDetail : Page
     {
+        StaffClass staff;
         PaymentDetail paymentDetail;
-        public ViewPaymentDetail(PaymentDetail paymentDetail)
+
+        public ViewPaymentDetail(StaffClass staff, PaymentDetail paymentDetail)
         {
             InitializeComponent();
+            this.staff = new StaffClass(staff);
             this.paymentDetail = new PaymentDetail(paymentDetail);
 
             // Thiết lập DataContext cho Canvas, tất cả các TextBlock con sẽ kế thừa DataContext này
@@ -39,7 +43,7 @@ namespace DentalClinicManagement.Employee
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard(staff));
             }
         }
 
@@ -49,11 +53,11 @@ namespace DentalClinicManagement.Employee
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.ViewPaymentList());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.ViewPaymentList(staff));
             }
         }
 
-        private PaymentDetail LoadPaymentDetail()
+        private PaymentDetail? LoadPaymentDetail()
         {
             try
             {

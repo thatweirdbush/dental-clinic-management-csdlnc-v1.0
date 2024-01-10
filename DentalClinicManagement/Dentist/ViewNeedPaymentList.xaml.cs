@@ -1,4 +1,5 @@
-﻿using DentalClinicManagement.Dentist.Class;
+﻿using DentalClinicManagement.Account.Class;
+using DentalClinicManagement.Dentist.Class;
 using DentalClinicManagement.Employee.Class;
 using System;
 using System.Collections.Generic;
@@ -24,14 +25,17 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class ViewNeedPaymentList : Page
     {
+        DentistClass dentist;
         PaymentDetail paymentDetail;
         Payment payment;
         Patient patient;
+
         public ObservableCollection<Payment> needPaymentList { get; set; } = new ObservableCollection<Payment>();
 
-        public ViewNeedPaymentList(Patient patient, Payment payment, PaymentDetail paymentDetail)
+        public ViewNeedPaymentList(DentistClass dentist, Patient patient, Payment payment, PaymentDetail paymentDetail)
         {
             InitializeComponent();
+            this.dentist = new DentistClass(dentist);
             this.patient = new Patient(patient);
             this.payment = new Payment(payment);
             this.paymentDetail = new PaymentDetail(paymentDetail);
@@ -44,7 +48,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 
@@ -54,7 +58,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPaymentDetail(patient, payment, paymentDetail));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPaymentDetail(dentist, patient, payment, paymentDetail));
             }
         }
 
@@ -68,7 +72,7 @@ namespace DentalClinicManagement.Dentist
 
                 if (mainWindow != null && mainWindow.MainFrame != null)
                 {
-                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.MakePayment(patient, thisPayment, thispaymentDetail));
+                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.MakePayment(dentist, patient, thisPayment, thispaymentDetail));
                 }
             }
         }

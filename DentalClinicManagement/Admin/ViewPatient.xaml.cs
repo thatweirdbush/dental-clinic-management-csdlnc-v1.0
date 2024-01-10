@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -16,23 +16,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DentalClinicManagement.Dentist.Class;
+using DentalClinicManagement.Account.Class;
 
 namespace DentalClinicManagement.Admin
 {
     
     public partial class ViewPatient : Page
     {
+        AdminClass admin;
         public ObservableCollection<Patient> PatientList { get; set; } = new ObservableCollection<Patient>();
-        public ViewPatient()
+        public ViewPatient(AdminClass admin)
         {
             InitializeComponent();
             LoadPatientList();
+            this.admin = new AdminClass(admin);
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Tìm kiếm.");
-
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -41,7 +43,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard(admin));
             }
         }
 

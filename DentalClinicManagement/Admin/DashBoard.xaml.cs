@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DentalClinicManagement.Account.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,9 +22,12 @@ namespace DentalClinicManagement.Admin
 
     public partial class DashBoard : Page
     {
-        public DashBoard()
+        AdminClass admin;
+
+        public DashBoard(AdminClass admin)
         {
             InitializeComponent();
+            this.admin = new AdminClass(admin);
         }
 
 
@@ -34,7 +38,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.AccountManagement());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.AccountManagement(admin));
             }
         }
 
@@ -45,7 +49,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.MedicalManagement());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.MedicalManagement(admin));
             }
         }
 
@@ -72,7 +76,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.CheckAppointment());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.CheckAppointment(admin));
             }
         }
 
@@ -83,7 +87,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPatient());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPatient(admin));
             }
         }
 
@@ -94,7 +98,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ReportAppointment());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ReportAppointment(admin));
             }
         }
 
@@ -105,7 +109,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ReportTreatment());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ReportTreatment(admin));
             }
         }
 
@@ -116,7 +120,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.AddSchedule());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.AddSchedule(admin));
             }
         }
     }

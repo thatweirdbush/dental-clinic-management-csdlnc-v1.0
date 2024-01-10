@@ -1,4 +1,4 @@
-﻿using DentalClinicManagement.Account;
+﻿using DentalClinicManagement.Account.Class;
 using DentalClinicManagement.Customer;
 using System;
 using System.Collections.Generic;
@@ -23,11 +23,14 @@ namespace DentalClinicManagement.Admin
     /// </summary>
     public partial class ViewRecord : Page
     {
+        AdminClass admin;
+
         public ObservableCollection<KhamBenh> KhamBenhList { get; set; }
 
-        public ViewRecord()
+        public ViewRecord(AdminClass admin)
         {
             InitializeComponent();
+            this.admin = new AdminClass(admin);
 
             // Khởi tạo danh sách và thêm dữ liệu mẫu
             KhamBenhList = new ObservableCollection<KhamBenh>
@@ -57,7 +60,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard(admin));
             }
         }
 

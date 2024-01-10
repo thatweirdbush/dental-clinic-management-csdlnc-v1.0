@@ -1,4 +1,5 @@
-﻿using DentalClinicManagement.Dentist.Class;
+﻿using DentalClinicManagement.Account.Class;
+using DentalClinicManagement.Dentist.Class;
 using DentalClinicManagement.Employee.Class;
 using System;
 using System.Collections.Generic;
@@ -23,13 +24,15 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class MakePayment : Page
     {
+        DentistClass dentist;
         PaymentDetail paymentDetail;
         Payment payment;
         Patient patient;
 
-        public MakePayment(Patient patient, Payment payment, PaymentDetail paymentDetail)
+        public MakePayment(DentistClass dentist, Patient patient, Payment payment, PaymentDetail paymentDetail)
         {
             InitializeComponent();
+            this.dentist = new DentistClass(dentist);
             this.patient = new Patient(patient);
             this.payment = new Payment(payment);
             this.paymentDetail = new PaymentDetail(paymentDetail);
@@ -44,7 +47,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 
@@ -54,7 +57,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewNeedPaymentList(patient, payment, paymentDetail));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewNeedPaymentList(dentist, patient, payment, paymentDetail));
             }
         }
 

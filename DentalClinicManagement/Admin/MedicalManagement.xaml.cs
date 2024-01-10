@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DentalClinicManagement.Account.Class;
 
 namespace DentalClinicManagement.Admin
 {
@@ -24,10 +25,11 @@ namespace DentalClinicManagement.Admin
     public partial class MedicalManagement : Page
     {
         public ObservableCollection<MedicationList> medicationList { get; set; } = new ObservableCollection<MedicationList>();
-
-        public MedicalManagement()
+       
+        public MedicalManagement(AdminClass admin)
         {
             InitializeComponent();
+            this.admin = new AdminClass(admin);
             LoadMedicationList();
         }
 
@@ -37,7 +39,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard(admin));
             }
         }
 

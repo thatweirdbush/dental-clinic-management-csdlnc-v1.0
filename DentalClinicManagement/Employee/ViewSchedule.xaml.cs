@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DentalClinicManagement.Account.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace DentalClinicManagement.Employee
     /// </summary>
     public partial class ViewSchedule : Page
     {
-        public ViewSchedule()
+        StaffClass staff;
+
+        public ViewSchedule(StaffClass staff)
         {
             InitializeComponent();
+            this.staff = new StaffClass(staff);
         }
 
         private void OnBackButtonClick(object sender, RoutedEventArgs e)
@@ -32,7 +36,7 @@ namespace DentalClinicManagement.Employee
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard(staff));
             }
         }
 

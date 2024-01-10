@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DentalClinicManagement.Account.Class;
 
 namespace DentalClinicManagement.Dentist
 {
@@ -23,13 +24,16 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class ViewTreatingTeethList : Page
     {
+        DentistClass dentist;
         private DetailedTreatmentPlan plan;
         private Patient patient;
+
         public ObservableCollection<DetailedTreatmentTooth> treatingToothList { get; set; } = new ObservableCollection<DetailedTreatmentTooth>();
 
-        public ViewTreatingTeethList(DetailedTreatmentPlan plan, Patient patient)
+        public ViewTreatingTeethList(DentistClass dentist, DetailedTreatmentPlan plan, Patient patient)
         {
             InitializeComponent();
+            this.dentist = new DentistClass(dentist);
             this.plan = new DetailedTreatmentPlan(plan);
             this.patient = new Patient(patient);
             LoadTreatingToothList();
@@ -41,7 +45,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewDetailTreatmentPlan(plan, patient));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewDetailTreatmentPlan(dentist, plan, patient));
             }
         }
 
@@ -51,7 +55,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 

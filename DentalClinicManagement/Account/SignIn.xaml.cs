@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DentalClinicManagement.Account.Class;
+using DentalClinicManagement.Dentist.Class;
 
 namespace DentalClinicManagement.Account
 {
@@ -22,13 +23,21 @@ namespace DentalClinicManagement.Account
     /// </summary>
     public partial class SignIn : Page
     {
-        private CustomerClass user;
+        const string ADMIN = "Admin";
+        const string STAFF = "Staff";
+        const string DENTIST = "Dentist";
+
+        private AdminClass? admin;
+        private StaffClass? staff;
+        private DentistClass? dentist;
+        private AccountClass? account;
 
         public SignIn()
         {
             InitializeComponent();
         }
-        private void OnBackButtonClick(object sender, RoutedEventArgs e)
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
 
@@ -44,7 +53,7 @@ namespace DentalClinicManagement.Account
             try
             {
                 // Tạo đối tượng Account
-                AccountClass account = new AccountClass
+                account = new AccountClass
                 {
                     // Lấy thông tin từ giao diện người dùng
                     PhoneNo = UsernameTextBox.Text,
@@ -52,20 +61,72 @@ namespace DentalClinicManagement.Account
                 };
 
                 // Kiểm tra đăng nhập
-                if (AuthenticateUser(account))
+                if (AuthenticateUser(account) == false)
                 {
-                    user = LoadCustomerInfo(account.PhoneNo);
-                    MessageBox.Show("Đăng nhập thành công!");
-                    MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
-
-                    if (mainWindow != null && mainWindow.MainFrame != null)
-                    {
-                        mainWindow.MainFrame.Navigate(new DentalClinicManagement.Customer.DashBoard(user));
-                    }
+                    MessageBox.Show("Đăng nhập thất bại. Vui lòng kiểm tra tên người dùng và mật khẩu.");
+                    return;
                 }
                 else
                 {
-                    MessageBox.Show("Đăng nhập thất bại. Vui lòng kiểm tra tên người dùng và mật khẩu.");
+                    // Load user's account information
+                    account = LoadAccountInformation(account.PhoneNo);
+                }
+
+                if (CheckUserRole(ADMIN))
+                {
+                    // Allocate memory
+                    admin = new AdminClass();
+
+                    // Load user to Admin object 
+                    admin = admin.LoadUser(account);
+                    if (admin != null)
+                    {
+                        MessageBox.Show($"Đăng nhập thành công! Chào mừng Admin {admin.Name}!");
+                        MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+
+                        if (mainWindow != null && mainWindow.MainFrame != null)
+                        {
+                            mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard(admin));
+                            return;
+                        }
+                    }
+                }
+                if (CheckUserRole(STAFF))
+                {
+                    // Allocate memory
+                    staff = new StaffClass();
+
+                    // Load user to Staff object 
+                    staff = staff.LoadUser(account);
+                    if (staff != null)
+                    {
+                        MessageBox.Show($"Đăng nhập thành công. Chào mừng nhân viên {staff.Name}!");
+                        MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+
+                        if (mainWindow != null && mainWindow.MainFrame != null)
+                        {
+                            mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard(staff));
+                            return;
+                        }
+                    }
+                }
+                if (CheckUserRole(DENTIST))
+                {
+                    // Allocate memory
+                    dentist = new DentistClass();
+
+                    // Load user to Dentist object 
+                    dentist = dentist.LoadUser(account);
+                    if (dentist != null)
+                    {
+                        MessageBox.Show($"Đăng nhập thành công. Chào mừng nha sĩ {dentist.Name}!");
+                        MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+
+                        if (mainWindow != null && mainWindow.MainFrame != null)
+                        {
+                            mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -79,7 +140,7 @@ namespace DentalClinicManagement.Account
             try
             {
                 // Câu truy vấn SQL để kiểm tra đăng nhập
-                string query = "SELECT TOP 1 * FROM Account WHERE PhoneNo = @Username AND Password = @Password";
+                string query = "SELECT TOP 1 * FROM [Account] WHERE PhoneNo = @Username AND Password = @Password";
 
                 DB dB = new DB();
                 using (SqlConnection connection = dB.Connection)
@@ -106,12 +167,12 @@ namespace DentalClinicManagement.Account
             }
         }
 
-        private CustomerClass LoadCustomerInfo(string username)
+        private AccountClass? LoadAccountInformation(string? phoneNo)
         {
             try
             {
-                // Câu truy vấn SQL để lấy thông tin Customer từ database dựa trên username
-                string query = "SELECT * FROM Customer WHERE PhoneNo = @Username";
+                // Câu truy vấn SQL để lấy thông tin Account từ database dựa trên PhoneNo
+                string query = "SELECT TOP 1* FROM [Account] WHERE PhoneNo = @PhoneNo";
 
                 // Tạo và mở kết nối
                 DB dB = new DB();
@@ -121,7 +182,7 @@ namespace DentalClinicManagement.Account
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         // Thêm tham số cho câu truy vấn
-                        command.Parameters.AddWithValue("@Username", username);
+                        command.Parameters.AddWithValue("@PhoneNo", phoneNo);
 
                         // Sử dụng SqlDataReader để đọc dữ liệu từ database
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -129,13 +190,13 @@ namespace DentalClinicManagement.Account
                             // Kiểm tra xem có dữ liệu hay không
                             if (reader.Read())
                             {
-                                // Tạo đối tượng Customer từ SqlDataReader
-                                CustomerClass customer = new CustomerClass(reader);
-                                return customer;
+                                // Tạo đối tượng AccountClass từ SqlDataReader
+                                AccountClass account = new AccountClass(reader);
+                                return account;
                             }
                             else
                             {
-                                // Trường hợp không tìm thấy thông tin Customer
+                                // Trường hợp không tìm thấy thông tin AccountClass
                                 return null;
                             }
                         }
@@ -150,6 +211,39 @@ namespace DentalClinicManagement.Account
             }
         }
 
+        private bool CheckUserRole(string ROLE)
+        {
+            try
+            {
+                StringBuilder builder = new StringBuilder();
+                builder.Append("SELECT COUNT(*) FROM [");
+                builder.Append(ROLE);
+                builder.Append("] WHERE PhoneNo = @PhoneNo");
+                string query = builder.ToString();
+
+                // Tạo và mở kết nối
+                DB dB = new DB();
+                using (SqlConnection connection = dB.Connection)
+                {
+                    // Tạo đối tượng SqlCommand
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        // Thêm tham số cho câu truy vấn
+                        command.Parameters.AddWithValue("@PhoneNo", account.PhoneNo);
+                        int count = (int)command.ExecuteScalar();
+
+                        return count > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi nếu có
+                MessageBox.Show($"Error: {ex.Message}");
+                return false;
+            }
+        }
+     
         private void signInAdmin_Click(object sender, RoutedEventArgs e)
         {
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
@@ -157,7 +251,7 @@ namespace DentalClinicManagement.Account
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard(admin));
             }
         }
 
@@ -168,7 +262,7 @@ namespace DentalClinicManagement.Account
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 
@@ -179,7 +273,7 @@ namespace DentalClinicManagement.Account
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard(staff));
             }
         }
 
