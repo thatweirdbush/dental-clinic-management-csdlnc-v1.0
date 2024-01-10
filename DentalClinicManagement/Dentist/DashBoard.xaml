@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DentalClinicManagement.Dentist"
       mc:Ignorable="d" 
-      d:DesignHeight="730" d:DesignWidth="1200"
+      d:DesignHeight="750" d:DesignWidth="1200"
       Title="DashBoard">
 
     <Grid Height="730">
@@ -47,9 +47,8 @@
             </Button.Resources>
         </Button>
 
-
         <!-- Nội dung của cửa sổ ở cột thứ hai -->
-        <Grid Grid.Column="1">
+        <Grid Grid.Column="1" Background="White">
             <!-- Nội dung của cửa sổ ở đây -->
             <TextBlock HorizontalAlignment="Left" Margin="29,81,0,0" TextWrapping="Wrap" Text="Dentistry Plus cung cấp các dịch vụ nha khoa đảm bảo chất lượng" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Width="397"/>
             <TextBlock HorizontalAlignment="Left" Margin="29,222,0,0" TextWrapping="Wrap" Text="Chúng tôi luôn cố gắng hết mình để nâng niu nụ cười Việt!" VerticalAlignment="Top" Width="397" FontSize="15" Foreground="#FFB59393"/>
@@ -59,7 +58,7 @@
                 <Button Click="ReceivePatient" x:Name="add_profile_btn" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="#FFF6F6F6" Foreground="#FF1C0303" Background="White" Cursor="Hand" FontSize="18" Height="175" Canvas.Top="280" Width="215" Canvas.Left="29" >
                     <StackPanel>
                         <Image Source="../images/add-profile.png" Width="115" Height="108"/>
-                        <TextBlock Text="Thêm hồ sơ bệnh nhân" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                        <TextBlock FontWeight="Bold" Margin="0,9.8,0,0" HorizontalAlignment="Center" TextWrapping="Wrap" Width="215" UseLayoutRounding="False" Text="Quản lý hồ sơ bệnh nhân"/>
                     </StackPanel>
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -90,7 +89,7 @@
                     </Button.Template>
                     <StackPanel>
                         <Image Source="../images/calendar.png" Width="115" Height="108"/>
-                        <TextBlock Text="Xem lịch hẹn" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                        <TextBlock Text="Quản lý cuộc hẹn" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,0"/>
                     </StackPanel>
                 </Button>
                 <!-- Button thêm bệnh án -->
@@ -112,9 +111,26 @@
                         <TextBlock Text="Thêm bệnh án" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,0"/>
                     </StackPanel>
                 </Button>
-                <!-- Button thêm lịch hẹn -->
-                <!-- Button cập nhật lịch hẹn -->
-                <!-- Button thêm lịch rảnh -->
+                <!-- Button Quản lý thuốc -->
+                <Button x:Name="MedicalManagementButton" BorderBrush="#FFF6F6F6" Foreground="#FF1C0303" Cursor="Hand" 
+                        Canvas.Left="29" Canvas.Top="487" Click="MedicalManagementButton_Click" Height="177" Width="215" HorizontalAlignment="Center" VerticalAlignment="Top" Background="{x:Null}">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="border" Background="White" CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background" Value="LightSkyBlue"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <StackPanel>
+                        <Image Source="../images/medicine.png" Width="115" Height="108"/>
+                        <TextBlock Text="Danh sách thuốc" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="18"/>
+                    </StackPanel>
+                </Button>
             </Canvas>
 
         </Grid>

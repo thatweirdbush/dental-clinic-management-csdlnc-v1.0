@@ -6,34 +6,11 @@
         xmlns:local="clr-namespace:DentalClinicManagement"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="750" Width="1200" Loaded="WindowLoaded">
+        Title="MainWindow" Height="800" Width="1200" Loaded="WindowLoaded">
     <Window.Resources>
 
     </Window.Resources>
-    <Grid Background="#FFF1E919">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="730"/>
-        </Grid.RowDefinitions>
-        <StackPanel Name="windowOptionsContainer"
-            Orientation="Horizontal"
-            HorizontalAlignment="Center"
-            FlowDirection="RightToLeft"
-            VerticalAlignment="Center" Width="1200">
-
-            <Button HorizontalAlignment="Left" VerticalAlignment="Top" 
-                Margin="10, 0, 0, 0" Padding="5, 0, 5, 0" 
-                Click="closeWindowButton_Click">
-                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16">&#xE8BB;</TextBlock>
-            </Button>
-            <Button HorizontalAlignment="Left" VerticalAlignment="Top" 
-                Padding="5, 0, 5, 0" 
-                Click="minimizeWindowButton_Click">
-                <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16">&#xE921;</TextBlock>
-            </Button>
-        </StackPanel>
-        <StackPanel Grid.Row="1" Background="White">
-            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
-        </StackPanel>
+    <Grid>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

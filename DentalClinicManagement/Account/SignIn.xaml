@@ -46,28 +46,28 @@
 
             </Canvas>
         </Border>
-        <Button  Content="Admin" Width="230" Height="50" Click="signInAdmin_Click" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Canvas.Left="960" Canvas.Top="320" HorizontalAlignment="Left" VerticalAlignment="Top" >
+        <Button  Content="Admin" Width="230" Height="50" Click="signInAdmin_Click" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Canvas.Left="939" Canvas.Top="314" HorizontalAlignment="Left" VerticalAlignment="Top" >
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="20"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Customer" Width="230" Height="50" Click="signInCustomer_Click" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Canvas.Left="960" Canvas.Top="522" HorizontalAlignment="Center" VerticalAlignment="Top" >
+        <Button Content="Customer" Width="230" Height="50" Click="signInCustomer_Click" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Canvas.Left="939" Canvas.Top="516" HorizontalAlignment="Left" VerticalAlignment="Top" >
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="20"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Employee" Width="230" Height="50" Click="signInEmployee_Click" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Canvas.Left="960" Canvas.Top="453" HorizontalAlignment="Center" VerticalAlignment="Top" >
+        <Button Content="Employee" Width="230" Height="50" Click="signInEmployee_Click" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Canvas.Left="939" Canvas.Top="447" HorizontalAlignment="Left" VerticalAlignment="Top" >
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="20"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Dentist" Width="230" Height="50" Click="signInDentist_Click" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Canvas.Left="960" Canvas.Top="387" HorizontalAlignment="Center" VerticalAlignment="Top" >
+        <Button Content="Dentist" Width="230" Height="50" Click="signInDentist_Click" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Canvas.Left="939" Canvas.Top="381" HorizontalAlignment="Left" VerticalAlignment="Top" >
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="20"/>

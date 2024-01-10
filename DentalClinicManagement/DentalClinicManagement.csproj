@@ -27,6 +27,7 @@
     <None Remove="images\log-out.png" />
     <None Remove="images\Logo.png" />
     <None Remove="images\makeAppoinment.jpg" />
+    <None Remove="images\medicine.png" />
     <None Remove="images\patient.png" />
     <None Remove="images\setting.png" />
     <None Remove="images\signUpTeeth.png" />
@@ -35,11 +36,13 @@
     <None Remove="images\update-appointment.png" />
     <None Remove="images\user-avatar.jpg" />
     <None Remove="images\UserAvatar.png" />
+    <None Remove="images\UserProfileImage.png" />
     <None Remove="images\view-profile.png" />
     <None Remove="images\view.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
@@ -95,6 +98,9 @@
     <Resource Include="images\makeAppoinment.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="images\medicine.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="images\patient.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
@@ -117,6 +123,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\UserAvatar.png" />
+    <Resource Include="images\UserProfileImage.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="images\view-profile.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

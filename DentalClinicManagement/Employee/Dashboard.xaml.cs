@@ -65,5 +65,27 @@ namespace DentalClinicManagement.Employee
         {
 
         }
+
+        private void ScheduleButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+
+
+            if (mainWindow != null && mainWindow.MainFrame != null)
+            {
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.ManageSchedule());
+            }
+        }
+
+        private void PaymentListButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+
+
+            if (mainWindow != null && mainWindow.MainFrame != null)
+            {
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.ViewPaymentList());
+            }
+        }
     }
 }
