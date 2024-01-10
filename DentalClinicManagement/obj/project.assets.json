@@ -1080,19 +1080,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\huyph\\.nuget\\packages\\": {}
+    "C:\\Users\\USER\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Visual Studio Solutions\\CSDL NC\\dental-clinic-management-csdlnc_ver1_branch_huy\\dental-clinic-management-csdlnc-v1.0\\DentalClinicManagement\\DentalClinicManagement.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\Source\\Repos\\dental-clinic-management-csdlnc-v1.0_newest\\DentalClinicManagement\\DentalClinicManagement.csproj",
       "projectName": "DentalClinicManagement",
-      "projectPath": "D:\\Visual Studio Solutions\\CSDL NC\\dental-clinic-management-csdlnc_ver1_branch_huy\\dental-clinic-management-csdlnc-v1.0\\DentalClinicManagement\\DentalClinicManagement.csproj",
-      "packagesPath": "C:\\Users\\huyph\\.nuget\\packages\\",
-      "outputPath": "D:\\Visual Studio Solutions\\CSDL NC\\dental-clinic-management-csdlnc_ver1_branch_huy\\dental-clinic-management-csdlnc-v1.0\\DentalClinicManagement\\obj\\",
+      "projectPath": "C:\\Users\\USER\\Source\\Repos\\dental-clinic-management-csdlnc-v1.0_newest\\DentalClinicManagement\\DentalClinicManagement.csproj",
+      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\USER\\Source\\Repos\\dental-clinic-management-csdlnc-v1.0_newest\\DentalClinicManagement\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\huyph\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1100,6 +1105,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1112,6 +1118,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -1146,7 +1157,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -29,7 +29,7 @@ namespace DentalClinicManagement.Dentist
             this.plan = new DetailedTreatmentPlan(plan);
             this.patient = new Patient(patient);
 
-            // Thiết lập DataContext cho Canvas chinhs, tất cả các TextBlock con sẽ kế thừa DataContext này
+            // Thiết lập DataContext cho Canvas chính, tất cả các TextBlock con sẽ kế thừa DataContext này
             MainCanvas.DataContext = plan;
         }
 
