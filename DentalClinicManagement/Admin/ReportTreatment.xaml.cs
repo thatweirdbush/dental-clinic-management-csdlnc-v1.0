@@ -14,19 +14,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DentalClinicManagement.Admin.Class;
 
 namespace DentalClinicManagement.Admin
 {
     /// <summary>
     /// Interaction logic for ReportTreatment.xaml
     /// </summary>
-    public class ReportTreat
-    {
-        public string ID { get; set; }
-        public string Date { get; set; }
-        public string PatientName { get; set; }
-        public string Status { get; set; }
-    }
 
     public class MainViewModel2 : INotifyPropertyChanged
     {

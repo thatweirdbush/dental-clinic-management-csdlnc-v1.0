@@ -78,7 +78,7 @@
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
                     </TextBox.BorderBrush>
                 </TextBox>
-                <Label Content="Ghi chú" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="658" Canvas.Top="210" Width="142" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="Ghi chú (50 ký tự)" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="658" Canvas.Top="210" Width="454" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <TextBox x:Name="NoteTextBox" FontSize="18" BorderThickness="2.5,2.5,2.5,2.5" Height="140" Canvas.Left="658" Canvas.Top="248" Width="454" HorizontalAlignment="Center" VerticalAlignment="Top" >
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">

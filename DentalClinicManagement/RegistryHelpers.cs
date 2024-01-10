@@ -144,7 +144,6 @@ namespace DentalClinicManagement
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@AccountID", patient.AccountID);
                         command.Parameters.AddWithValue("@Name", patient.Name);
                         command.Parameters.AddWithValue("@PhoneNo", patient.PhoneNo);
 

@@ -144,7 +144,7 @@
 
                 <Label Content="Họ và tên" Canvas.Left="46" Canvas.Top="20" FontSize="20" FontFamily="Segoe UI Semibold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 <Label Content="Tổng tiền điều trị" Canvas.Left="46" Canvas.Top="195" FontSize="20" FontFamily="Segoe UI Semibold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                <Label Content="Tổng quan về tình trạng sức khỏe răng mệng" Canvas.Left="46" Canvas.Top="281" FontSize="20" FontFamily="Segoe UI Semibold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Label Content="Tổng quan về tình trạng sức khỏe răng mệng (100 ký tự)" Canvas.Left="46" Canvas.Top="281" FontSize="20" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" VerticalAlignment="Center" Width="624"/>
                 <Label Content="Giới tính" Canvas.Left="373" Canvas.Top="107" FontSize="20" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
                 <!-- Check box giới tính -->
@@ -171,7 +171,7 @@
                     <Border.BorderBrush>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
                     </Border.BorderBrush>
-                    <TextBlock TextWrapping="Wrap" Text="{Binding AllergyStatus}" FontSize="16" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <TextBlock TextWrapping="Wrap" Text="{Binding AllergyStatus}" FontSize="16" Margin="0,0,8,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                     <!-- Đặt văn bản mặc định hoặc Binding với thuộc tính Text-->
                 </Border>
 
