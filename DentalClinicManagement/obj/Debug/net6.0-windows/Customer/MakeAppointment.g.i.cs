@@ -166,7 +166,7 @@ namespace DentalClinicManagement.Customer {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DentalClinicManagement;component/customer/makeappointment.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DentalClinicManagement;V1.0.0.0;component/customer/makeappointment.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Customer\MakeAppointment.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
