@@ -113,7 +113,7 @@ RenderOptions.BitmapScalingMode="HighQuality" Height="149" HorizontalAlignment="
                     </TextBox.BorderBrush>
                 </TextBox>
 
-                <Button x:Name="FixButton" Content="Sửa" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Canvas.Left="389" Canvas.Top="494" Width="136" Click="FixButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                <Button x:Name="FixButton" Content="Chỉnh sửa" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Canvas.Left="389" Canvas.Top="494" Width="136" Click="FixButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="24"/>

@@ -17,7 +17,9 @@
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="50*"/>
         </Grid.ColumnDefinitions>
-        <Canvas Background="White" Margin="595,0,15,0" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <Canvas Background="White" Margin="595,0,15,0" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <Image Source="../images/tooth.jpg" Height="334" Width="390" Canvas.Top="55" HorizontalAlignment="Center" Canvas.Left="100" VerticalAlignment="Top"/>
+        </Canvas>
         <Canvas Grid.Column="0" Background="White" Grid.RowSpan="2">
             <Label Content="Thêm kế hoạch điều trị" FontSize="45" FontFamily="Segoe UI Semibold" Height="76" Canvas.Left="52" Canvas.Top="37" Width="688" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black"/>
             <Image Source="../images/TeethList.jpg" HorizontalAlignment="Center" Height="456" VerticalAlignment="Top" Width="600" Canvas.Top="149"/>
@@ -37,7 +39,7 @@
             </Button.Effect>
         </Button>
         <Label Content="Mã răng" FontSize="20" FontFamily="Segoe UI Semibold" Height="39" Width="120" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="26,59,0,0" Grid.Row="1"/>
-        <TextBox x:Name="TeethIDTextBox" Width="240" Height="40" FontSize="16" BorderThickness="2.5,2.5,2.5,2.5" VerticalContentAlignment="Center" Padding="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="26,115,0,0" Grid.Row="1" >
+        <TextBox x:Name="TeethIDTextBox" Width="209" Height="40" FontSize="16" BorderThickness="2.5,2.5,2.5,2.5" VerticalContentAlignment="Center" Padding="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="26,114,0,0" Grid.Row="1" >
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -48,7 +50,7 @@
             </TextBox.BorderBrush>
         </TextBox>
         <Label Content="Bề mặt" FontSize="20" FontFamily="Segoe UI Semibold" Height="39" Width="120" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="343,59,0,0" Grid.Row="1"/>
-        <TextBox x:Name="SurfaceTextBox" Width="240" Height="40" FontSize="16" BorderThickness="2.5,2.5,2.5,2.5" VerticalContentAlignment="Center" Padding="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="343,115,0,0" Grid.Row="1" >
+        <TextBox x:Name="SurfaceTextBox" Width="202" Height="40" FontSize="16" BorderThickness="2.5,2.5,2.5,2.5" VerticalContentAlignment="Center" Padding="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="343,114,0,0" Grid.Row="1" >
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="10"/>
@@ -58,7 +60,7 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
             </TextBox.BorderBrush>
         </TextBox>
-        <Button x:Name="HomeButton" Content="⩠ Trang chủ" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Width="158" Click="HomeButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="324,47,0,0" >
+        <Button x:Name="HomeButton" Content="⩠ Trang chủ" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Width="158" Click="HomeButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="343,64,0,0" >
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="24"/>
@@ -71,7 +73,7 @@
                 <DropShadowEffect ShadowDepth="3" BlurRadius="10" Color="Gray"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="BackButton" Content="◀ Trở về" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Width="102" Click="BackButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="164,47,0,0" >
+        <Button x:Name="BackButton" Content="◀ Trở về" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Width="102" Click="BackButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="86,64,0,0" >
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="24"/>

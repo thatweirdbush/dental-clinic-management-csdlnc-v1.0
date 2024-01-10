@@ -30,7 +30,7 @@
             <Canvas Background="White">
                 <Label Content="Chọn liệu trình" FontSize="30" FontFamily="Segoe UI Semibold" Height="71" Canvas.Left="240" Canvas.Top="40" Width="225" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black"/>
                 <!-- Record Data -->
-                <DataGrid x:Name="TreatmentPlanDataGrid" AutoGenerateColumns="False" Canvas.Left="240" Canvas.Top="111" HorizontalAlignment="Center" Height="324" VerticalAlignment="Top" Width="720" HorizontalScrollBarVisibility="Disabled" FontSize="14" FontWeight="SemiBold">
+                <DataGrid x:Name="TreatmentListDataGrid" AutoGenerateColumns="False" Canvas.Left="240" Canvas.Top="111" HorizontalAlignment="Center" Height="324" VerticalAlignment="Top" Width="720" HorizontalScrollBarVisibility="Disabled" FontSize="14" FontWeight="SemiBold">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Mã điều trị" Binding="{Binding TreatmentID}" Width="*">
                             <DataGridTextColumn.ElementStyle>
