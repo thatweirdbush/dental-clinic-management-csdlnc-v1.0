@@ -41,7 +41,7 @@
                     </Border.BorderBrush>
                     <TextBlock x:Name="TotalPaidTextBlock" TextWrapping="Wrap" Text="{Binding TotalPaid}" Margin="0,0,8,0" VerticalAlignment="Center" FontSize="16" Padding="10,0,0,0"/>
                 </Border>
-                <Button x:Name="TreatingToothListButton" Content="Danh sách các điều trị cần thanh toán" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="52" Canvas.Left="698" Canvas.Top="474" Width="356" Click="TreatingToothListButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <Button x:Name="NeedPaymentListButton" Content="Danh sách các điều trị cần thanh toán" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="52" Canvas.Left="698" Canvas.Top="474" Width="356" Click="NeedPaymentListButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="24"/>

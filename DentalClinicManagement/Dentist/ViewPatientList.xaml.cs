@@ -73,8 +73,12 @@ namespace DentalClinicManagement.Dentist
 
         private void AddNewPatientButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Thêm bệnh nhân.");
+            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
 
+            if (mainWindow != null && mainWindow.MainFrame != null)
+            {
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddPatient());
+            }
         }
 
         private void AppointmentRequestButton_Click(object sender, RoutedEventArgs e)

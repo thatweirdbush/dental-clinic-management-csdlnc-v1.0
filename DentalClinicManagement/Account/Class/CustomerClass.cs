@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace DentalClinicManagement.Account
+namespace DentalClinicManagement.Account.Class
 {
     public class CustomerClass
     {

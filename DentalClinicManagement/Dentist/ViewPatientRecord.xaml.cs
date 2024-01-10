@@ -31,7 +31,7 @@ namespace DentalClinicManagement.Dentist
         {
             InitializeComponent();
 
-            this.patient = LoadPatient(patient.PatientID);
+            this.patient = new Patient(patient);
             patientRecord = LoadPatientRecord(patient.PatientID);
 
             // Thiết lập DataContext cho Canvas bên trái, tất cả các TextBlock con sẽ kế thừa DataContext này
@@ -157,51 +157,7 @@ namespace DentalClinicManagement.Dentist
                 mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewRestrictedMedicationList(patient, patientRecord));
             }
         }
-
-        private Patient LoadPatient(int? patientID)
-        {
-            try
-            {
-                // Câu truy vấn SQL để lấy thông tin Patient từ database dựa trên PatientID
-                string query = "SELECT TOP 1* FROM Patient WHERE PatientID = @PatientID";
-
-                // Tạo và mở kết nối
-                DB dB = new DB();
-                using (SqlConnection connection = dB.Connection)
-                {
-                    // Tạo đối tượng SqlCommand
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        // Thêm tham số cho câu truy vấn
-                        command.Parameters.AddWithValue("@PatientID", patientID);
-
-                        // Sử dụng SqlDataReader để đọc dữ liệu từ database
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            // Kiểm tra xem có dữ liệu hay không
-                            if (reader.Read())
-                            {
-                                // Tạo đối tượng Patient từ SqlDataReader
-                                Patient patient = new Patient(reader);
-                                return patient;
-                            }
-                            else
-                            {
-                                // Trường hợp không tìm thấy thông tin Patient
-                                return null;
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                // Xử lý lỗi nếu có
-                MessageBox.Show($"Error: {ex.Message}");
-                return null;
-            }
-        }
-
+       
         private PatientRecord LoadPatientRecord(int? patientID)
         {
             try

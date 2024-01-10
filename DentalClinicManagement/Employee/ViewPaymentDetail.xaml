@@ -35,12 +35,6 @@
                 <Label Content="Tổng tiền cần thanh toán" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="640" Canvas.Top="210" Width="454" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <Label Content="Người thanh toán" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="640" Canvas.Top="110" Width="352" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <Label Content="Đã trả" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="74" Canvas.Top="310" Width="118" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <Border BorderThickness="2.5" CornerRadius="10" Width="473" Height="40" Canvas.Left="74" Canvas.Top="348" HorizontalAlignment="Left" VerticalAlignment="Center">
-                    <Border.BorderBrush>
-                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
-                    </Border.BorderBrush>
-                    <TextBox x:Name="TotalPaidTextBox" TextWrapping="Wrap" Text="{Binding TotalPaid}" Margin="8,0,8,0" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="16" VerticalAlignment="Center"/>
-                </Border>
                 <Button x:Name="UpdateButton" Content="Cập nhật" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="52" Canvas.Left="796" Canvas.Top="468" Width="160" Click="UpdateButton_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF2CE61B" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
@@ -51,37 +45,26 @@
                         <DropShadowEffect ShadowDepth="3" BlurRadius="10" Color="Gray"/>
                     </Button.Effect>
                 </Button>
-                <Border BorderThickness="2.5" CornerRadius="10" Width="473" Height="106" Canvas.Left="74" Canvas.Top="448" HorizontalAlignment="Center" VerticalAlignment="Top">
-                    <Border.BorderBrush>
-                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
-                    </Border.BorderBrush>
-                    <TextBox x:Name="NoteTextBox" TextWrapping="Wrap" Text="{Binding Note}" HorizontalAlignment="Center" Width="454" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}"/>
-                </Border>
                 <Label Content="Ghi chú" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="74" Canvas.Top="410" Width="118" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                <Border BorderThickness="2.5" CornerRadius="10" Width="473" Height="40" Canvas.Left="74" Canvas.Top="248" HorizontalAlignment="Left" VerticalAlignment="Center">
-                    <Border.BorderBrush>
-                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
-                    </Border.BorderBrush>
-                    <TextBox x:Name="MethodTextBox" TextWrapping="Wrap" Text="{Binding PaymentMethod}" Margin="8,0,8,0" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="16" VerticalAlignment="Center"/>
-                </Border>
                 <Border BorderThickness="2.5" CornerRadius="10" Width="473" Height="40" Canvas.Left="74" Canvas.Top="148" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="10,0,0,0">
                     <Border.BorderBrush>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
                     </Border.BorderBrush>
-                    <DatePicker x:Name="DatePicker" SelectedDate="{Binding Date, Mode=TwoWay}" Margin="-2,0,8,0" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center"/>
+                    <DatePicker x:Name="DatePicker" SelectedDate="{Binding Date, Mode=TwoWay}" Margin="-2,0,8,0" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Height="28"/>
                 </Border>
-                <Border BorderThickness="2.5" CornerRadius="10" Width="472" Height="40" Canvas.Left="640" Canvas.Top="148" HorizontalAlignment="Left" VerticalAlignment="Center">
-                    <Border.BorderBrush>
+
+                <Label Content="Tiền thối" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="640" Canvas.Top="310" Width="454" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox x:Name="ChangeTextBox" Text="{Binding Change}" Width="472" Height="40" FontSize="16" Canvas.Left="640" Canvas.Top="348" BorderThickness="2.5,2.5,2.5,2.5" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="10,0,0,0" >
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                    <TextBox.BorderBrush>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
-                    </Border.BorderBrush>
-                    <TextBox x:Name="PayerTextBox" TextWrapping="Wrap" Text="{Binding Payer}" Margin="8,0,8,0" FontSize="16" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}"/>
-                </Border>
-                <Border BorderThickness="2.5" CornerRadius="10" Width="472" Height="40" Canvas.Left="640" Canvas.Top="248" HorizontalAlignment="Left" VerticalAlignment="Center">
-                    <Border.BorderBrush>
-                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
-                    </Border.BorderBrush>
-                    <TextBox x:Name="TotalPaymentTextBox" TextWrapping="Wrap" Text="{Binding TotalPayment}" Margin="8,0,8,0" VerticalAlignment="Center" FontSize="16" BorderBrush="{x:Null}" Background="{x:Null}"/>
-                </Border>
+                    </TextBox.BorderBrush>
+                </TextBox>
+
                 <Button x:Name="HomeButton_Copy" Content="⩠ Trang chủ" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Canvas.Left="200" Canvas.Top="35" Width="158" Click="HomeButton_Click" HorizontalAlignment="Center" VerticalAlignment="Center" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
@@ -95,6 +78,7 @@
                         <DropShadowEffect ShadowDepth="3" BlurRadius="10" Color="Gray"/>
                     </Button.Effect>
                 </Button>
+
                 <Button x:Name="BackButton_Copy" Content="◀ Trở về" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Canvas.Left="74" Canvas.Top="35" Width="102" Click="BackButton_Click" HorizontalAlignment="Center" VerticalAlignment="Center" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
@@ -108,13 +92,57 @@
                         <DropShadowEffect ShadowDepth="3" BlurRadius="10" Color="Gray"/>
                     </Button.Effect>
                 </Button>
-                <Border BorderThickness="2.5" CornerRadius="10" Width="472" Height="40" Canvas.Left="640" Canvas.Top="348" HorizontalAlignment="Left" VerticalAlignment="Center">
-                    <Border.BorderBrush>
+                <TextBox x:Name="TotalPaymentTextBox" Text="{Binding TotalPayment}" Width="472" Height="40" FontSize="16" Canvas.Left="640" Canvas.Top="248" BorderThickness="2.5,2.5,2.5,2.5" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="10,0,0,0" >
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                    <TextBox.BorderBrush>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
-                    </Border.BorderBrush>
-                    <TextBox x:Name="ChangeTextBox" TextWrapping="Wrap" Text="{Binding Change}" Margin="8,0,8,0" FontSize="16" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}"/>
-                </Border>
-                <Label Content="Tiền thối" FontSize="20" FontFamily="Segoe UI Semibold" Height="38" Canvas.Left="640" Canvas.Top="310" Width="454" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </TextBox.BorderBrush>
+                </TextBox>
+                <TextBox x:Name="PayerTextBox" Text="{Binding Payer}" Width="472" Height="40" FontSize="16" Canvas.Left="640" Canvas.Top="148" BorderThickness="2.5,2.5,2.5,2.5" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="10,0,0,0" >
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                    <TextBox.BorderBrush>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+                    </TextBox.BorderBrush>
+                </TextBox>
+                <TextBox x:Name="NoteTextBox" Text="{Binding Note}" Width="472" Height="106" FontSize="16" Canvas.Left="75" Canvas.Top="448" BorderThickness="2.5,2.5,2.5,2.5" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="10,0,0,0" >
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                    <TextBox.BorderBrush>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+                    </TextBox.BorderBrush>
+                </TextBox>
+                <TextBox x:Name="TotalPaidTextBox" Text="{Binding TotalPaid}" Width="472" Height="40" FontSize="16" Canvas.Left="75" Canvas.Top="348" BorderThickness="2.5,2.5,2.5,2.5" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="10,0,0,0" >
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                    <TextBox.BorderBrush>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+                    </TextBox.BorderBrush>
+                </TextBox>
+                <TextBox x:Name="MethodTextBox" Text="{Binding PaymentMethod}" Width="472" Height="40" FontSize="16" Canvas.Left="75" Canvas.Top="248" BorderThickness="2.5,2.5,2.5,2.5" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="10,0,0,0" >
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                    <TextBox.BorderBrush>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+                    </TextBox.BorderBrush>
+                </TextBox>
+
             </Canvas>
         </Grid>
     </Grid>

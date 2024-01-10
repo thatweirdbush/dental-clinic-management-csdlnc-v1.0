@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:DentalClinicManagement.Employee"
       xmlns:converters="clr-namespace:DentalClinicManagement.Converter"
       mc:Ignorable="d" 
-      d:DesignHeight="730" d:DesignWidth="1200"
+      d:DesignHeight="750" d:DesignWidth="1200"
       Title="Staff" Loaded="Window_Loaded">
     <Page.Resources>
         <converters:AbsoluteConverter x:Key="absoluteConverter"/>
@@ -14,7 +14,7 @@
     <Canvas Background="White">
         <StackPanel Orientation="Horizontal">
 
-            <Canvas Height="734" Width="400" Background="#FF00C1E6">
+            <Canvas Height="750" Width="400" Background="#FF00C1E6">
                 <Image Source="../images/teeth.jpg" Width="100" Height="96" Canvas.Left="6" Canvas.Top="7"/>
                 <Image Source="../images/ava_10.png" Width="152" Height="150" Canvas.Left="124" Canvas.Top="66"/>
                 <TextBlock Text="Dentistry Plus" FontSize="24" FontFamily="Bookman Old Style" FontWeight="Bold" HorizontalAlignment="Center" Height="76" Canvas.Left="211" Foreground="White" Canvas.Top="17" VerticalAlignment="Top"/>
@@ -28,7 +28,7 @@
                     </Button.Resources>
                 </Button>
             </Canvas>
-            <Canvas Height="734" Width="800" Background="White">
+            <Canvas Height="750" Width="800" Background="White">
                 <Image Source="../images/homePage.jpg" Width="258" Height="248" Canvas.Left="491" Canvas.Top="144"/>
                 <TextBlock Text="Trang Chủ" Width="780" Height="41" FontSize="24" Background="#FFB6D7F4" Canvas.Left="10" Canvas.Top="10" HorizontalAlignment="Left" TextAlignment="Center" VerticalAlignment="Center"/>
                 <TextBlock Text="Dentistry Plus cung cấp các dịch vụ nha khoa đảm bảo chất lượng" Canvas.Left="33" Canvas.Top="170" FontSize="36" FontWeight="Bold" Height="197" Width="367" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>

@@ -98,6 +98,8 @@
                         <DropShadowEffect ShadowDepth="3" BlurRadius="10" Color="Gray"/>
                     </Button.Effect>
                 </Button>
+                <Label Content="Nhấp chuột để xem chi tiết thanh toán." FontSize="18" FontFamily="Segoe UI Semibold" Height="35" Canvas.Left="202" Canvas.Top="554" Width="379" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Label Content="Hướng dẫn:" FontSize="20" Height="35" Canvas.Left="74" Canvas.Top="555" Width="123" Foreground="Black" HorizontalContentAlignment="Right" FontWeight="SemiBold" FontFamily="Arial" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Canvas>
         </Grid>
     </Grid>

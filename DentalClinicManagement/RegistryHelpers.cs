@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DentalClinicManagement.Account.Class;
 
 namespace DentalClinicManagement
 {
@@ -117,6 +118,68 @@ namespace DentalClinicManagement
                     {
                         command.Parameters.AddWithValue("@MedicationID", medication.MedicationID);
                         command.Parameters.AddWithValue("@PatientRecordID", medication.PatientRecordID);
+
+                        command.ExecuteNonQuery();
+                    }
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+        }
+
+        public bool RegisterPatient(Patient patient)
+        {
+            try
+            {
+                DB dB = new DB();
+                using (SqlConnection connection = dB.Connection)
+                {
+                    // Thực hiện thêm dữ liệu vào database
+                    string query = "INSERT INTO [Patient] (AccountID, Name, PhoneNo) " +
+                                   "VALUES (@AccountID, @Name, @PhoneNo)";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@AccountID", patient.AccountID);
+                        command.Parameters.AddWithValue("@Name", patient.Name);
+                        command.Parameters.AddWithValue("@PhoneNo", patient.PhoneNo);
+
+                        command.ExecuteNonQuery();
+                    }
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+        }
+
+        public bool RegisterPatientRecord(PatientRecord patientRecord)
+        {
+            try
+            {
+                DB dB = new DB();
+                using (SqlConnection connection = dB.Connection)
+                {
+                    // Thực hiện thêm dữ liệu vào database
+                    string query = "INSERT INTO [Patient Record] (Name, Age, Sex, TotalTreatmentFee, TotalPaid, GeneralInformation, AllergyStatus) " +
+                                   "VALUES (@Name, @Age, @Sex, @TotalTreatmentFee, @TotalPaid, @GeneralInformation, @AllergyStatus)";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Name", patientRecord.Name);
+                        command.Parameters.AddWithValue("@Age", patientRecord.Age);
+                        command.Parameters.AddWithValue("@Sex", patientRecord.Age);
+                        command.Parameters.AddWithValue("@TotalTreatmentFee", patientRecord.TotalTreatmentFee);
+                        command.Parameters.AddWithValue("@TotalPaid", patientRecord.TotalPaid);
+                        command.Parameters.AddWithValue("@GeneralInformation", patientRecord.GeneralInformation);
+                        command.Parameters.AddWithValue("@AllergyStatus", patientRecord.AllergyStatus);
 
                         command.ExecuteNonQuery();
                     }

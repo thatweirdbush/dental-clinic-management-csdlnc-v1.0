@@ -32,18 +32,18 @@ namespace DentalClinicManagement.Dentist
         {
             InitializeComponent();
             this.patient = new Patient(patient);
-            LoadPayment(patient.PatientID);
+            LoadPaymentListByPatient(patient);
             LoadPaymentDetailList();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            //MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
 
-            //if (mainWindow != null && mainWindow.MainFrame != null)
-            //{
-            //    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPatientRecord());
-            //}
+            if (mainWindow != null && mainWindow.MainFrame != null)
+            {
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPatientRecord(patient));
+            }
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
@@ -58,6 +58,7 @@ namespace DentalClinicManagement.Dentist
 
         private void AddNewPaymentButton_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Thêm mới.");
 
         }
 
@@ -69,12 +70,57 @@ namespace DentalClinicManagement.Dentist
 
                 if (mainWindow != null && mainWindow.MainFrame != null)
                 {
-                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPaymentDetail(patient, paymentDetail));
+                    Payment payment = LoadPaymentByPaymentDetail(paymentDetail);
+                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPaymentDetail(patient, payment, paymentDetail));
                 }
             }
         }
 
-        private void LoadPayment(int? patientID)
+        private Payment LoadPaymentByPaymentDetail(PaymentDetail paymentDetail)
+        {
+            try
+            {
+                // Câu truy vấn SQL để lấy thông tin Payment từ database
+                string query = "SELECT TOP 1* FROM [Payment] " +
+                    "WHERE @PaymentID = PaymentID";
+
+                // Tạo và mở kết nối
+                DB dB = new DB();
+                using (SqlConnection connection = dB.Connection)
+                {
+                    // Tạo đối tượng SqlCommand
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        // Thêm tham số cho câu truy vấn
+                        command.Parameters.AddWithValue("@PaymentID", paymentDetail.PaymentID);
+
+                        // Sử dụng SqlDataReader để đọc dữ liệu từ database
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            // Kiểm tra xem có dữ liệu hay không
+                            if (reader.Read())
+                            {
+                                // Tạo đối tượng Patient từ SqlDataReader
+                                Payment payment = new Payment(reader);
+                                return payment;
+                            }
+                            else
+                            {
+                                // Trường hợp không tìm thấy thông tin payment
+                                return null;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+                return null;
+            }
+        }
+
+        private void LoadPaymentListByPatient(Patient patient)
         {
             try
             {
@@ -90,7 +136,7 @@ namespace DentalClinicManagement.Dentist
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         // Thêm tham số cho câu truy vấn
-                        command.Parameters.AddWithValue("@PatientID", patientID);
+                        command.Parameters.AddWithValue("@PatientID", patient.PatientID);
 
                         // Thực hiện truy vấn SQL và lấy dữ liệu
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -139,8 +185,6 @@ namespace DentalClinicManagement.Dentist
                                     PaymentDetail paymentDetail = new PaymentDetail(reader);
                                     paymentDetailList.Add(paymentDetail);
                                 }
-                                // Gán ObservableCollection làm nguồn dữ liệu cho DataGrid
-                                PaymentListDataGrid.ItemsSource = paymentDetailList;
                             }
                         }
                     }
@@ -149,7 +193,9 @@ namespace DentalClinicManagement.Dentist
                 {
                     MessageBox.Show($"Error: {ex.Message}");
                 }
-            }           
+            }
+            // Gán ObservableCollection làm nguồn dữ liệu cho DataGrid
+            PaymentListDataGrid.ItemsSource = paymentDetailList;
         }
     }
 }

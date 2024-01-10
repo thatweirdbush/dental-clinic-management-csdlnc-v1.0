@@ -94,7 +94,7 @@ namespace DentalClinicManagement.Dentist
 
         private void RestrictedMedicationList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Thông tin chi tiết thuốc chống chỉ định.");
+            //MessageBox.Show("Thông tin chi tiết thuốc chống chỉ định.");
 
         }
 

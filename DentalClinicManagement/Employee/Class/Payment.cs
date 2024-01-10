@@ -26,5 +26,14 @@ namespace DentalClinicManagement.Employee.Class
         }
 
         public Payment() { }
+
+        public Payment(Payment other)
+        {
+            PaymentID = other.PaymentID;
+            PatientID = other.PatientID;
+            TreatmentID = other.TreatmentID;
+            ConductedTreatmentID = other.ConductedTreatmentID;
+            Status = other.Status;
+        }
     }
 }

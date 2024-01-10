@@ -37,7 +37,13 @@
     <Compile Update="Customer\MakeAppointment.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Dentist\AddPatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Dentist\DashBoard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Dentist\MakePayment.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Dentist\MedicalManagement.xaml.cs">
@@ -62,6 +68,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Dentist\ViewMedication.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Dentist\ViewNeedPaymentList.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Dentist\ViewPaymentDetail.xaml.cs">
@@ -147,7 +156,13 @@
     <Page Update="Customer\MakeAppointment.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Dentist\AddPatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Dentist\DashBoard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dentist\MakePayment.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Dentist\MedicalManagement.xaml">
@@ -175,6 +190,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Dentist\ViewMedication.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dentist\ViewNeedPaymentList.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Dentist\ViewPaymentDetail.xaml">
