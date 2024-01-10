@@ -1,5 +1,8 @@
-﻿using System;
+﻿using DentalClinicManagement.Dentist.Class;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,12 +23,15 @@ namespace DentalClinicManagement.Admin
     /// </summary>
     public partial class MedicalManagement : Page
     {
+        public ObservableCollection<MedicationList> medicationList { get; set; } = new ObservableCollection<MedicationList>();
+
         public MedicalManagement()
         {
             InitializeComponent();
+            LoadMedicationList();
         }
 
-        private void OnBackButtonClick(object sender, RoutedEventArgs e)
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
 
@@ -35,53 +41,48 @@ namespace DentalClinicManagement.Admin
             }
         }
 
-        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
 
+            if (mainWindow != null && mainWindow.MainFrame != null)
+            {
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
+            }
         }
 
-        private void addMedical(object sender, RoutedEventArgs e)
+        private void LoadMedicationList()
         {
-            ViewMedicalDetail.Visibility = Visibility.Collapsed;
-            EditMedicalDetail.Visibility = Visibility.Visible;
-        }
+            try
+            {
+                // Câu truy vấn SQL để lấy thông tin Detailed Treatment Plan từ database
+                string query = "SELECT * FROM [Medication List]";
 
-        private void deletemedical(object sender, RoutedEventArgs e)
-        {
-            ViewMedicalDetail.Visibility = Visibility.Collapsed;
-            EditMedicalDetail.Visibility = Visibility.Collapsed;
-        }
-
-        private void editMedical(object sender, RoutedEventArgs e)
-        {
-            ViewMedicalDetail.Visibility = Visibility.Collapsed;
-            EditMedicalDetail.Visibility = Visibility.Visible;
-        }
-
-        private void completeMedical(object sender, RoutedEventArgs e)
-        {
-            ViewMedicalDetail.Visibility = Visibility.Visible;
-            EditMedicalDetail.Visibility = Visibility.Collapsed;
-        }
-
-        private void btnNext_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnPrevious_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void comboPage_Selected(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+                // Tạo và mở kết nối
+                DB dB = new DB();
+                using (SqlConnection connection = dB.Connection)
+                {
+                    // Tạo đối tượng SqlCommand
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        // Thực hiện truy vấn SQL và lấy dữ liệu
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                MedicationList medication = new MedicationList(reader);
+                                medicationList.Add(medication);
+                            }
+                            // Gán ObservableCollection làm nguồn dữ liệu cho DataGrid
+                            MedicationListDataGrid.ItemsSource = medicationList;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
     }
 }

@@ -25,10 +25,16 @@
     <Compile Update="Admin\AccountManagement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Admin\AddPatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Admin\CheckAppointment.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Admin\DashBoard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\MakePayment.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Admin\MedicalManagement.xaml.cs">
@@ -37,10 +43,37 @@
     <Compile Update="Admin\ReportAppointment.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Admin\ViewAppointmentRequest.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\ViewDetailTreatmentPlan.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\ViewNeedPaymentList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Admin\ViewPatient.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Admin\ViewPatientRecord.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\ViewPaymentDetail.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\ViewPaymentList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Admin\ViewRecord.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\ViewRestrictedMedicationList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\ViewTreatingTeethList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\ViewTreatmentPlanList.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Customer\DashBoard.xaml.cs">
@@ -134,8 +167,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Employee\ViewPaymentList.xaml.cs">
-	<SubType>Code</SubType>
-	</Compile>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Employee\ViewSchedule.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -159,10 +192,16 @@
     <Page Update="Admin\AccountManagement.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Admin\AddPatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Admin\CheckAppointment.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Admin\DashBoard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\MakePayment.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Admin\MedicalManagement.xaml">
@@ -171,10 +210,37 @@
     <Page Update="Admin\ReportAppointment.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Admin\ViewAppointmentRequest.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\ViewDetailTreatmentPlan.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\ViewNeedPaymentList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Admin\ViewPatient.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Admin\ViewPatientRecord.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\ViewPaymentDetail.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\ViewPaymentList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Admin\ViewRecord.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\ViewRestrictedMedicationList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\ViewTreatingTeethList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\ViewTreatmentPlanList.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Customer\DashBoard.xaml">
@@ -277,8 +343,8 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Employee\ViewPaymentList.xaml">
-	<SubType>Designer</SubType>
-	</Page>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Employee\ViewSchedule.xaml">
       <SubType>Designer</SubType>
     </Page>

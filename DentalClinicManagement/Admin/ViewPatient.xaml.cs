@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,67 +15,29 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DentalClinicManagement.Dentist.Class;
 
 namespace DentalClinicManagement.Admin
 {
-    /// <summary>
-    /// Interaction logic for ViewPatient.xaml
-    /// </summary>
-    public class PatientInfor
-    {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string Sex { get; set; }
-        public string Address { get; set; }
-
-    }
-
-    public class MainViewModels : INotifyPropertyChanged
-    {
-
-        private ObservableCollection<PatientInfor> _patientInfo;
-        public ObservableCollection<PatientInfor> PatientInfos
-        {
-            get { return _patientInfo; }
-            set
-            {
-                _patientInfo = value;
-                OnPropertyChanged(nameof(PatientInfos));
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
-
+    
     public partial class ViewPatient : Page
     {
+        public ObservableCollection<Patient> PatientList { get; set; } = new ObservableCollection<Patient>();
         public ViewPatient()
         {
             InitializeComponent();
+            LoadPatientList();
         }
 
-        public ObservableCollection<PatientInfor> PatientInfos { get; set; }
-
-        private void checkRecord_btn(object sender, MouseButtonEventArgs e)
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+            MessageBox.Show("Tìm kiếm.");
 
-
-            if (mainWindow != null && mainWindow.MainFrame != null)
-            {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewRecord());
-            }
         }
 
-        private void backButton_Click(object sender, RoutedEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
-
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
@@ -82,22 +45,81 @@ namespace DentalClinicManagement.Admin
             }
         }
 
-        private void search_click(object sender, RoutedEventArgs e)
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
-            MainViewModels viewModel = new MainViewModels()
+            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+
+            if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                PatientInfos = new ObservableCollection<PatientInfor>
-                    {
-                        new PatientInfor { Id = "1", Name = "Giang", Sex = "Nam", Address = "TP.HCM" },
-                        new PatientInfor { Id = "2", Name = "Huy", Sex = "Nam", Address = "TP.HCM" },
-                    },
-            };
-            this.DataContext = viewModel;
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
+            }
         }
 
-        private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void PatientList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            if (sender is DataGrid dataGrid && dataGrid.SelectedItem is Patient selectedPatient)
+            {
+                MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
 
+                if (mainWindow != null && mainWindow.MainFrame != null)
+                {
+                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPatientRecord(selectedPatient));
+                }
+            }
+        }
+
+        private void AddNewPatientButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+
+            if (mainWindow != null && mainWindow.MainFrame != null)
+            {
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddPatient());
+            }
+        }
+
+        private void AppointmentRequestButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+
+            if (mainWindow != null && mainWindow.MainFrame != null)
+            {
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewAppointmentRequest());
+            }
+        }
+
+        private void LoadPatientList()
+        {
+            try
+            {
+                // Câu truy vấn SQL để lấy thông tin AppointmentRequest từ database
+                string query = "SELECT * FROM [Patient]";
+
+                // Tạo và mở kết nối
+                DB dB = new DB();
+                using (SqlConnection connection = dB.Connection)
+                {
+                    // Tạo đối tượng SqlCommand
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        // Thực hiện truy vấn SQL và lấy dữ liệu
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Patient patient = new Patient(reader);
+                                PatientList.Add(patient);
+                            }
+                            // Gán ObservableCollection làm nguồn dữ liệu cho DataGrid
+                            PatientListDataGrid.ItemsSource = PatientList;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
     }
 }

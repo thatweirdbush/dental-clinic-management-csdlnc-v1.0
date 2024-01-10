@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DentalClinicManagement.Admin.Class;
+using DentalClinicManagement.Dentist.Class;
 
 namespace DentalClinicManagement.Admin
 {
@@ -22,31 +24,15 @@ namespace DentalClinicManagement.Admin
     /// Interaction logic for ReportAppointment.xaml
     /// </summary>
 
-    public class MainViewModel : INotifyPropertyChanged
-    {    
-        private ObservableCollection<ReportAppoint> _reportAppoint;
-        public ObservableCollection<ReportAppoint> ReportAppoints
-        {
-            get { return _reportAppoint; }
-            set
-            {
-                _reportAppoint = value;
-                OnPropertyChanged(nameof(ReportAppoints));
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
-
     public partial class ReportAppointment : Page
     {
+
+        public ObservableCollection<ReportAppoint> reportAppointList { get; set; } = new ObservableCollection<ReportAppoint>();
+
         public ReportAppointment()
         {
             InitializeComponent();
+            LoadReportAppoint();
         }
 
         private void viewHome(object sender, RoutedEventArgs e)
@@ -60,26 +46,42 @@ namespace DentalClinicManagement.Admin
             }
         }
 
-        private void Report(object sender, RoutedEventArgs e)
+
+        private void LoadReportAppoint()
         {
-            if (!string.IsNullOrEmpty(DentistSearch.Text))
+
+            try
             {
-                MainViewModel viewModel = new MainViewModel()
+                // Câu truy vấn SQL để lấy thông tin AppointmentRequest từ database
+                string query = "SELECT TimeOfRequest,[Schedule].Shift, [Patient].Name, [Dentist].Name as DentistName, [Appointment Request].Room, [Appointment Request].Status\r\nFROM [Appointment Request], [Patient],[Schedule], [Dentist]\r\nWHERE [Schedule].ScheduleID = [Appointment Request].ScheduleID\r\nAND [Schedule].DentistID = [Appointment Request].DentistID\r\nAND [Appointment Request].PatientID = [Patient].PatientID\r\nAND [Schedule].DentistID = [Dentist].DentistID";
+                // Tạo và mở kết nối
+                DB dB = new DB();
+                using (SqlConnection connection = dB.Connection)
                 {
-                    ReportAppoints = new ObservableCollection<ReportAppoint>
+                    // Tạo đối tượng SqlCommand
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        new ReportAppoint { Date = "01/01/2023", Shift = "1", PatientName = "Giang", Dentist = "Giang", TroKham = "Trần Hàn Phong", Room = "3", Status = " " },
-                        new ReportAppoint { Date = "02/01/2023", Shift = "3", PatientName = "Huy", Dentist = "Huy", TroKham = "Trần Hàn Phong", Room = "7", Status = " " },
-                    },
-                };
-                this.DataContext = viewModel;
-
+                        // Thực hiện truy vấn SQL và lấy dữ liệu
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                ReportAppoint reportAppoint = new ReportAppoint(reader);
+                                reportAppointList.Add(reportAppoint);
+                            }
+                            // Gán ObservableCollection làm nguồn dữ liệu cho DataGrid
+                            ReportAppointListView.ItemsSource = reportAppointList;
+                        }
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-
-                MessageBox.Show("Please enter name of dentist");
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
+
+
     }
 }
