@@ -99,8 +99,7 @@ namespace DentalClinicManagement.Dentist
                     // Lấy thông tin từ giao diện người dùng
                     Name = PatientNameTextBox.Text,
                     PhoneNo = PhoneNoTextBox.Text,
-                    AccountID = int.TryParse(AccountIDTextBox.Text, out int aID) ? aID : null
-            };
+                };
 
                 // Thực hiện đăng ký và lưu vào database
                 RegistryHelpers regist = new RegistryHelpers();
