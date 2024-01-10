@@ -98,13 +98,14 @@ namespace DentalClinicManagement.Admin
                 }
                 else
                 {
+                   
                     // Lọc dữ liệu trong khoảng từ fromDate đến toDate và theo trạng thái
-                    ReportAppointListView.ItemsSource = reportAppointList.Where(c => c.Date >= fromDate && c.Date <= toDate && (string.Equals(c.Dentist, selectDentist) == true));
+                    ReportAppointListView.ItemsSource = reportAppointList.Where(c => c.Date >= fromDate && c.Date <= toDate && (c.Dentist.Contains(selectDentist) == true));
                 }
             }
             if (!fromDate.HasValue && !toDate.HasValue && selectDentist != null)
             {
-                ReportAppointListView.ItemsSource = reportAppointList.Where(c => c.Dentist == selectDentist);
+                ReportAppointListView.ItemsSource = reportAppointList.Where(c => c.Dentist.Contains(selectDentist));
             }
         }
 
