@@ -20,8 +20,6 @@ namespace DentalClinicManagement.Admin
     /// <summary>
     /// Interaction logic for ViewPatient.xaml
     /// </summary>
-    /// 
-
     public class PatientInfor
     {
         public string Id { get; set; }

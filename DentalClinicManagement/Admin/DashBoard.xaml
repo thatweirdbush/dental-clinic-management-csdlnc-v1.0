@@ -68,6 +68,20 @@
                         </Style>
                     </Button.Resources>
                 </Button>
+                <Button Content="Báo cáo điều trị" Width="364" Height="49" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="reportTreatment" Canvas.Left="426" Canvas.Top="659" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Content="Thêm lịch nha sĩ" Width="364" Height="49" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="addSchedule" Canvas.Left="426" Canvas.Top="430" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
 
             </Canvas>
         </StackPanel>

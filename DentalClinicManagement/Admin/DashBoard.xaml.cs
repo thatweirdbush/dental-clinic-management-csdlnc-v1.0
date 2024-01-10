@@ -97,5 +97,27 @@ namespace DentalClinicManagement.Admin
                 mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ReportAppointment());
             }
         }
+
+        private void reportTreatment(object sender, RoutedEventArgs e)
+        {
+            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+
+
+            if (mainWindow != null && mainWindow.MainFrame != null)
+            {
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ReportTreatment());
+            }
+        }
+
+        private void addSchedule(object sender, RoutedEventArgs e)
+        {
+            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+
+
+            if (mainWindow != null && mainWindow.MainFrame != null)
+            {
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.AddSchedule());
+            }
+        }
     }
 }

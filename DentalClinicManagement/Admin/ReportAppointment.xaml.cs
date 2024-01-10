@@ -20,8 +20,6 @@ namespace DentalClinicManagement.Admin
     /// <summary>
     /// Interaction logic for ReportAppointment.xaml
     /// </summary>
-    /// 
-
     public class ReportAppoint
     {
         public string Date { get; set; }
@@ -34,8 +32,7 @@ namespace DentalClinicManagement.Admin
     }
 
     public class MainViewModel : INotifyPropertyChanged
-    {
-    
+    {    
         private ObservableCollection<ReportAppoint> _reportAppoint;
         public ObservableCollection<ReportAppoint> ReportAppoints
         {
