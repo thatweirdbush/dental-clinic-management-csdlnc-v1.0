@@ -1,4 +1,5 @@
-﻿using DentalClinicManagement.Dentist.Class;
+﻿using DentalClinicManagement.Account.Class;
+using DentalClinicManagement.Dentist.Class;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,13 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class ViewDetailTreatmentPlan : Page
     {
+        DentistClass dentist;
         private DetailedTreatmentPlan plan;
         private Patient patient;
-        public ViewDetailTreatmentPlan(DetailedTreatmentPlan plan, Patient patient)
+        public ViewDetailTreatmentPlan(DentistClass dentist, DetailedTreatmentPlan plan, Patient patient)
         {
             InitializeComponent();
+            this.dentist = new DentistClass(dentist);
             this.plan = new DetailedTreatmentPlan(plan);
             this.patient = new Patient(patient);
 
@@ -39,7 +42,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 
@@ -49,7 +52,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewTreatmentPlanList(patient));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewTreatmentPlanList(dentist, patient));
             }
         }
 
@@ -59,7 +62,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewTreatingTeethList(plan, patient));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewTreatingTeethList(dentist, plan, patient));
             }
         }
     }

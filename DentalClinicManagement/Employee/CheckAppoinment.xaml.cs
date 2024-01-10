@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DentalClinicManagement.Account.Class;
 
 namespace DentalClinicManagement.Employee
 {
@@ -20,9 +21,12 @@ namespace DentalClinicManagement.Employee
     /// </summary>
     public partial class CheckAppoinment : Page
     {
-        public CheckAppoinment()
+        StaffClass staff;
+
+        public CheckAppoinment(StaffClass staff)
         {
             InitializeComponent();
+            this.staff = new StaffClass(staff);
         }
 
         private void makeAppointment(object sender, RoutedEventArgs e)
@@ -32,7 +36,7 @@ namespace DentalClinicManagement.Employee
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.MakeAppointment());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.MakeAppointment(staff));
             }
         }
 
@@ -43,7 +47,7 @@ namespace DentalClinicManagement.Employee
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard(staff));
             }
         }
     }

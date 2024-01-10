@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DentalClinicManagement.Account.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class AddRecord : Page
     {
-        public AddRecord()
+        DentistClass dentist;
+
+        public AddRecord(DentistClass dentist)
         {
             InitializeComponent();
+            this.dentist = new DentistClass(dentist);
         }
 
         private void backHome(object sender, RoutedEventArgs e)
@@ -32,7 +36,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.SearchCustomerRecord());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.SearchCustomerRecord(dentist));
             }
         }
 
@@ -43,7 +47,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.SearchCustomerRecord());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.SearchCustomerRecord(dentist));
             }
         }
     }

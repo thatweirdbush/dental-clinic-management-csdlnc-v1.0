@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DentalClinicManagement.Account.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,14 @@ namespace DentalClinicManagement.Admin
     /// </summary>
     public partial class CheckAppointment : Page
     {
-        public CheckAppointment()
+        AdminClass admin;
+
+        public CheckAppointment(AdminClass admin)
         {
             InitializeComponent();
+            this.admin = new AdminClass(admin);
         }
+
         private void homePageButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
@@ -31,7 +36,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard(admin));
             }
         }
 

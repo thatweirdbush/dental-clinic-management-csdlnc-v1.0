@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DentalClinicManagement.Account.Class;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -37,7 +39,6 @@ namespace DentalClinicManagement.Employee
         public string Medicine { get; set; }
         public string ReDate { get; set; }
         public string Doctor { get; set; }
-
         public string Payment { get; set; }
     }
 
@@ -73,9 +74,12 @@ namespace DentalClinicManagement.Employee
     }
     public partial class SearchCustomerRecord : Page
     {
-        public SearchCustomerRecord()
+        StaffClass staff;
+
+        public SearchCustomerRecord(StaffClass staff)
         {
             InitializeComponent();
+            this.staff = new StaffClass(staff);
         }
 
         public ObservableCollection<MedicalRecord> MedicalRecords { get; set; }
@@ -124,7 +128,7 @@ namespace DentalClinicManagement.Employee
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard(staff));
             }
         }
 

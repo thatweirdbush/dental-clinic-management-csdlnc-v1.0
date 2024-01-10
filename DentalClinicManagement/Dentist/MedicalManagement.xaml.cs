@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DentalClinicManagement.Account.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class MedicalManagement : Page
     {
-        public MedicalManagement()
+        DentistClass dentist;
+
+        public MedicalManagement(DentistClass dentist)
         {
             InitializeComponent();
+            this.dentist = new DentistClass(dentist);
         }
 
         private void OnBackButtonClick(object sender, RoutedEventArgs e)
@@ -31,7 +35,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 

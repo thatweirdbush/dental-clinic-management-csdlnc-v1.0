@@ -32,19 +32,13 @@ namespace DentalClinicManagement.Account
         {
 
         }
-        private void openSignup(object sender, RoutedEventArgs e)
+
+        private void SignUpButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
-
-
-            if (mainWindow != null && mainWindow.MainFrame != null)
-            {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Account.SignUp());
-            }
+            MessageBox.Show("Chức năng đang được phát triển.");
         }
 
-
-        private void openSignin(object sender, RoutedEventArgs e)
+        private void SignInButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
 

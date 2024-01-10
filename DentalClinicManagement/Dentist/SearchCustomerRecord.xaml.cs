@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DentalClinicManagement.Account.Class;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -73,9 +74,12 @@ namespace DentalClinicManagement.Dentist
     }
     public partial class SearchCustomerRecord : Page
     {
-        public SearchCustomerRecord()
+        DentistClass dentist;
+
+        public SearchCustomerRecord(DentistClass dentist)
         {
             InitializeComponent();
+            this.dentist = new DentistClass(dentist);
         }
 
         public ObservableCollection<MedicalRecord> MedicalRecords { get; set; }
@@ -124,7 +128,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 
@@ -135,7 +139,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddRecord());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddRecord(dentist));
             }
         }
     }

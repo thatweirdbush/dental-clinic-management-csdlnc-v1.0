@@ -11,26 +11,43 @@
     <Page.Resources>
         <converters:AbsoluteConverter x:Key="absoluteConverter"/>
     </Page.Resources>
-    <Canvas Background="White">
-        <Border BorderBrush="Black" BorderThickness="2" CornerRadius="20" HorizontalAlignment="Left" Canvas.Left="290" Canvas.Top="67" VerticalAlignment="Center">
+    <Canvas>
+        <Canvas.Background>
+            <ImageBrush ImageSource="/images/teeth.jpg"/>
+        </Canvas.Background>
+        <Border BorderBrush="AliceBlue" BorderThickness="2" CornerRadius="20" HorizontalAlignment="Left" Canvas.Left="290" Canvas.Top="67" VerticalAlignment="Center">
             <StackPanel Height="601" Width="620" HorizontalAlignment="Left" VerticalAlignment="Top">
-                <Image Source="..\\images\\teeth.jpg" Width="620" Height="246"/>
-                <TextBlock Text="Chào mừng bạn đến với" Height="62" HorizontalAlignment="Center" FontSize="36" FontFamily="Segoe UI Semibold"/>
+                <StackPanel.Background>
+                    <SolidColorBrush Color="#FFDAEFF8" Opacity="0.5"/>
+                </StackPanel.Background>
+                <TextBlock Text="Chào mừng bạn đến với" Height="62" HorizontalAlignment="Center" FontSize="36" FontFamily="Segoe UI Semibold" Margin="0,80,0,0"/>
                 <TextBlock Text="Dentistry Plus" FontSize="48" FontFamily="Bookman Old Style" FontWeight="Bold" HorizontalAlignment="Center" Height="76"/>
-                <TextBlock FontSize="24" Height="68" Width="446" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center"><Run Text="Phòng khám nha khoa với sứ mệnh "/><LineBreak/><Run Text="chăm sóc nụ cười Việt"/></TextBlock>
-                <Button Content="Đăng ký" Width="364" Height="49" IsDefault="True" FontSize="24" Margin="0,10,0,10" Background="#FFB6D7F4" Click="openSignup" >
+                <TextBlock FontSize="24" Height="68" Width="446" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center" Margin="0,0,0,80"><Run Text="Phòng khám nha khoa với sứ mệnh "/><LineBreak/><Run Text="chăm sóc nụ cười Việt"/></TextBlock>
+                <Button x:Name="SignUpButton" Content="Đăng ký" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="57" Width="280" Click="SignUpButton_Click" Margin="0,0,0,18" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="20"/>
+                            <Setter Property="CornerRadius" Value="24"/>
                         </Style>
                     </Button.Resources>
+                    <Button.Background>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}" Opacity="0.6"/>
+                    </Button.Background>
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="3" BlurRadius="10" Color="Gray"/>
+                    </Button.Effect>
                 </Button>
-                <Button Content="Đăng nhập" Width="364" Height="49" IsDefault="True" FontSize="24" Margin="0,0,0,10" Background="#FFB6D7F4" Click="openSignin" >
+                <Button x:Name="SignInButton" Content="Đăng nhập" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="57" Width="280" Click="SignInButton_Click" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="20"/>
+                            <Setter Property="CornerRadius" Value="24"/>
                         </Style>
                     </Button.Resources>
+                    <Button.Background>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}" Opacity="0.6"/>
+                    </Button.Background>
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="3" BlurRadius="10" Color="Gray"/>
+                    </Button.Effect>
                 </Button>
 
             </StackPanel>

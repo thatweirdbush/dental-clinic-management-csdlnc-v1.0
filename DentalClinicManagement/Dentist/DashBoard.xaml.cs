@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DentalClinicManagement.Account.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class DashBoard : Page
     {
-        public DashBoard()
+        DentistClass dentist;
+
+        public DashBoard(DentistClass dentist)
         {
             InitializeComponent();
+            this.dentist = new DentistClass(dentist);
         }
 
         private void view_appointment_btn_Click(object sender, RoutedEventArgs e)
@@ -31,7 +35,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewAppointment());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewAppointment(dentist));
             }
         }
 
@@ -55,7 +59,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPatientList());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPatientList(dentist));
             }
         }
 
@@ -65,7 +69,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.SearchCustomerRecord());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.SearchCustomerRecord(dentist));
             }
         }
 
@@ -75,7 +79,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewMedication());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewMedication(dentist));
             }
         }
     }

@@ -24,9 +24,12 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class AddPatient : Page
     {
-        public AddPatient()
+        DentistClass dentist;
+
+        public AddPatient(DentistClass dentist)
         {
             InitializeComponent();
+            this.dentist = new DentistClass(dentist);
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -35,7 +38,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPatientList());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPatientList(dentist));
             }
         }
 
@@ -45,7 +48,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 
@@ -75,7 +78,7 @@ namespace DentalClinicManagement.Dentist
 
                     if (mainWindow != null && mainWindow.MainFrame != null)
                     {
-                        mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddPatient());
+                        mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddPatient(dentist));
                     }
                 }
                 else
@@ -110,7 +113,7 @@ namespace DentalClinicManagement.Dentist
 
                     if (mainWindow != null && mainWindow.MainFrame != null)
                     {
-                        mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddPatient());
+                        mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddPatient(dentist));
                     }
                 }
                 else

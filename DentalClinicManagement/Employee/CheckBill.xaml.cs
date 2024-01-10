@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DentalClinicManagement.Account.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ namespace DentalClinicManagement.Employee
     /// </summary>
     public partial class CheckBill : Page
     {
+        StaffClass staff;
+
         public CheckBill()
         {
             InitializeComponent();
@@ -32,7 +35,7 @@ namespace DentalClinicManagement.Employee
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.SearchCustomerRecord());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.SearchCustomerRecord(staff));
             }
         }
 
@@ -49,7 +52,7 @@ namespace DentalClinicManagement.Employee
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.SearchCustomerRecord());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.SearchCustomerRecord(staff));
             }
         }
     }

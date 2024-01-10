@@ -1,4 +1,4 @@
-﻿using DentalClinicManagement.Account;
+﻿using DentalClinicManagement.Account.Class;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,9 +22,12 @@ namespace DentalClinicManagement.Employee
     /// </summary>
     public partial class AddNewAppointment : Page
     {
-        public AddNewAppointment()
+        StaffClass staff;
+
+        public AddNewAppointment(StaffClass staff)
         {
             InitializeComponent();
+            this.staff = new StaffClass(staff);
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
@@ -33,7 +36,7 @@ namespace DentalClinicManagement.Employee
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard(staff));
             }
         }
 
@@ -43,7 +46,7 @@ namespace DentalClinicManagement.Employee
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.ManageSchedule());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.ManageSchedule(staff));
             }
         }
 
@@ -71,7 +74,7 @@ namespace DentalClinicManagement.Employee
                 if (mainWindow != null && mainWindow.MainFrame != null)
                 {
                     // Chuyển qua cửa sổ PasswordSignUp và chuyển số điện thoại từ SignUp qua
-                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.ManageSchedule());
+                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.ManageSchedule(staff));
                 }
             }
             else

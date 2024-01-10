@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DentalClinicManagement"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="800" Width="1200" Loaded="WindowLoaded">
+        Title="Hệ thống quản lý nha khoa" Height="800" Width="1200" Loaded="WindowLoaded">
     <Window.Resources>
 
     </Window.Resources>

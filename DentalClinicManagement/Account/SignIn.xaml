@@ -11,68 +11,67 @@
     <Page.Resources>
         <converters:AbsoluteConverter x:Key="absoluteConverter"/>
     </Page.Resources>
-    <Canvas Background="White">
-        <Border BorderBrush="Black" BorderThickness="2" CornerRadius="20" HorizontalAlignment="Left" Canvas.Left="290" Canvas.Top="67" VerticalAlignment="Center">
+    <Canvas>
+        <Canvas.Background>
+            <ImageBrush ImageSource="/images/teeth.jpg"/>
+        </Canvas.Background>
+        <Border BorderBrush="AliceBlue" BorderThickness="2" CornerRadius="20" HorizontalAlignment="Left" Canvas.Left="290" Canvas.Top="67" VerticalAlignment="Center">
             <Canvas  Height="601" Width="620"  HorizontalAlignment="Left" VerticalAlignment="Center">
-                <Button Width="83" Height="39" Click="OnBackButtonClick" HorizontalAlignment="Left" Canvas.Top="18" VerticalAlignment="Top" Background="White" BorderBrush="White">
-                    <Path Data="M3,12 L9,18 L9,14 L21,14 L21,10 L9,10 L9,6 L3,12 Z" Fill="Black" Stretch="Fill" Width="79" />
-                </Button>
+                <Canvas.Background>
+                    <SolidColorBrush Color="#FFDAEFF8" Opacity="0.5"/>
+                </Canvas.Background>
                 <TextBlock Text="Đăng nhập" Height="70" HorizontalAlignment="Left" FontSize="48" FontFamily="Segoe UI Semibold" Canvas.Left="186" Canvas.Top="106" VerticalAlignment="Top"/>
-                <TextBlock Text="Dentistry Plus" FontSize="48" FontFamily="Bookman Old Style" FontWeight="Bold" HorizontalAlignment="Left" Height="76" Canvas.Left="253" VerticalAlignment="Center" Canvas.Top="10"/>
-                <TextBlock Text="Chào mừng bạn quay trở lại!" FontSize="24" Height="41" Width="446" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Canvas.Left="87" Canvas.Top="181" HorizontalAlignment="Center"/>
-                <Button x:Name="SignInButton" Content="Đăng nhập" Width="364" Height="49" Click="SignInButton_Click" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Canvas.Left="128" Canvas.Top="500" HorizontalAlignment="Center" VerticalAlignment="Top" >
-                    <Button.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="20"/>
-                        </Style>
-                    </Button.Resources>
-                </Button>
-                <TextBox x:Name="UsernameTextBox" Width="462" Height="50" FontSize="24" Canvas.Left="87" Canvas.Top="276" BorderThickness="3,3,3,3" BorderBrush="Black" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <TextBlock Text="Chào mừng bạn quay trở lại!" FontSize="24" Height="41" Width="446" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Canvas.Left="87" Canvas.Top="176" HorizontalAlignment="Center"/>
+                <TextBox x:Name="UsernameTextBox" Width="462" Height="50" FontSize="24" Canvas.Left="87" Canvas.Top="276" BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="10,0,0,0" VerticalContentAlignment="Center" >
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>
                         </Style>
                     </TextBox.Resources>
+                    <TextBox.Background>
+                        <SolidColorBrush Color="White" Opacity="0.6"/>
+                    </TextBox.Background>
                 </TextBox>
                 <Label Content="Tên Đăng Nhập" Canvas.Left="87" Canvas.Top="227" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 <Label Content="Mật Khẩu" Canvas.Left="87" Canvas.Top="358" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                <TextBox x:Name="PasswordTextBox" Width="462" Height="50" FontSize="24" Canvas.Left="87" Canvas.Top="405" BorderThickness="3,3,3,3" BorderBrush="Black" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <TextBox x:Name="PasswordTextBox" Width="462" Height="50" FontSize="24" Canvas.Left="87" Canvas.Top="405" BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="10,0,0,0" VerticalContentAlignment="Center" >
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>
                         </Style>
                     </TextBox.Resources>
+                    <TextBox.Background>
+                        <SolidColorBrush Color="White" Opacity="0.6"/>
+                    </TextBox.Background>
                 </TextBox>
+                <Button x:Name="SignInButton" Content="Đăng nhập" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="57" Width="280" Click="SignInButton_Click" Canvas.Left="170" Canvas.Top="488" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="24"/>
+                        </Style>
+                    </Button.Resources>
+                    <Button.Background>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}" Opacity="0.6"/>
+                    </Button.Background>
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="3" BlurRadius="10" Color="Gray"/>
+                    </Button.Effect>
+                </Button>
+                <Button x:Name="BackButton" Content="◀ Trở về" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Canvas.Left="10" Canvas.Top="10" Width="102" Click="BackButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="24"/>
+                        </Style>
+                    </Button.Resources>
+                    <Button.Background>
+                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}" Opacity="0.6"/>
+                    </Button.Background>
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="3" BlurRadius="10" Color="Gray"/>
+                    </Button.Effect>
+                </Button>
 
             </Canvas>
         </Border>
-        <Button  Content="Admin" Width="230" Height="50" Click="signInAdmin_Click" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Canvas.Left="939" Canvas.Top="314" HorizontalAlignment="Left" VerticalAlignment="Top" >
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="20"/>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Button Content="Customer" Width="230" Height="50" Click="signInCustomer_Click" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Canvas.Left="939" Canvas.Top="516" HorizontalAlignment="Left" VerticalAlignment="Top" >
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="20"/>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Button Content="Employee" Width="230" Height="50" Click="signInEmployee_Click" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Canvas.Left="939" Canvas.Top="447" HorizontalAlignment="Left" VerticalAlignment="Top" >
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="20"/>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Button Content="Dentist" Width="230" Height="50" Click="signInDentist_Click" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Canvas.Left="939" Canvas.Top="381" HorizontalAlignment="Left" VerticalAlignment="Top" >
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="20"/>
-                </Style>
-            </Button.Resources>
-        </Button>
     </Canvas>
 </Page>

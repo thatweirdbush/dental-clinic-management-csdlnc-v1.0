@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DentalClinicManagement.Account.Class;
 
 namespace DentalClinicManagement.Dentist
 {
@@ -23,12 +24,14 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class ViewTreatmentPlanList : Page
     {
+        DentistClass dentist;
         private Patient patient;
         public ObservableCollection<DetailedTreatmentPlan> planList { get; set; } = new ObservableCollection<DetailedTreatmentPlan>();
 
-        public ViewTreatmentPlanList(Patient patient)
+        public ViewTreatmentPlanList(DentistClass dentist, Patient patient)
         {
             InitializeComponent();
+            this.dentist = new DentistClass(dentist);
             this.patient = new Patient(patient);
             LoadPlanList(patient);
 
@@ -45,7 +48,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 
@@ -55,7 +58,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPatientRecord(patient));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPatientRecord(dentist, patient));
             }
         }
 
@@ -67,7 +70,7 @@ namespace DentalClinicManagement.Dentist
 
                 if (mainWindow != null && mainWindow.MainFrame != null)
                 {
-                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewDetailTreatmentPlan(selectedPlan, patient));
+                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewDetailTreatmentPlan(dentist, selectedPlan, patient));
                 }
             }
         }

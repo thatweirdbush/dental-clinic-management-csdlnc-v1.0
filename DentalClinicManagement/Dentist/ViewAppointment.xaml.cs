@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DentalClinicManagement.Account.Class;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
@@ -22,11 +23,15 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class ViewAppointment : Page
     {
+        DentistClass dentist;
+
         public ObservableCollection<Appointment> Appointment { get; set; }
         private readonly string[] StatusArray = { "Đã xong", "Đã hủy", "Quá hẹn" };
-        public ViewAppointment()
+        public ViewAppointment(DentistClass dentist)
         {
             InitializeComponent();
+            this.dentist = new DentistClass(dentist);
+
             DataContext = this;
             Random random = new Random();
             sttTextBlock.IsEnabled = false;
@@ -76,7 +81,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 

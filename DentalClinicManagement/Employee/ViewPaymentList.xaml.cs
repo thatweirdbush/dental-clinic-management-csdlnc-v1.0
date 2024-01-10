@@ -1,4 +1,5 @@
-﻿using DentalClinicManagement.Dentist.Class;
+﻿using DentalClinicManagement.Account.Class;
+using DentalClinicManagement.Dentist.Class;
 using DentalClinicManagement.Employee.Class;
 using System;
 using System.Collections.Generic;
@@ -24,12 +25,14 @@ namespace DentalClinicManagement.Employee
     /// </summary>
     public partial class ViewPaymentList : Page
     {
+        StaffClass staff;
         public ObservableCollection<Payment> paymentList { get; set; } = new ObservableCollection<Payment>();
         public ObservableCollection<PaymentDetail> paymentDetailList { get; set; } = new ObservableCollection<PaymentDetail>();
 
-        public ViewPaymentList()
+        public ViewPaymentList(StaffClass staff)
         {
             InitializeComponent();
+            this.staff = new StaffClass(staff);
             LoadPayment();
             LoadPaymentDetailList();
         }
@@ -40,7 +43,7 @@ namespace DentalClinicManagement.Employee
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard(staff));
             }
         }
 
@@ -50,7 +53,7 @@ namespace DentalClinicManagement.Employee
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.Dashboard(staff));
             }
         }
 
@@ -67,7 +70,7 @@ namespace DentalClinicManagement.Employee
 
                 if (mainWindow != null && mainWindow.MainFrame != null)
                 {
-                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.ViewPaymentDetail(paymentDetail));
+                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.ViewPaymentDetail(staff, paymentDetail));
                 }
             }
         }

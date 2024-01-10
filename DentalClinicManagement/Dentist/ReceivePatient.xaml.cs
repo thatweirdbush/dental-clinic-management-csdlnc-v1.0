@@ -23,9 +23,12 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class ReceivePatient : Page
     {
-        public ReceivePatient()
+        DentistClass dentist;
+
+        public ReceivePatient(DentistClass dentist)
         {
             InitializeComponent();
+            this.dentist = new DentistClass(dentist);
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -35,7 +38,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 
@@ -69,7 +72,7 @@ namespace DentalClinicManagement.Dentist
 
                 if (mainWindow != null && mainWindow.MainFrame != null)
                 {
-                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.SearchCustomerRecord());
+                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.SearchCustomerRecord(dentist));
                 }
             }
             else

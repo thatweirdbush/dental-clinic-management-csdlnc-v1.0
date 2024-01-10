@@ -1,4 +1,5 @@
-﻿using DentalClinicManagement.Dentist.Class;
+﻿using DentalClinicManagement.Account.Class;
+using DentalClinicManagement.Dentist.Class;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -23,11 +24,14 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class ViewMedication : Page
     {
+        DentistClass dentist;
         public ObservableCollection<MedicationList> medicationList { get; set; } = new ObservableCollection<MedicationList>();
 
-        public ViewMedication()
+        public ViewMedication(DentistClass dentist)
         {
             InitializeComponent();
+            this.dentist = new DentistClass(dentist);
+
             LoadMedicationList();
         }
 
@@ -37,7 +41,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 
@@ -47,7 +51,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 

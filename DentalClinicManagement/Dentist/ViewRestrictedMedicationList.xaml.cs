@@ -1,4 +1,5 @@
-﻿using DentalClinicManagement.Dentist.Class;
+﻿using DentalClinicManagement.Account.Class;
+using DentalClinicManagement.Dentist.Class;
 using DentalClinicManagement.Employee;
 using System;
 using System.Collections.Generic;
@@ -26,13 +27,15 @@ namespace DentalClinicManagement.Dentist
 
     public partial class ViewRestrictedMedicationList : Page
     {
+        DentistClass dentist;
         private Patient patient;
         private PatientRecord patientRecord;
         public ObservableCollection<MedicationList> restrictedMedicationList { get; set; } = new ObservableCollection<MedicationList>();
 
-        public ViewRestrictedMedicationList(Patient patient, PatientRecord patientRecord)
+        public ViewRestrictedMedicationList(DentistClass dentist, Patient patient, PatientRecord patientRecord)
         {
             InitializeComponent();
+            this.dentist = new DentistClass(dentist);
             this.patient = new Patient(patient);
             this.patientRecord = new PatientRecord(patientRecord);
 
@@ -45,7 +48,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPatientRecord(patient));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewPatientRecord(dentist, patient));
             }
         }
 
@@ -55,7 +58,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 
@@ -83,7 +86,7 @@ namespace DentalClinicManagement.Dentist
                 if (mainWindow != null && mainWindow.MainFrame != null)
                 {
                     // Chuyển qua cửa sổ PasswordSignUp và chuyển số điện thoại từ SignUp qua
-                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewRestrictedMedicationList(patient, patientRecord));
+                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.ViewRestrictedMedicationList(dentist, patient, patientRecord));
                 }
             }
             else

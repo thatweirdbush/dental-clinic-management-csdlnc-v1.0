@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DentalClinicManagement.Admin.Class;
+using DentalClinicManagement.Account.Class;
 
 namespace DentalClinicManagement.Admin
 {
@@ -44,9 +45,12 @@ namespace DentalClinicManagement.Admin
 
     public partial class ReportAppointment : Page
     {
-        public ReportAppointment()
+        AdminClass admin;
+       
+        public ReportAppointment(AdminClass admin)
         {
             InitializeComponent();
+            this.admin = new AdminClass(admin);
         }
 
         private void viewHome(object sender, RoutedEventArgs e)
@@ -56,7 +60,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard(admin));
             }
         }
 
