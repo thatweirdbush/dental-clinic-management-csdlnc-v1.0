@@ -1,4 +1,5 @@
-﻿using DentalClinicManagement.Dentist.Class;
+﻿using DentalClinicManagement.Account.Class;
+using DentalClinicManagement.Dentist.Class;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -23,13 +24,15 @@ namespace DentalClinicManagement.Admin
     /// </summary>
     public partial class ViewTreatmentPlanList : Page
     {
+        AdminClass admin;
 
         private Patient patient;
         public ObservableCollection<DetailedTreatmentPlan> planList { get; set; } = new ObservableCollection<DetailedTreatmentPlan>();
 
-        public ViewTreatmentPlanList(Patient patient)
+        public ViewTreatmentPlanList(AdminClass admin, Patient patient)
         {
             InitializeComponent();
+            this.admin = new AdminClass(admin);
             this.patient = new Patient(patient);
             LoadPlanList(patient);
         }
@@ -44,7 +47,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard(admin));
             }
         }
 
@@ -54,7 +57,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPatientRecord(patient));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPatientRecord(admin, patient));
             }
         }
 
@@ -66,7 +69,7 @@ namespace DentalClinicManagement.Admin
 
                 if (mainWindow != null && mainWindow.MainFrame != null)
                 {
-                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewDetailTreatmentPlan(selectedPlan, patient));
+                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewDetailTreatmentPlan(admin, selectedPlan, patient));
                 }
             }
         }

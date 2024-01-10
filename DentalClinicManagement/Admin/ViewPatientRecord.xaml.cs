@@ -1,4 +1,5 @@
-﻿using DentalClinicManagement.Dentist.Class;
+﻿using DentalClinicManagement.Account.Class;
+using DentalClinicManagement.Dentist.Class;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -22,14 +23,14 @@ namespace DentalClinicManagement.Admin
     /// </summary>
     public partial class ViewPatientRecord : Page
     {
-
+        AdminClass admin;
         private Patient patient;
         private PatientRecord patientRecord;
 
-        public ViewPatientRecord(Patient patient)
+        public ViewPatientRecord(AdminClass admin, Patient patient)
         {
             InitializeComponent();
-
+            this.admin = new AdminClass(admin);
             this.patient = new Patient(patient);
             patientRecord = LoadPatientRecord(patient.PatientID);
 
@@ -95,7 +96,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPatient());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPatient(admin));
             }
         }
 
@@ -105,7 +106,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard(admin));
             }
         }
 
@@ -121,7 +122,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewTreatmentPlanList(patient));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewTreatmentPlanList(admin, patient));
             }
         }
 
@@ -137,7 +138,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPaymentList(patient));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPaymentList(admin, patient));
             }
         }
 
@@ -153,7 +154,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewRestrictedMedicationList(patient, patientRecord));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewRestrictedMedicationList(admin, patient, patientRecord));
             }
         }
 

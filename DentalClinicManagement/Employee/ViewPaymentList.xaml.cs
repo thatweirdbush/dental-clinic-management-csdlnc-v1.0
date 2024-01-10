@@ -107,46 +107,84 @@ namespace DentalClinicManagement.Employee
             }
         }
 
+        //private void LoadPaymentDetailList()
+        //{
+        //    foreach (Payment payment in paymentList)
+        //    {
+        //        int? paymentID = payment.PaymentID;
+        //        try
+        //        {
+        //            // Câu truy vấn SQL để lấy thông tin AppointmentRequest từ database
+        //            string query = "SELECT * FROM [Payment Detail] " +
+        //                "WHERE @PaymentID = PaymentID";
+
+        //            // Tạo và mở kết nối
+        //            DB dB = new DB();
+        //            using (SqlConnection connection = dB.Connection)
+        //            {
+        //                // Tạo đối tượng SqlCommand
+        //                using (SqlCommand command = new SqlCommand(query, connection))
+        //                {
+        //                    // Thêm tham số cho câu truy vấn
+        //                    command.Parameters.AddWithValue("@PaymentID", paymentID);
+
+        //                    // Thực hiện truy vấn SQL và lấy dữ liệu
+        //                    using (SqlDataReader reader = command.ExecuteReader())
+        //                    {
+        //                        while (reader.Read())
+        //                        {
+        //                            PaymentDetail paymentDetail = new PaymentDetail(reader);
+        //                            paymentDetailList.Add(paymentDetail);
+        //                        }
+        //                        // Gán ObservableCollection làm nguồn dữ liệu cho DataGrid
+        //                        PaymentListDataGrid.ItemsSource = paymentDetailList;
+        //                    }
+        //                }
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show($"Error: {ex.Message}");
+        //        }
+        //    }
+        //}
+
+
         private void LoadPaymentDetailList()
         {
-            foreach (Payment payment in paymentList)
+            try
             {
-                int? paymentID = payment.PaymentID;
-                try
+                // Câu truy vấn SQL để lấy thông tin AppointmentRequest từ database
+                string query = "SELECT * FROM [Payment Detail]";
+
+                // Tạo và mở kết nối
+                DB dB = new DB();
+                using (SqlConnection connection = dB.Connection)
                 {
-                    // Câu truy vấn SQL để lấy thông tin AppointmentRequest từ database
-                    string query = "SELECT * FROM [Payment Detail] " +
-                        "WHERE @PaymentID = PaymentID";
-
-                    // Tạo và mở kết nối
-                    DB dB = new DB();
-                    using (SqlConnection connection = dB.Connection)
+                    // Tạo đối tượng SqlCommand
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        // Tạo đối tượng SqlCommand
-                        using (SqlCommand command = new SqlCommand(query, connection))
-                        {
-                            // Thêm tham số cho câu truy vấn
-                            command.Parameters.AddWithValue("@PaymentID", paymentID);
 
-                            // Thực hiện truy vấn SQL và lấy dữ liệu
-                            using (SqlDataReader reader = command.ExecuteReader())
+                        // Thực hiện truy vấn SQL và lấy dữ liệu
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
                             {
-                                while (reader.Read())
-                                {
-                                    PaymentDetail paymentDetail = new PaymentDetail(reader);
-                                    paymentDetailList.Add(paymentDetail);
-                                }
-                                // Gán ObservableCollection làm nguồn dữ liệu cho DataGrid
-                                PaymentListDataGrid.ItemsSource = paymentDetailList;
+                                PaymentDetail paymentDetail = new PaymentDetail(reader);
+                                paymentDetailList.Add(paymentDetail);
                             }
+                            // Gán ObservableCollection làm nguồn dữ liệu cho DataGrid
+                            PaymentListDataGrid.ItemsSource = paymentDetailList;
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error: {ex.Message}");
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
+
     }
 }

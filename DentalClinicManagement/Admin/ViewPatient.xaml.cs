@@ -53,7 +53,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard(admin));
             }
         }
 
@@ -65,7 +65,7 @@ namespace DentalClinicManagement.Admin
 
                 if (mainWindow != null && mainWindow.MainFrame != null)
                 {
-                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPatientRecord(selectedPatient));
+                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPatientRecord(admin, selectedPatient));
                 }
             }
         }
@@ -76,7 +76,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddPatient());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.AddPatient(admin));
             }
         }
 
@@ -86,7 +86,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewAppointmentRequest());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewAppointmentRequest(admin));
             }
         }
 

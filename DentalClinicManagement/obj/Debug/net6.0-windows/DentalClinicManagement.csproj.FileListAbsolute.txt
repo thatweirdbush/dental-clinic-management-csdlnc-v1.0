@@ -455,3 +455,25 @@ C:\Users\Dell\Desktop\CSDLNC\dental-clinic-management-csdlnc-v1.0\DentalClinicMa
 C:\Users\Dell\Desktop\CSDLNC\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewTreatmentPlanList.baml
 C:\Users\Dell\Desktop\CSDLNC\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\AddPatient.g.cs
 C:\Users\Dell\Desktop\CSDLNC\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\AddPatient.baml
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\AddPatient.g.cs
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\MakePayment.g.cs
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewAppointmentRequest.g.cs
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewDetailTreatmentPlan.g.cs
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewNeedPaymentList.g.cs
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewPatientRecord.g.cs
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewPaymentDetail.g.cs
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewPaymentList.g.cs
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewRestrictedMedicationList.g.cs
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewTreatingTeethList.g.cs
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewTreatmentPlanList.g.cs
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\AddPatient.baml
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\MakePayment.baml
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewAppointmentRequest.baml
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewDetailTreatmentPlan.baml
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewNeedPaymentList.baml
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewPatientRecord.baml
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewPaymentDetail.baml
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewPaymentList.baml
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewRestrictedMedicationList.baml
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewTreatingTeethList.baml
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewTreatmentPlanList.baml

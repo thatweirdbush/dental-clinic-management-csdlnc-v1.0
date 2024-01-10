@@ -18,7 +18,9 @@ namespace DentalClinicManagement
         //public string ConnectionString { get; set; } = "Server=DESKTOP-8IL3H18\\SQLEXPRESS01;Database=ImportExcel;Integrated Security=True;";
 
         // 21120082_PhanQuocHuy's ConnectionString
-        public string ConnectionString { get; set; } = "Server=YANGGGGG\\TESTDB;Database=QLPhongKhamNhaKhoa;Integrated Security=True;";
+        //public string ConnectionString { get; set; } = "Server=YANGGGGG\\TESTDB;Database=QLPhongKhamNhaKhoa;Integrated Security=True;";
+
+        public string ConnectionString { get; set; } = "Server=LAPTOP-PRB0VQ46;Database=QLPhongKhamNhaKhoa;Integrated Security=True;";
 
 
         public string tableName = "QLPhongKhamNhaKhoa";

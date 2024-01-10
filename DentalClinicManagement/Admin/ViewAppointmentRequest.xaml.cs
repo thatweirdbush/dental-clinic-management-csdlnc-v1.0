@@ -1,4 +1,5 @@
-﻿using DentalClinicManagement.Employee.Class;
+﻿using DentalClinicManagement.Account.Class;
+using DentalClinicManagement.Employee.Class;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -23,11 +24,13 @@ namespace DentalClinicManagement.Admin
     /// </summary>
     public partial class ViewAppointmentRequest : Page
     {
+        AdminClass admin;
         public ObservableCollection<AppointmentRequest> appointments { get; set; } = new ObservableCollection<AppointmentRequest>();
 
-        public ViewAppointmentRequest()
+        public ViewAppointmentRequest(AdminClass admin)
         {
             InitializeComponent();
+            this.admin = new AdminClass(admin);
             LoadAppointmentRequests();
         }
 
@@ -37,7 +40,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPatient());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPatient(admin));
             }
         }
 
@@ -47,7 +50,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard(admin));
             }
         }
 

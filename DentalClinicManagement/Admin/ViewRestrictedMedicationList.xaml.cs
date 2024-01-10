@@ -1,4 +1,5 @@
 ﻿using DentalClinicManagement.Dentist.Class;
+using DentalClinicManagement.Account.Class;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -23,13 +24,15 @@ namespace DentalClinicManagement.Admin
     /// </summary>
     public partial class ViewRestrictedMedicationList : Page
     {
+        private AdminClass admin;
         private Patient patient;
         private PatientRecord patientRecord;
         public ObservableCollection<MedicationList> restrictedMedicationList { get; set; } = new ObservableCollection<MedicationList>();
 
-        public ViewRestrictedMedicationList(Patient patient, PatientRecord patientRecord)
+        public ViewRestrictedMedicationList(AdminClass admin, Patient patient, PatientRecord patientRecord)
         {
             InitializeComponent();
+            this.admin = new AdminClass(admin);
             this.patient = new Patient(patient);
             this.patientRecord = new PatientRecord(patientRecord);
 
@@ -41,7 +44,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPatientRecord(patient));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPatientRecord(admin, patient));
             }
         }
 
@@ -51,7 +54,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard(admin));
             }
         }
 
@@ -79,7 +82,7 @@ namespace DentalClinicManagement.Admin
                 if (mainWindow != null && mainWindow.MainFrame != null)
                 {
                     // Chuyển qua cửa sổ PasswordSignUp và chuyển số điện thoại từ SignUp qua
-                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewRestrictedMedicationList(patient, patientRecord));
+                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewRestrictedMedicationList(admin, patient, patientRecord));
                 }
             }
             else

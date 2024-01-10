@@ -24,6 +24,7 @@ namespace DentalClinicManagement.Admin
     /// </summary>
     public partial class MedicalManagement : Page
     {
+        AdminClass admin;
         public ObservableCollection<MedicationList> medicationList { get; set; } = new ObservableCollection<MedicationList>();
        
         public MedicalManagement(AdminClass admin)
@@ -49,7 +50,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard(admin));
             }
         }
 

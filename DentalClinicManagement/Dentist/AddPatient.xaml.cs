@@ -25,7 +25,6 @@ namespace DentalClinicManagement.Dentist
     public partial class AddPatient : Page
     {
         DentistClass dentist;
-
         public AddPatient(DentistClass dentist)
         {
             InitializeComponent();

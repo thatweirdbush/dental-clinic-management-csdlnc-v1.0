@@ -1,4 +1,5 @@
-﻿using DentalClinicManagement.Dentist.Class;
+﻿using DentalClinicManagement.Account.Class;
+using DentalClinicManagement.Dentist.Class;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,11 @@ namespace DentalClinicManagement.Admin
     /// </summary>
     public partial class AddPatient : Page
     {
-        public AddPatient()
+        AdminClass admin;
+        public AddPatient(AdminClass admin)
         {
             InitializeComponent();
+            this.admin = new AdminClass(admin);
         }
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
@@ -31,7 +34,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPatient());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPatient(admin));
             }
         }
 
@@ -41,7 +44,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard(admin));
             }
         }
 
@@ -71,7 +74,7 @@ namespace DentalClinicManagement.Admin
 
                     if (mainWindow != null && mainWindow.MainFrame != null)
                     {
-                        mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.AddPatient());
+                        mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.AddPatient(admin));
                     }
                 }
                 else
@@ -106,7 +109,7 @@ namespace DentalClinicManagement.Admin
 
                     if (mainWindow != null && mainWindow.MainFrame != null)
                     {
-                        mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.AddPatient());
+                        mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.AddPatient(admin));
                     }
                 }
                 else

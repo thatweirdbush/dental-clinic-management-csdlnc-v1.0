@@ -1,4 +1,5 @@
-﻿using DentalClinicManagement.Dentist.Class;
+﻿using DentalClinicManagement.Account.Class;
+using DentalClinicManagement.Dentist.Class;
 using DentalClinicManagement.Employee.Class;
 using System;
 using System.Collections.Generic;
@@ -22,12 +23,14 @@ namespace DentalClinicManagement.Admin
     /// </summary>
     public partial class ViewPaymentDetail : Page
     {
+        AdminClass admin;
         Patient patient;
         Payment payment;
         PaymentDetail paymentDetail;
         public ViewPaymentDetail(Patient patient, Payment payment, PaymentDetail paymentDetail)
         {
             InitializeComponent();
+            this.admin = new AdminClass(admin);
             this.patient = new Patient(patient);
             this.payment = new Payment(payment);
             this.paymentDetail = new PaymentDetail(paymentDetail);
@@ -51,7 +54,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard(admin));
             }
         }
 
@@ -61,7 +64,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPatientRecord(patient));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPatientRecord(admin, patient));
             }
         }
     }

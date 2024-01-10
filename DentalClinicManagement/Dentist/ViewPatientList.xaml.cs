@@ -32,7 +32,6 @@ namespace DentalClinicManagement.Dentist
         {
             InitializeComponent();
             this.dentist = new DentistClass(dentist);
-
             LoadPatientList();
         }
 

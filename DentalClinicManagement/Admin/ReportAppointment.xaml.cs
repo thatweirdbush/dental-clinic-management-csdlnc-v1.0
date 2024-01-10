@@ -28,6 +28,7 @@ namespace DentalClinicManagement.Admin
 
     public partial class ReportAppointment : Page
     {
+        AdminClass admin;
         public ObservableCollection<ReportAppoint> reportAppointList { get; set; } = new ObservableCollection<ReportAppoint>();
 
         public ReportAppointment(AdminClass admin)

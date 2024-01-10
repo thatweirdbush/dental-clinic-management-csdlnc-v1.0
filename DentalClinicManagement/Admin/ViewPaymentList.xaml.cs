@@ -1,4 +1,5 @@
-﻿using DentalClinicManagement.Dentist.Class;
+﻿using DentalClinicManagement.Account.Class;
+using DentalClinicManagement.Dentist.Class;
 using DentalClinicManagement.Employee.Class;
 using System;
 using System.Collections.Generic;
@@ -24,13 +25,14 @@ namespace DentalClinicManagement.Admin
     /// </summary>
     public partial class ViewPaymentList : Page
     {
-
+        AdminClass admin;
         Patient patient;
         public ObservableCollection<Payment> paymentList { get; set; } = new ObservableCollection<Payment>();
         public ObservableCollection<PaymentDetail> paymentDetailList { get; set; } = new ObservableCollection<PaymentDetail>();
-        public ViewPaymentList(Patient patient)
+        public ViewPaymentList(AdminClass admin, Patient patient)
         {
             InitializeComponent();
+            this.admin = new AdminClass(admin);
             this.patient = new Patient(patient);
             LoadPaymentListByPatient(patient);
             LoadPaymentDetailList();
@@ -41,7 +43,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPatientRecord(patient));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewPatientRecord(admin, patient));
             }
         }
 
@@ -51,7 +53,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard(admin));
             }
         }
 

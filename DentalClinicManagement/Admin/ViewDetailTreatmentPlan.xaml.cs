@@ -1,4 +1,5 @@
-﻿using DentalClinicManagement.Dentist.Class;
+﻿using DentalClinicManagement.Account.Class;
+using DentalClinicManagement.Dentist.Class;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,10 @@ namespace DentalClinicManagement.Admin
     /// </summary>
     public partial class ViewDetailTreatmentPlan : Page
     {
+        private AdminClass admin;
         private DetailedTreatmentPlan plan;
         private Patient patient;
-        public ViewDetailTreatmentPlan(DetailedTreatmentPlan plan, Patient patient)
+        public ViewDetailTreatmentPlan(AdminClass admin, DetailedTreatmentPlan plan, Patient patient)
         {
             InitializeComponent();
             this.plan = new DetailedTreatmentPlan(plan);
@@ -38,7 +40,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard(admin));
             }
         }
 
@@ -48,7 +50,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewTreatmentPlanList(patient));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewTreatmentPlanList(admin, patient));
             }
         }
 
@@ -58,7 +60,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewTreatingTeethList(plan, patient));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ViewTreatingTeethList(admin, plan, patient));
             }
         }
     }
