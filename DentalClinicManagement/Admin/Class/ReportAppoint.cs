@@ -11,7 +11,7 @@ namespace DentalClinicManagement.Admin.Class
 {
     public class ReportAppoint
     {
-        public string? Date { get; set; }
+        public DateTime? Date { get; set; }
         public string? Shift { get; set; }
         public string? PatientName { get; set; }
         public string? Dentist { get; set; }
@@ -22,7 +22,7 @@ namespace DentalClinicManagement.Admin.Class
 
         public ReportAppoint(SqlDataReader reader)
         {
-            Date = reader["TimeOfRequest"].ToString();
+            Date = reader["TimeOfRequest"] != DBNull.Value ? (DateTime?)reader["TimeOfRequest"] : null;
             Shift = reader["Shift"].ToString();
             PatientName = reader["Name"].ToString();
             Dentist = reader["DentistName"].ToString();

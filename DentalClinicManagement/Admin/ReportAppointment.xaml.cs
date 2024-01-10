@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DentalClinicManagement.Admin.Class;
+using DentalClinicManagement.Dentist;
 using DentalClinicManagement.Dentist.Class;
 
 namespace DentalClinicManagement.Admin
@@ -81,7 +82,35 @@ namespace DentalClinicManagement.Admin
             }
         }
 
+        private void FilterDataGrid()
+        {
+            DateTime? fromDate = fromDatePicker.SelectedDate;
+            DateTime? toDate = toDatePicker.SelectedDate;
 
+            string selectDentist = DentistSearch.Text;
 
+            // Kiểm tra nếu cả hai DatePicker đều đã được chọn và một trạng thái đã được chọn
+            if (fromDate.HasValue && toDate.HasValue && selectDentist != null)
+            {
+                if (fromDate.Value > toDate.Value)
+                {
+                    MessageBox.Show("Vui lòng chọn ngày bắt đầu và kết thúc hợp lệ", "Ngày không hợp lệ", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    // Lọc dữ liệu trong khoảng từ fromDate đến toDate và theo trạng thái
+                    ReportAppointListView.ItemsSource = reportAppointList.Where(c => c.Date >= fromDate && c.Date <= toDate && (string.Equals(c.Dentist, selectDentist) == true));
+                }
+            }
+            if (!fromDate.HasValue && !toDate.HasValue && selectDentist != null)
+            {
+                ReportAppointListView.ItemsSource = reportAppointList.Where(c => c.Dentist == selectDentist);
+            }
+        }
+
+        private void Filter_Button_Click(object sender, RoutedEventArgs e)
+        {
+            FilterDataGrid();
+        }
     }
 }
