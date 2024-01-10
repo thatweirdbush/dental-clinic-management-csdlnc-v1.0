@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DentalClinicManagement.Admin.Class;
+using DentalClinicManagement.Dentist.Class;
 
 namespace DentalClinicManagement.Admin
 {
@@ -21,6 +23,7 @@ namespace DentalClinicManagement.Admin
 
     public partial class DashBoard : Page
     {
+        private Victim victim;
         public DashBoard()
         {
             InitializeComponent();
@@ -100,12 +103,17 @@ namespace DentalClinicManagement.Admin
 
         private void reportTreatment(object sender, RoutedEventArgs e)
         {
+            if (victim == null)
+            {
+                MessageBox.Show("Không truy cập được vì hồ sơ bệnh án không tồn tại.");
+                return;
+            }
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
 
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ReportTreatment());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.ReportTreatment(victim));
             }
         }
 

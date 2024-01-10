@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace DentalClinicManagement.Admin
     /// Interaction logic for ReportTreatment.xaml
     /// </summary>
 
-    public class MainViewModel2 : INotifyPropertyChanged
+/*    public class MainViewModel2 : INotifyPropertyChanged
     {
 
         private ObservableCollection<ReportTreat> _reportTreat;
@@ -41,19 +42,61 @@ namespace DentalClinicManagement.Admin
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-    }
+    }*/
 
     public partial class ReportTreatment : Page
     {
-        public ReportTreatment()
+        private Victim victim;
+        public ObservableCollection<ReportTreat> treatmentList { get; set; } = new ObservableCollection<ReportTreat>();
+
+        public ReportTreatment(Victim victim)
         {
             InitializeComponent();
+            this.victim = new Victim(victim);
+            LoadTreatmentList(victim);
+
         }
 
-        private void viewHome(object sender, RoutedEventArgs e)
+        private void LoadTreatmentList(Victim victim)
+        {
+            int? patientID = victim.PatientID;
+            try
+            {
+                // Câu truy vấn SQL để lấy thông tin Detailed Treatment Plan từ database
+                string query = "SELECT * FROM [Detailed Treatment Plan]" +
+                    "WHERE @PatientID = PatientID";
+
+                // Tạo và mở kết nối
+                DB dB = new DB();
+                using (SqlConnection connection = dB.Connection)
+                {
+                    // Tạo đối tượng SqlCommand
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@PatientID", patientID);
+                        // Thực hiện truy vấn SQL và lấy dữ liệu
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                ReportTreat report = new ReportTreat(reader);
+                                treatmentList.Add(report);
+                            }
+                            // Gán ObservableCollection làm nguồn dữ liệu cho DataGrid
+                            ReportTreatmentListDataGrid.ItemsSource = treatmentList;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
-
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
@@ -61,26 +104,9 @@ namespace DentalClinicManagement.Admin
             }
         }
 
-        private void Report(object sender, RoutedEventArgs e)
+        private void FilterButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(DentistSearch.Text))
-            {
-                MainViewModel2 viewModel = new MainViewModel2()
-                {
-                    ReportTreats = new ObservableCollection<ReportTreat>
-                    {
-                        new ReportTreat { ID = "001", Date = "01/01/2023", PatientName = "Giang", Status = " " },
-                        new ReportTreat { ID = "002", Date = "02/01/2023", PatientName = "Huy", Status = " " },
-                    },
-                };
-                this.DataContext = viewModel;
 
-            }
-            else
-            {
-
-                MessageBox.Show("Please enter name of dentist");
-            }
         }
     }
 }
