@@ -197,7 +197,7 @@ namespace DentalClinicManagement.Dentist {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DentalClinicManagement;V1.0.0.0;component/dentist/addpatient.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DentalClinicManagement;component/dentist/addpatient.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Dentist\AddPatient.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

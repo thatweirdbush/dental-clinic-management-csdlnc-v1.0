@@ -290,3 +290,13 @@ D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_h
 D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Dentist\MakePayment.baml
 D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Dentist\AddPatient.g.cs
 D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Dentist\AddPatient.baml
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\CheckAppointment.g.cs
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ReportAppointment.g.cs
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewPatient.g.cs
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewRecord.g.cs
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Employee\ViewSchedule.g.cs
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\CheckAppointment.baml
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ReportAppointment.baml
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewPatient.baml
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Admin\ViewRecord.baml
+D:\Visual Studio Solutions\CSDL NC\dental-clinic-management-csdlnc_ver1_branch_huy\dental-clinic-management-csdlnc-v1.0\DentalClinicManagement\obj\Debug\net6.0-windows\Employee\ViewSchedule.baml

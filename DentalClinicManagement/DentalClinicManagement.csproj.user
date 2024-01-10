@@ -134,6 +134,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Employee\ViewPaymentList.xaml.cs">
+	<SubType>Code</SubType>
+	</Compile>
     <Compile Update="Employee\ViewSchedule.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -275,6 +277,8 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Employee\ViewPaymentList.xaml">
+	<SubType>Designer</SubType>
+	</Page>
     <Page Update="Employee\ViewSchedule.xaml">
       <SubType>Designer</SubType>
     </Page>

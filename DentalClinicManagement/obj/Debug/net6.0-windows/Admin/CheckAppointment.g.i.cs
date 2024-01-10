@@ -134,7 +134,7 @@ namespace DentalClinicManagement.Admin {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DentalClinicManagement;V1.0.0.0;component/admin/checkappointment.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DentalClinicManagement;component/admin/checkappointment.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Admin\CheckAppointment.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

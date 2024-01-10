@@ -86,7 +86,7 @@ namespace DentalClinicManagement.Employee {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DentalClinicManagement;V1.0.0.0;component/employee/viewschedule.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DentalClinicManagement;component/employee/viewschedule.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Employee\ViewSchedule.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
