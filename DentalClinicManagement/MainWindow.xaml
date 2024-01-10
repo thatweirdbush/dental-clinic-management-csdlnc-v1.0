@@ -12,5 +12,6 @@
     </Window.Resources>
     <Grid>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+
     </Grid>
 </Window>

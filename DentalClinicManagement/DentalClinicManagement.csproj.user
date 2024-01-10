@@ -25,10 +25,22 @@
     <Compile Update="Admin\AccountManagement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Admin\CheckAppointment.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Admin\DashBoard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Admin\MedicalManagement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\ReportAppointment.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\ViewPatient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Admin\ViewRecord.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Customer\DashBoard.xaml.cs">
@@ -122,6 +134,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Employee\ViewPaymentList.xaml.cs">
+    <Compile Update="Employee\ViewSchedule.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -144,10 +157,22 @@
     <Page Update="Admin\AccountManagement.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Admin\CheckAppointment.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Admin\DashBoard.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Admin\MedicalManagement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\ReportAppointment.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\ViewPatient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Admin\ViewRecord.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Customer\DashBoard.xaml">
@@ -250,6 +275,7 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Employee\ViewPaymentList.xaml">
+    <Page Update="Employee\ViewSchedule.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

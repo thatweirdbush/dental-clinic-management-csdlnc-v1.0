@@ -67,7 +67,7 @@ namespace DentalClinicManagement.Employee
         }
 
         private void ScheduleButton_Click(object sender, RoutedEventArgs e)
-        {
+            {
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
 
 
@@ -77,14 +77,35 @@ namespace DentalClinicManagement.Employee
             }
         }
 
-        private void PaymentListButton_Click(object sender, RoutedEventArgs e)
+        private void PaymentListButton_Click(object sender, RoutedEventArgs e){
+            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+
+            if (mainWindow != null && mainWindow.MainFrame != null)
+            {
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.ViewPaymentList());
+            }
+        }
+
+        private void ViewAppointment(object sender, RoutedEventArgs e)
         {
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
 
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.ViewPaymentList());
+
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.CheckAppoinment());
+            }
+        }
+
+        private void viewSchedule(object sender, RoutedEventArgs e)
+        {
+            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+
+
+            if (mainWindow != null && mainWindow.MainFrame != null)
+            {
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.ViewSchedule());
             }
         }
     }
