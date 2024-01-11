@@ -23,6 +23,7 @@ namespace DentalClinicManagement.Dentist
         public AddTreatmentPlan_ChooseTeeth()
         {
             InitializeComponent();
+            AddSurface();
         }
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
@@ -52,6 +53,17 @@ namespace DentalClinicManagement.Dentist
                 mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_Confirm());
             }
         }
+
+        private void AddSurface()
+        {
+            Surface.Items.Add("L (Mặt trong)");
+            Surface.Items.Add("F (Mặt ngoài)");
+            Surface.Items.Add("D (Mặt xa)");
+            Surface.Items.Add("M (Mặt gần)");
+            Surface.Items.Add("T (Mặt đỉnh)");
+            Surface.Items.Add("R (Mặt chân răng)");
+        }
+        
 
     }
 }

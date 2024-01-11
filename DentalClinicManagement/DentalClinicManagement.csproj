@@ -32,7 +32,9 @@
     <None Remove="images\setting.png" />
     <None Remove="images\signUpTeeth.png" />
     <None Remove="images\teeth.jpg" />
+    <None Remove="images\TeethList.jpg" />
     <None Remove="images\telephone.png" />
+    <None Remove="images\tooth.jpg" />
     <None Remove="images\update-appointment.png" />
     <None Remove="images\user-avatar.jpg" />
     <None Remove="images\UserAvatar.png" />
@@ -113,8 +115,14 @@
     <Resource Include="images\teeth.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="images\TeethList.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="images\telephone.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\tooth.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="images\update-appointment.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
