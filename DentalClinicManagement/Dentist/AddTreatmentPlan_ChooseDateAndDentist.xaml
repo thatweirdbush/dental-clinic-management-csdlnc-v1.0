@@ -61,7 +61,7 @@
                     </Border.BorderBrush>
                     <TextBlock x:Name="TreatmentID" TextWrapping="Wrap" Text="{Binding TreatmentChildID}" Margin="0,0,8,0" FontSize="16" VerticalAlignment="Center"/>
                 </Border>
-                <Button x:Name="ChooseTeethButton" Content="Chọn răng" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Canvas.Left="295" Canvas.Top="487" Width="610" Click="ChooseTeethButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <Button x:Name="ChooseTeethButton" Content="Chọn răng" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Canvas.Left="295" Canvas.Top="373" Width="610" Click="ChooseTeethButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="24"/>
@@ -74,14 +74,7 @@
                         <DropShadowEffect ShadowDepth="3" BlurRadius="10" Color="Gray"/>
                     </Button.Effect>
                 </Button>
-                <Label Content="Mã điều trị" FontSize="20" FontFamily="Segoe UI Semibold" Height="39" Canvas.Left="248" Canvas.Top="111" Width="120" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <Border BorderThickness="2.5" CornerRadius="10" Width="334" Height="40" Canvas.Left="646" Canvas.Top="160" Padding="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
-                    <Border.BorderBrush>
-                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
-                    </Border.BorderBrush>
-                    <TextBlock x:Name="Name" TextWrapping="Wrap" Text="{Binding Name}" Margin="0,0,8,0" FontSize="16" VerticalAlignment="Center"/>
-                </Border>
-                <Label Content="Tên điều trị" FontSize="20" FontFamily="Segoe UI Semibold" Height="39" Canvas.Left="646" Canvas.Top="111" Width="120" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Label Content="Mã điều trị" FontSize="20" FontFamily="Segoe UI Semibold" Height="39" Canvas.Left="248" Canvas.Top="116" Width="120" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 <Label Content="Ngày" FontSize="20" FontFamily="Segoe UI Semibold" Height="39" Canvas.Left="248" Canvas.Top="230" Width="120" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                 <Border BorderThickness="2.5" CornerRadius="10" Width="332" Height="40" Canvas.Left="248" Canvas.Top="274" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="10,0,0,0">
                     <Border.BorderBrush>
@@ -89,8 +82,8 @@
                     </Border.BorderBrush>
                     <DatePicker x:Name="Date" SelectedDate="{Binding Date, Mode=TwoWay}" Margin="-2,0,8,0" FontSize="16" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Center" Height="28"/>
                 </Border>
-                <Label Content="Bác sĩ" FontSize="20" FontFamily="Segoe UI Semibold" Height="39" Canvas.Left="248" Canvas.Top="331" Width="120" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                <TextBox x:Name="DentistTextBox" Width="332" Height="40" FontSize="16" Canvas.Left="248" Canvas.Top="375" BorderThickness="2.5,2.5,2.5,2.5" VerticalContentAlignment="Center" Padding="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Label Content="Bác sĩ" FontSize="20" FontFamily="Segoe UI Semibold" Height="39" Canvas.Left="646" Canvas.Top="116" Width="120" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <TextBox x:Name="DentistTextBox" Width="332" Height="40" FontSize="16" Canvas.Left="646" Canvas.Top="160" BorderThickness="2.5,2.5,2.5,2.5" VerticalContentAlignment="Center" Padding="10,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" >
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>
@@ -100,8 +93,8 @@
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
                     </TextBox.BorderBrush>
                 </TextBox>
-                <Label Content="Trợ khám" FontSize="20" FontFamily="Segoe UI Semibold" Height="39" Canvas.Left="655" Canvas.Top="331" Width="120" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox x:Name="AssistantTextBox" Width="332" Height="40" FontSize="16" Canvas.Left="646" Canvas.Top="375" BorderThickness="2.5,2.5,2.5,2.5" VerticalContentAlignment="Center" Padding="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Label Content="Trợ khám" FontSize="20" FontFamily="Segoe UI Semibold" Height="39" Canvas.Left="646" Canvas.Top="230" Width="120" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox x:Name="AssistantTextBox" Width="332" Height="40" FontSize="16" Canvas.Left="646" Canvas.Top="274" BorderThickness="2.5,2.5,2.5,2.5" VerticalContentAlignment="Center" Padding="10,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" >
                     <TextBox.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="10"/>
