@@ -40,13 +40,6 @@
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button Content="Xem, sửa tài khoản" Width="364" Height="49" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="viewAccount" Canvas.Left="33" Canvas.Top="506" HorizontalAlignment="Left" VerticalAlignment="Top" >
-                    <Button.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="20"/>
-                        </Style>
-                    </Button.Resources>
-                </Button>
                 <Button Content="Xem cuộc hẹn" Width="364" Height="49" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="checkAppointment" Canvas.Left="426" Canvas.Top="506" HorizontalAlignment="Left" VerticalAlignment="Center" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">

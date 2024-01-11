@@ -14,7 +14,7 @@
     <Canvas Background="White">
         <StackPanel Orientation="Vertical">
             <Canvas Height="100" Width="1200" Background="#39A7FF">
-                <TextBlock Text="Báo cáo các cuộc hẹn" FontSize="40" FontWeight="Bold" HorizontalAlignment="Left" Height="53" Canvas.Left="69" Foreground="White" Canvas.Top="23" VerticalAlignment="Center" Width="463"/>
+                <TextBlock Text="Báo cáo các điều trị" FontSize="40" FontWeight="Bold" HorizontalAlignment="Left" Height="53" Canvas.Left="69" Foreground="White" Canvas.Top="23" VerticalAlignment="Center" Width="463"/>
                 <Image Source="../images/teeth.jpg" Width="127" Height="112" Canvas.Left="1063" Canvas.Top="-6"/>
             </Canvas>
             <StackPanel Orientation="Horizontal">
@@ -23,7 +23,7 @@
                     <DatePicker Name="fromDatePicker" Width="242" Height="30" Canvas.Left="23" Canvas.Top="67" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
                     <TextBlock Name="Patient" Text="Bệnh nhân" FontSize="20" Height="31" Canvas.Left="26" Foreground="Black" Canvas.Top="136" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <ListView Name="ReportTreatListView" Height="325" Width="754" Canvas.Left="222" Canvas.Top="245" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <ListView Name="ReportTreatListView" Height="325" Width="754" Canvas.Left="222" Canvas.Top="245" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Mã điều trị" Width="150" DisplayMemberBinding="{Binding ConductedTreatmentID}"/>

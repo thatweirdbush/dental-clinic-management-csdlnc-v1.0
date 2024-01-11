@@ -108,7 +108,7 @@ namespace DentalClinicManagement.Admin
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard(admin));
             }
         }
 

@@ -30,7 +30,7 @@
             <Canvas Background="White">
                 <Label Content="Chọn liệu trình con" FontSize="30" FontFamily="Segoe UI Semibold" Height="131" Canvas.Left="240" Canvas.Top="11" Width="300" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="Black"/>
                 <!-- Record Data -->
-                <DataGrid x:Name="TreatmentChildListDataGrid" AutoGenerateColumns="False" Canvas.Left="240" Canvas.Top="111" HorizontalAlignment="Center" Height="324" VerticalAlignment="Top" Width="720" HorizontalScrollBarVisibility="Disabled" FontSize="14" FontWeight="SemiBold" MouseDoubleClick="TreatmentChildListDataGrid_MouseDoubleClick">
+                <DataGrid x:Name="TreatmentChildListDataGrid" AutoGenerateColumns="False" Canvas.Left="240" Canvas.Top="111" HorizontalAlignment="Center" Height="434" VerticalAlignment="Top" Width="720" HorizontalScrollBarVisibility="Disabled" FontSize="14" FontWeight="SemiBold" MouseDoubleClick="TreatmentChildListDataGrid_MouseDoubleClick">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Mã điều trị" Binding="{Binding TreatmentID}" Width="*">
                             <DataGridTextColumn.ElementStyle>
@@ -70,19 +70,6 @@
                     </Button.Effect>
                 </Button>
                 <Button x:Name="BackButton" Content="◀ Trở về" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Canvas.Left="673" Canvas.Top="40" Width="102" Click="BackButton_Click" HorizontalAlignment="Left" VerticalAlignment="Center" >
-                    <Button.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="24"/>
-                        </Style>
-                    </Button.Resources>
-                    <Button.Background>
-                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
-                    </Button.Background>
-                    <Button.Effect>
-                        <DropShadowEffect ShadowDepth="3" BlurRadius="10" Color="Gray"/>
-                    </Button.Effect>
-                </Button>
-                <Button x:Name="ChooseDateAndDentistButton" Content="Chọn lịch và bác sĩ" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Canvas.Left="465" Canvas.Top="475" Width="270" Click="ChooseDateAndDentistButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="24"/>

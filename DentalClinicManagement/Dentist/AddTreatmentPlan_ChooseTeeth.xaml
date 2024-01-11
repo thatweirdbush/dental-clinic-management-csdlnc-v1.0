@@ -23,7 +23,14 @@
                 <Border.BorderBrush>
                     <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
                 </Border.BorderBrush>
-                <ComboBox x:Name="Surface" Height="42" Width="210" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-12,-2,0,0" FontSize="16"/>
+                <ComboBox x:Name="Surface" Height="42" Width="210" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="-12,-2,0,0" FontSize="16">
+                    <ComboBoxItem Content="1"/>
+                    <ComboBoxItem Content="2"/>
+                    <ComboBoxItem Content="3"/>
+                    <ComboBoxItem Content="4"/>
+                    <ComboBoxItem Content="5"/>
+                    <ComboBoxItem Content="6"/>
+                </ComboBox>
             </Border>
         </Canvas>
         <Canvas Grid.Column="0" Background="White" Grid.RowSpan="2">

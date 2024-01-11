@@ -23,10 +23,12 @@ namespace DentalClinicManagement.Employee
     public partial class Dashboard : Page
     {
         StaffClass staff;
+
         public Dashboard(StaffClass staff)
         {
             InitializeComponent();
             this.staff = new StaffClass(staff);
+            MainCanvas.DataContext = this.staff;
         }
 
 
@@ -48,7 +50,7 @@ namespace DentalClinicManagement.Employee
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.CheckAppoinment(staff));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.AddPatient(staff));
             }
         }
 
@@ -59,7 +61,7 @@ namespace DentalClinicManagement.Employee
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.SearchCustomerRecord(staff));
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Employee.ViewPatientList(staff));
             }
         }
 

@@ -14,11 +14,10 @@
     <Canvas Background="White">
         <StackPanel Orientation="Horizontal">
 
-            <Canvas Height="750" Width="400" Background="#FF00C1E6">
-                <Image Source="../images/teeth.jpg" Width="100" Height="96" Canvas.Left="6" Canvas.Top="7"/>
+            <Canvas x:Name="MainCanvas" Height="750" Width="400" Background="#39a7ff">
                 <Image Source="../images/ava_10.png" Width="152" Height="150" Canvas.Left="124" Canvas.Top="66"/>
-                <TextBlock Text="Dentistry Plus" FontSize="24" FontFamily="Bookman Old Style" FontWeight="Bold" HorizontalAlignment="Center" Height="76" Canvas.Left="211" Foreground="White" Canvas.Top="17" VerticalAlignment="Top"/>
-                <TextBlock Text="Tên người dùng" Canvas.Left="118" Canvas.Top="231" FontSize="22" FontWeight="Bold"/>
+                <TextBlock Text="Dentistry Plus" FontSize="24" FontFamily="Bookman Old Style" FontWeight="Bold" HorizontalAlignment="Left" Height="76" Canvas.Left="10" Foreground="White" Canvas.Top="10" VerticalAlignment="Top"/>
+                <TextBlock Text="{Binding Name}" Canvas.Left="118" Canvas.Top="231" FontSize="22" FontWeight="Bold"/>
                 <TextBlock Text="Nhân viên" Canvas.Left="147" Canvas.Top="265" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Button Name="logOutButton" Content="Đăng Xuất" Width="364" Height="49" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="logOutButton_Click" Canvas.Left="18" Canvas.Top="588" HorizontalAlignment="Center" VerticalAlignment="Top" >
                     <Button.Resources>
@@ -40,28 +39,21 @@
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button Name="findPatientButton" Content="Tìm kiếm hồ sơ bệnh nhân" Width="305" Height="67" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="findPatientButton_Click" Canvas.Left="33" Canvas.Top="459" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <Button Name="findPatientButton" Content="Hồ sơ bệnh nhân" Width="305" Height="66" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="findPatientButton_Click" Canvas.Left="33" Canvas.Top="490" HorizontalAlignment="Center" VerticalAlignment="Top" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="20"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button x:Name="findPatientButton_Copy" Content="Xem cuộc hẹn" Width="305" Height="68" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="ViewAppointment" Canvas.Left="33" Canvas.Top="635" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <Button x:Name="findPatientButton_Copy1" Content="Xem lịch làm việc của nha sĩ" Width="304" Height="68" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="viewSchedule" Canvas.Left="468" Canvas.Top="629" HorizontalAlignment="Center" VerticalAlignment="Top" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="20"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button x:Name="findPatientButton_Copy1" Content="Xem lịch làm việc của nha sĩ" Width="304" Height="68" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="viewSchedule" Canvas.Left="468" Canvas.Top="635" HorizontalAlignment="Center" VerticalAlignment="Top" >
-                    <Button.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="20"/>
-                        </Style>
-                    </Button.Resources>
-                </Button>
-                <Button x:Name="ScheduleButton" Content="Lịch hẹn" Width="305" Height="61" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="ScheduleButton_Click" Canvas.Left="33" Canvas.Top="544" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                <Button x:Name="ScheduleButton" Content="Lịch hẹn" Width="305" Height="62" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="ScheduleButton_Click" Canvas.Left="33" Canvas.Top="574" HorizontalAlignment="Center" VerticalAlignment="Top" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="20"/>

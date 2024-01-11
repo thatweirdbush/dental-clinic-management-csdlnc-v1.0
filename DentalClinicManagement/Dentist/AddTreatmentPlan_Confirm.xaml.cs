@@ -1,6 +1,9 @@
-﻿using System;
+﻿using DentalClinicManagement.Account.Class;
+using DentalClinicManagement.Dentist.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,17 +23,34 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class AddTreatmentPlan_Confirm : Page
     {
-        public AddTreatmentPlan_Confirm()
+        DetailedTreatmentPlan detailPlan;
+        DentistClass dentist;
+        TreatmentChild child;
+        FullDetailedTreatmentPlan fullplan;
+        Patient patient;
+
+        public AddTreatmentPlan_Confirm(DetailedTreatmentPlan detailPlan, DentistClass dentist, TreatmentChild child, ToothSurface toothSurface, Patient patient)
         {
             InitializeComponent();
+            this.dentist = new DentistClass(dentist);
+            this.detailPlan = new DetailedTreatmentPlan(detailPlan);
+            this.child = new TreatmentChild(child);
+
+            fullplan = new FullDetailedTreatmentPlan(detailPlan);
+            fullplan.TeethID = toothSurface.TeethID;
+            fullplan.SurfaceID = toothSurface.SurfaceID;
+
+            MainCanvas.DataContext = fullplan;
+            this.patient = new Patient(patient);
         }
+
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 
@@ -40,7 +60,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTeeth());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTeeth(detailPlan ,dentist, child, patient));
             }
         }
 
@@ -50,42 +70,47 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTreatment());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTreatment(dentist, patient));
             }
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Thêm kế hoạch điều trị thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
-            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
-
-            if (mainWindow != null && mainWindow.MainFrame != null)
+            try
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                //MessageBox.Show($"{detailPlan.ConductedTreatmentID}", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                //MessageBox.Show($"{detailPlan.TreatmentID}", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                //MessageBox.Show($"{detailPlan.PatientID}", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                //MessageBox.Show($"{detailPlan.Date}", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                //MessageBox.Show($"{detailPlan.DentistID}", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                //MessageBox.Show($"{detailPlan.Assistant}", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                //MessageBox.Show($"{detailPlan.ToothSurfaceID}", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+
+
+
+
+                // Thực hiện đăng ký và lưu vào database
+                RegistryHelpers regist = new RegistryHelpers();
+                if (regist.RegisterDetailTreatmentPlan(detailPlan))
+                {
+                    MessageBox.Show("Thêm kế hoạch điều trị thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+
+                    if (mainWindow != null && mainWindow.MainFrame != null)
+                    {
+                        mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Thêm kế hoạch thất bại. Vui lòng thử lại.");
+                }
             }
-        }
-        // How to get data from another page
-        // public AddTreatmentPlan_Confirm(string treatmentID, string teeth, string date, string dentist)
-        // {
-        //     InitializeComponent();
-        //     TreatmentIDTextBlock.Text = treatmentID;
-        //     TeethTextBlock.Text = teeth;
-        //     DateTextBlock.Text = date;
-        //     DentistTextBlock.Text = dentist;
-        // }
-
-        // How to get date data from another page when using DatePicker
-        // public AddTreatmentPlan_Confirm(string treatmentID, string teeth, DateTime date, string dentist)
-        // {
-        //     InitializeComponent();
-        //     TreatmentIDTextBlock.Text = treatmentID;
-        //     TeethTextBlock.Text = teeth;
-        //     DateTextBlock.Text = date.ToString("dd/MM/yyyy");
-        //     DentistTextBlock.Text = dentist;
-        // }
-
-
-
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+        }       
     }
 
 }

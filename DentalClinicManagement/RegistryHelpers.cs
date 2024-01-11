@@ -139,8 +139,8 @@ namespace DentalClinicManagement
                 using (SqlConnection connection = dB.Connection)
                 {
                     // Thực hiện thêm dữ liệu vào database
-                    string query = "INSERT INTO [Patient] (AccountID, Name, PhoneNo) " +
-                                   "VALUES (@AccountID, @Name, @PhoneNo)";
+                    string query = "INSERT INTO [Patient] (Name, PhoneNo) " +
+                                   "VALUES (@Name, @PhoneNo)";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -179,6 +179,39 @@ namespace DentalClinicManagement
                         command.Parameters.AddWithValue("@TotalPaid", patientRecord.TotalPaid);
                         command.Parameters.AddWithValue("@GeneralInformation", patientRecord.GeneralInformation);
                         command.Parameters.AddWithValue("@AllergyStatus", patientRecord.AllergyStatus);
+
+                        command.ExecuteNonQuery();
+                    }
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
+        }
+
+        public bool RegisterDetailTreatmentPlan(DetailedTreatmentPlan plan)
+        {
+            try
+            {
+                DB dB = new DB();
+                using (SqlConnection connection = dB.Connection)
+                {
+                    // Thực hiện thêm dữ liệu vào database
+                    string query = "INSERT INTO [Detailed Treatment Plan] (ConductedTreatmentID, PatientID, TreatmentID, Date, DentistID, Assistant, ToothSurfaceID) " +
+                                   "VALUES (@ConductedTreatmentID, @PatientID, @TreatmentID, @Date, @DentistID, @Assistant, @ToothSurfaceID)";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@ConductedTreatmentID", plan.ConductedTreatmentID);
+                        command.Parameters.AddWithValue("@PatientID", plan.PatientID);
+                        command.Parameters.AddWithValue("@TreatmentID", plan.TreatmentID);
+                        command.Parameters.AddWithValue("@Date", plan.Date);
+                        command.Parameters.AddWithValue("@DentistID", plan.DentistID);
+                        command.Parameters.AddWithValue("@Assistant", plan.Assistant);
+                        command.Parameters.AddWithValue("@ToothSurfaceID", plan.ToothSurfaceID);
 
                         command.ExecuteNonQuery();
                     }

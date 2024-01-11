@@ -15,7 +15,7 @@ namespace DentalClinicManagement.Admin.Class
         public string? Shift { get; set; }
         public string? PatientName { get; set; }
         public string? Dentist { get; set; }
-        public string? TroKham { get; set; }
+        //public string? TroKham { get; set; }
         public int? Room { get; set; }
         public string? Status { get; set; }
         public ReportAppoint() { }
@@ -26,6 +26,7 @@ namespace DentalClinicManagement.Admin.Class
             Shift = reader["Shift"].ToString();
             PatientName = reader["Name"].ToString();
             Dentist = reader["DentistName"].ToString();
+            //TroKham = reader["TroKham"].ToString();
             Room = (int)reader["Room"];
             Status = reader["Status"].ToString();
         }
@@ -37,7 +38,7 @@ namespace DentalClinicManagement.Admin.Class
             Shift = other.Shift;
             PatientName = other.PatientName;
             Dentist = other.Dentist;
-            TroKham = other.TroKham;
+            //TroKham = other.TroKham;
             Room = other.Room;
             Status = other.Status;
         }

@@ -26,7 +26,7 @@
         </Canvas>
         <!-- Row phía dưới của Grid còn lại -->
         <Grid Grid.Row="1">
-            <Canvas Background="White">
+            <Canvas x:Name="MainCanvas" Background="White">
                 <Label Content="Chọn ngày và bác sĩ" FontSize="30" FontFamily="Segoe UI Semibold" Height="71" Canvas.Left="240" Canvas.Top="40" Width="360" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black"/>
                 <!-- Record Data -->
                 <Button x:Name="HomeButton" Content="⩠ Trang chủ" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Canvas.Left="802" Canvas.Top="40" Width="158" Click="HomeButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" >
@@ -59,7 +59,7 @@
                     <Border.BorderBrush>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
                     </Border.BorderBrush>
-                    <TextBlock x:Name="TreatmentID" TextWrapping="Wrap" Text="{Binding TreatmentID}" Margin="0,0,8,0" FontSize="16" VerticalAlignment="Center"/>
+                    <TextBlock x:Name="TreatmentID" TextWrapping="Wrap" Text="{Binding TreatmentChildID}" Margin="0,0,8,0" FontSize="16" VerticalAlignment="Center"/>
                 </Border>
                 <Button x:Name="ChooseTeethButton" Content="Chọn răng" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Canvas.Left="295" Canvas.Top="487" Width="610" Click="ChooseTeethButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top" >
                     <Button.Resources>

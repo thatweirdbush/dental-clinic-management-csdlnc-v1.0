@@ -1,4 +1,5 @@
-﻿using DentalClinicManagement.Dentist.Class;
+﻿using DentalClinicManagement.Account.Class;
+using DentalClinicManagement.Dentist.Class;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -23,10 +24,15 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class AddTreatmentPlan_ChooseTreatment : Page
     {
+        DentistClass dentist;
+        Patient patient;
         public ObservableCollection<Treatment> treatmentList { get; set; } = new ObservableCollection<Treatment>();
-        public AddTreatmentPlan_ChooseTreatment()
+
+        public AddTreatmentPlan_ChooseTreatment(DentistClass dentist, Patient patient)
         {
             InitializeComponent();
+            this.dentist = new DentistClass(dentist);
+            this.patient = new Patient(patient);
             LoadTreatmentList();
         }
         private void HomeButton_Click(object sender, RoutedEventArgs e)
@@ -35,7 +41,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 
@@ -45,7 +51,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 
@@ -101,7 +107,7 @@ namespace DentalClinicManagement.Dentist
 
                 if (mainWindow != null && mainWindow.MainFrame != null)
                 {
-                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTreatmentChild(treatment));
+                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTreatmentChild(dentist, treatment, patient));
                 }
             }
         }

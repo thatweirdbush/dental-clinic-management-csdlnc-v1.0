@@ -10,6 +10,7 @@ namespace DentalClinicManagement.Dentist.Class
 {
     public class DetailedTreatmentPlan
     {
+        public int? DetailedTreatmentPlanID { get; set; }
         public int? ConductedTreatmentID { get; set; }
         public int? PatientID { get; set; }
         public int? TreatmentID { get; set; }
@@ -25,6 +26,7 @@ namespace DentalClinicManagement.Dentist.Class
         // Constructor để tạo đối tượng Payment từ SqlDataReader
         public DetailedTreatmentPlan(SqlDataReader reader)
         {
+            DetailedTreatmentPlanID = (int)reader["DetailedTreatmentPlanID"];
             ConductedTreatmentID = (int)reader["ConductedTreatmentID"];
             PatientID = DBNull.Value.Equals(reader["PatientID"]) ? (int?)null : (int)reader["PatientID"];
             TreatmentID = DBNull.Value.Equals(reader["TreatmentID"]) ? (int?)null : (int)reader["TreatmentID"];
@@ -41,6 +43,7 @@ namespace DentalClinicManagement.Dentist.Class
 
         public DetailedTreatmentPlan(DetailedTreatmentPlan other)
         {
+            DetailedTreatmentPlanID = other.DetailedTreatmentPlanID;
             ConductedTreatmentID = other.ConductedTreatmentID;
             PatientID = other.PatientID;
             TreatmentID = other.TreatmentID;

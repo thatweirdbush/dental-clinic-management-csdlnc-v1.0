@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DentalClinicManagement.Account.Class;
+using DentalClinicManagement.Dentist.Class;
+using DentalClinicManagement.Employee.Class;
 
 namespace DentalClinicManagement.Dentist
 {
@@ -20,9 +23,17 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class AddTreatmentPlan_ChooseDateAndDentist : Page
     {
-        public AddTreatmentPlan_ChooseDateAndDentist()
+        DentistClass dentist;
+        TreatmentChild child;
+        DetailedTreatmentPlan detailPlan;
+        Patient patient;
+        public AddTreatmentPlan_ChooseDateAndDentist(DentistClass dentist, TreatmentChild child, Patient patient)
         {
             InitializeComponent();
+            this.dentist = new DentistClass(dentist);
+            this.child = new TreatmentChild(child);
+            MainCanvas.DataContext = this.child;
+            this.patient = new Patient(patient);
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
@@ -31,7 +42,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 
@@ -41,17 +52,27 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTreatment());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTreatment(dentist, patient));
             }
         }
 
         private void ChooseTeethButton_Click(object sender, RoutedEventArgs e)
         {
+            detailPlan = new DetailedTreatmentPlan
+            {
+                TreatmentID = child.TreatmentID,
+                ConductedTreatmentID = child.TreatmentChildID,
+                DentistID = int.TryParse(DentistTextBox.Text, out int id) ? id : null,
+                Assistant = AssistantTextBox.Text,
+                Date = Date.SelectedDate ?? DateTime.Now,
+                PatientID = patient.PatientID
+            };
+
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTeeth());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTeeth(detailPlan, dentist, child, patient));
             }
         }
     }

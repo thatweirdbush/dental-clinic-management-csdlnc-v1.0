@@ -28,13 +28,12 @@
                     <ListView Name="ReportAppointListView" Height="325" Width="1156" Canvas.Left="23" Canvas.Top="246" HorizontalAlignment="Center" VerticalAlignment="Top">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Ngày" Width="170" DisplayMemberBinding="{Binding Date}"/>
-                                <GridViewColumn Header="Ca" Width="40" DisplayMemberBinding="{Binding Shift}"/>
-                                <GridViewColumn Header="Tên bệnh nhân" Width="150" DisplayMemberBinding="{Binding PatientName}"/>
-                                <GridViewColumn Header="Nha sĩ" Width="150" DisplayMemberBinding="{Binding Dentist}"/>
-                                <GridViewColumn Header="Trợ khám" Width="150" DisplayMemberBinding="{Binding TroKham}"/>
-                                <GridViewColumn Header="Phòng" Width="150" DisplayMemberBinding="{Binding Room}"/>
-                                <GridViewColumn Header="Tình trạng" Width="150" DisplayMemberBinding="{Binding Status}"/>
+                                <GridViewColumn Header="Ngày" Width="190" DisplayMemberBinding="{Binding Date}"/>
+                                <GridViewColumn Header="Ca" Width="190" DisplayMemberBinding="{Binding Shift}"/>
+                                <GridViewColumn Header="Tên bệnh nhân" Width="190" DisplayMemberBinding="{Binding PatientName}"/>
+                                <GridViewColumn Header="Nha sĩ" Width="190" DisplayMemberBinding="{Binding Dentist}"/>
+                                <GridViewColumn Header="Phòng" Width="190" DisplayMemberBinding="{Binding Room}"/>
+                                <GridViewColumn Header="Tình trạng" Width="190" DisplayMemberBinding="{Binding Status}"/>
                             </GridView>
                         </ListView.View>
                     </ListView>

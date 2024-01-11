@@ -1,4 +1,5 @@
-﻿using DentalClinicManagement.Dentist.Class;
+﻿using DentalClinicManagement.Account.Class;
+using DentalClinicManagement.Dentist.Class;
 using DentalClinicManagement.Employee.Class;
 using System;
 using System.Collections.Generic;
@@ -24,12 +25,16 @@ namespace DentalClinicManagement.Dentist
     /// </summary>
     public partial class AddTreatmentPlan_ChooseTreatmentChild : Page
     {
-        private Treatment treatment;
+        DentistClass dentist;
+        Treatment treatment;
+        Patient patient;
         public ObservableCollection<TreatmentChild> treatmentChildList { get; set; } = new ObservableCollection<TreatmentChild>();
-        public AddTreatmentPlan_ChooseTreatmentChild(Treatment treatment)
+        public AddTreatmentPlan_ChooseTreatmentChild(DentistClass dentist, Treatment treatment, Patient patient)
         {
             InitializeComponent();
+            this.dentist = new DentistClass(dentist);
             this.treatment = new Treatment(treatment);
+            this.patient = new Patient(patient);
             LoadTreatmentChildList(treatment);
         }
         private void HomeButton_Click(object sender, RoutedEventArgs e)
@@ -38,7 +43,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.DashBoard(dentist));
             }
         }
 
@@ -48,17 +53,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTreatment());
-            }
-        }
-
-        private void ChooseDateAndDentistButton_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
-
-            if (mainWindow != null && mainWindow.MainFrame != null)
-            {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseDateAndDentist());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTreatment(dentist, patient));
             }
         }
 
@@ -71,7 +66,7 @@ namespace DentalClinicManagement.Dentist
                 string query = "SELECT [Treatment].TreatmentID, [Treatment Child List].TreatmentChildID, [Treatment].Name " +
                                "FROM [Treatment Child List], [Treatment] " +
                                "WHERE @TreatmentID = [Treatment].TreatmentID " +
-                               "AND [Treatment Child List].TreatmentChildID = [Treatment].TreatmentID";
+                               "AND [Treatment Child List].TreatmentID = [Treatment].TreatmentID";
                                
 
                 // Tạo và mở kết nối
@@ -110,7 +105,8 @@ namespace DentalClinicManagement.Dentist
 
                 if (mainWindow != null && mainWindow.MainFrame != null)
                 {
-                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTeeth());
+                    //mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTeeth(dentist));
+                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseDateAndDentist(dentist, treatmentChild, patient));
                 }
             }
         }
