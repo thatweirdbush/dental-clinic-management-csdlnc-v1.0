@@ -8,14 +8,14 @@
       d:DesignHeight="750" d:DesignWidth="1200"
       Title="DashBoard">
 
-    <Grid Height="730">
+    <Grid x:Name="MainCanvas" Height="730">
         <!-- Cột đầu tiên chiếm 2/5 chiều rộng của Grid với nền màu xanh -->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
 
-        <Rectangle x:Name="MainCanvas" Grid.Column="0" Fill="#39a7ff"/>
+        <Rectangle Grid.Column="0" Fill="#39a7ff"/>
         <Ellipse Stroke="Black" StrokeThickness="1" Margin="0,33,0,433" HorizontalAlignment="Center" Width="250">
             <!-- Hình ảnh bên trong Ellipse -->
             <Ellipse.Fill>
