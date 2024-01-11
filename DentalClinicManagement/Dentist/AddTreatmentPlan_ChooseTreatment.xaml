@@ -1,4 +1,4 @@
-﻿<Page x:Class="DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTreatmentID"
+﻿<Page x:Class="DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTreatment"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:DentalClinicManagement.Dentist"
       mc:Ignorable="d" 
       d:DesignHeight="750" d:DesignWidth="1200"
-      Title="AddTreatmentPlan_ChooseTreatmentID">
+      Title="AddTreatmentPlan_ChooseTreatment">
 
     <Grid Background="White">
         <!-- Tạo Row Grid -->
@@ -28,9 +28,9 @@
         <!-- Row phía dưới của Grid còn lại -->
         <Grid Grid.Row="1">
             <Canvas Background="White">
-                <Label Content="Chọn liệu trình" FontSize="30" FontFamily="Segoe UI Semibold" Height="71" Canvas.Left="240" Canvas.Top="40" Width="225" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black"/>
+                <Label Content="Chọn liệu trình" FontSize="30" FontFamily="Segoe UI Semibold" Height="71" Canvas.Left="240" Canvas.Top="40" Width="300" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black"/>
                 <!-- Record Data -->
-                <DataGrid x:Name="TreatmentListDataGrid" AutoGenerateColumns="False" Canvas.Left="240" Canvas.Top="111" HorizontalAlignment="Center" Height="324" VerticalAlignment="Top" Width="720" HorizontalScrollBarVisibility="Disabled" FontSize="14" FontWeight="SemiBold">
+                <DataGrid x:Name="TreatmentListDataGrid" AutoGenerateColumns="False" Canvas.Left="240" Canvas.Top="111" HorizontalAlignment="Center" Height="429" VerticalAlignment="Top" Width="720" HorizontalScrollBarVisibility="Disabled" FontSize="14" FontWeight="SemiBold" MouseDoubleClick="TreatmentListDataGrid_MouseDoubleClick">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Mã điều trị" Binding="{Binding TreatmentID}" Width="*">
                             <DataGridTextColumn.ElementStyle>
@@ -63,19 +63,6 @@
                     </Button.Effect>
                 </Button>
                 <Button x:Name="BackButton" Content="◀ Trở về" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Canvas.Left="673" Canvas.Top="40" Width="102" Click="BackButton_Click" HorizontalAlignment="Left" VerticalAlignment="Center" >
-                    <Button.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="24"/>
-                        </Style>
-                    </Button.Resources>
-                    <Button.Background>
-                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
-                    </Button.Background>
-                    <Button.Effect>
-                        <DropShadowEffect ShadowDepth="3" BlurRadius="10" Color="Gray"/>
-                    </Button.Effect>
-                </Button>
-                <Button x:Name="ChooseTreatmentIDButton" Content="Chọn mã điều trị có trong liệu trình" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Canvas.Left="295" Canvas.Top="490" Width="610" Click="ChooseTreatmentIDButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="24"/>

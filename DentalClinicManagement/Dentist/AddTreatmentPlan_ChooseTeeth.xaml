@@ -17,12 +17,10 @@
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="50*"/>
         </Grid.ColumnDefinitions>
-        <Canvas Background="White" Margin="595,0,15,0" Grid.RowSpan="2" Grid.ColumnSpan="2">
-            <Image Source="../images/tooth.jpg" Height="334" Width="390" Canvas.Top="55" HorizontalAlignment="Center" Canvas.Left="100" VerticalAlignment="Top"/>
-        </Canvas>
+        <Canvas Background="White" Margin="595,0,15,0" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
         <Canvas Grid.Column="0" Background="White" Grid.RowSpan="2">
             <Label Content="Thêm kế hoạch điều trị" FontSize="45" FontFamily="Segoe UI Semibold" Height="76" Canvas.Left="52" Canvas.Top="37" Width="688" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Black"/>
-            <Image Source="../images/TeethList.jpg" HorizontalAlignment="Center" Height="456" VerticalAlignment="Top" Width="600" Canvas.Top="149"/>
+            <Image Source="../images/TeethList.jpg" HorizontalAlignment="Left" Height="454" VerticalAlignment="Top" Width="600" Canvas.Top="159"/>
         </Canvas>
         <Label x:Name="Title" Content="Chọn răng" FontFamily="Segoe UI Semibold" FontSize="24" Height="48" Width="138" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1" Margin="8,2,0,0"/>
         <Button x:Name="FinishButton" Content="Hoàn tất" FontFamily="Segoe UI Semibold" IsDefault="True" FontSize="18" BorderBrush="#FFABABAB" BorderThickness="0,0,0,0" Height="48" Width="300" Click="FinishButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Margin="0,207,0,0" Grid.Row="1" >

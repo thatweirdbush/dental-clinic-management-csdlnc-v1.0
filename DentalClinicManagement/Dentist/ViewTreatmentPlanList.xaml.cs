@@ -40,7 +40,7 @@ namespace DentalClinicManagement.Dentist
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTreatmentID());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTreatment());
             }
         }
 

@@ -58,7 +58,10 @@
     <Compile Update="Dentist\AddTreatmentPlan_ChooseTeeth.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Dentist\AddTreatmentPlan_ChooseTreatmentID.xaml.cs">
+    <Compile Update="Dentist\AddTreatmentPlan_ChooseTreatment.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Dentist\AddTreatmentPlan_ChooseTreatmentChild.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Dentist\AddTreatmentPlan_Confirm.xaml.cs">
@@ -204,7 +207,10 @@
     <Page Update="Dentist\AddTreatmentPlan_ChooseTeeth.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Dentist\AddTreatmentPlan_ChooseTreatmentID.xaml">
+    <Page Update="Dentist\AddTreatmentPlan_ChooseTreatment.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dentist\AddTreatmentPlan_ChooseTreatmentChild.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Dentist\AddTreatmentPlan_Confirm.xaml">

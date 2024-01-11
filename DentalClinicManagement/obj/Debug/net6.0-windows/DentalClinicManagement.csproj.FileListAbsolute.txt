@@ -434,11 +434,13 @@ C:\Users\USER\Source\Repos\dental-clinic-management-csdlnc-v1.0_newest\DentalCli
 C:\Users\USER\Source\Repos\dental-clinic-management-csdlnc-v1.0_newest\DentalClinicManagement\obj\Debug\net6.0-windows\DentalClinicManagement.pdb
 C:\Users\USER\Source\Repos\dental-clinic-management-csdlnc-v1.0_newest\DentalClinicManagement\obj\Debug\net6.0-windows\DentalClinicManagement.genruntimeconfig.cache
 C:\Users\USER\Source\Repos\dental-clinic-management-csdlnc-v1.0_newest\DentalClinicManagement\obj\Debug\net6.0-windows\ref\DentalClinicManagement.dll
-C:\Users\USER\source\repos\dental-clinic-management-csdlnc-v1.0_newest\DentalClinicManagement\obj\Debug\net6.0-windows\Dentist\AddTreatmentPlan_ChooseTreatmentID.g.cs
-C:\Users\USER\source\repos\dental-clinic-management-csdlnc-v1.0_newest\DentalClinicManagement\obj\Debug\net6.0-windows\Dentist\AddTreatmentPlan_ChooseTreatmentID.baml
 C:\Users\USER\source\repos\dental-clinic-management-csdlnc-v1.0_newest\DentalClinicManagement\obj\Debug\net6.0-windows\Dentist\AddTreatmentPlan_ChooseDateAndDentist.g.cs
 C:\Users\USER\source\repos\dental-clinic-management-csdlnc-v1.0_newest\DentalClinicManagement\obj\Debug\net6.0-windows\Dentist\AddTreatmentPlan_ChooseTeeth.g.cs
 C:\Users\USER\source\repos\dental-clinic-management-csdlnc-v1.0_newest\DentalClinicManagement\obj\Debug\net6.0-windows\Dentist\AddTreatmentPlan_Confirm.g.cs
 C:\Users\USER\source\repos\dental-clinic-management-csdlnc-v1.0_newest\DentalClinicManagement\obj\Debug\net6.0-windows\Dentist\AddTreatmentPlan_ChooseDateAndDentist.baml
 C:\Users\USER\source\repos\dental-clinic-management-csdlnc-v1.0_newest\DentalClinicManagement\obj\Debug\net6.0-windows\Dentist\AddTreatmentPlan_ChooseTeeth.baml
 C:\Users\USER\source\repos\dental-clinic-management-csdlnc-v1.0_newest\DentalClinicManagement\obj\Debug\net6.0-windows\Dentist\AddTreatmentPlan_Confirm.baml
+C:\Users\USER\source\repos\dental-clinic-management-csdlnc-v1.0_newest\DentalClinicManagement\obj\Debug\net6.0-windows\Dentist\AddTreatmentPlan_ChooseTreatment.g.cs
+C:\Users\USER\source\repos\dental-clinic-management-csdlnc-v1.0_newest\DentalClinicManagement\obj\Debug\net6.0-windows\Dentist\AddTreatmentPlan_ChooseTreatment.baml
+C:\Users\USER\source\repos\dental-clinic-management-csdlnc-v1.0_newest\DentalClinicManagement\obj\Debug\net6.0-windows\Dentist\AddTreatmentPlan_ChooseTreatmentChild.g.cs
+C:\Users\USER\source\repos\dental-clinic-management-csdlnc-v1.0_newest\DentalClinicManagement\obj\Debug\net6.0-windows\Dentist\AddTreatmentPlan_ChooseTreatmentChild.baml

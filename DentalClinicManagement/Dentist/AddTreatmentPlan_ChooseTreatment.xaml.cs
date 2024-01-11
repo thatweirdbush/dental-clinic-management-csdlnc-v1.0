@@ -19,12 +19,12 @@ using System.Windows.Shapes;
 namespace DentalClinicManagement.Dentist
 {
     /// <summary>
-    /// Interaction logic for AddTreatmentPlan_ChooseTreatmentID.xaml
+    /// Interaction logic for AddTreatmentPlan_ChooseTreatment.xaml
     /// </summary>
-    public partial class AddTreatmentPlan_ChooseTreatmentID : Page
+    public partial class AddTreatmentPlan_ChooseTreatment : Page
     {
         public ObservableCollection<Treatment> treatmentList { get; set; } = new ObservableCollection<Treatment>();
-        public AddTreatmentPlan_ChooseTreatmentID()
+        public AddTreatmentPlan_ChooseTreatment()
         {
             InitializeComponent();
             LoadTreatmentList();
@@ -49,15 +49,15 @@ namespace DentalClinicManagement.Dentist
             }
         }
 
-        private void ChooseTreatmentIDButton_Click(object sender, RoutedEventArgs e)
+/*        private void ChooseTreatmentChildButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseDateAndDentist());
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTreatmentChild());
             }
-        }
+        }*/
 
         private void LoadTreatmentList()
         {
@@ -90,6 +90,19 @@ namespace DentalClinicManagement.Dentist
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void TreatmentListDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (sender is DataGrid dataGrid && dataGrid.SelectedItem is Treatment treatment)
+            {
+                MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+
+                if (mainWindow != null && mainWindow.MainFrame != null)
+                {
+                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTreatmentChild(treatment));
+                }
             }
         }
     }
