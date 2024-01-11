@@ -101,7 +101,8 @@ namespace DentalClinicManagement.Dentist {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DentalClinicManagement;component/dentist/addtreatmentplan_chooseteeth.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DentalClinicManagement;V1.0.0.0;component/dentist/addtreatmentplan_chooseteeth.x" +
+                    "aml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Dentist\AddTreatmentPlan_ChooseTeeth.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

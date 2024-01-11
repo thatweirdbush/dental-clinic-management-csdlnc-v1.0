@@ -157,7 +157,7 @@ namespace DentalClinicManagement.Dentist {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DentalClinicManagement;component/dentist/addtreatmentplan_confirm.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DentalClinicManagement;V1.0.0.0;component/dentist/addtreatmentplan_confirm.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Dentist\AddTreatmentPlan_Confirm.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

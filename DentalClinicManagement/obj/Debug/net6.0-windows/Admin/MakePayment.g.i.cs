@@ -10,6 +10,7 @@
 //------------------------------------------------------------------------------
 
 using DentalClinicManagement.Admin;
+using DentalClinicManagement.Converter;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -149,7 +150,7 @@ namespace DentalClinicManagement.Admin {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DentalClinicManagement;component/admin/makepayment.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DentalClinicManagement;V1.0.0.0;component/admin/makepayment.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Admin\MakePayment.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

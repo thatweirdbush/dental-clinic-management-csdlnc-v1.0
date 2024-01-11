@@ -35,21 +35,14 @@
                 <TextBlock Text="Trang Chủ" Width="800" Height="41" FontSize="24" Background="#FFB6D7F4" HorizontalAlignment="Left" TextAlignment="Center" VerticalAlignment="Center"/>
                 <TextBlock Text="Dentistry Plus cung cấp các dịch vụ nha khoa đảm bảo chất lượng" Canvas.Left="33" Canvas.Top="170" FontSize="36" FontWeight="Bold" Height="197" Width="367" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                 <TextBlock Text="Các chức năng" Canvas.Left="33" Canvas.Top="439" FontSize="24" FontWeight="Bold" Height="62" Width="279" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Top"></TextBlock>
-                <Button Content="Xem, sửa thông tin thuốc" Width="364" Height="49" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="viewMedical" Canvas.Left="33" Canvas.Top="579" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <Button Content="Xem, sửa thông tin thuốc" Width="364" Height="49" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="viewMedical" Canvas.Left="33" Canvas.Top="589" HorizontalAlignment="Left" VerticalAlignment="Top" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="20"/>
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button Content="Xem cuộc hẹn" Width="364" Height="49" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="checkAppointment" Canvas.Left="426" Canvas.Top="506" HorizontalAlignment="Left" VerticalAlignment="Center" >
-                    <Button.Resources>
-                        <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="20"/>
-                        </Style>
-                    </Button.Resources>
-                </Button>
-                <Button Content="Xem danh sách bệnh nhân" Width="364" Height="49" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="ViewPatient" Canvas.Left="426" Canvas.Top="579" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                <Button Content="Xem danh sách bệnh nhân" Width="364" Height="49" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="ViewPatient" Canvas.Left="426" Canvas.Top="589" HorizontalAlignment="Center" VerticalAlignment="Top" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="20"/>
@@ -70,7 +63,7 @@
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button Content="Thêm lịch nha sĩ" Width="364" Height="49" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="addSchedule" Canvas.Left="34" Canvas.Top="506" HorizontalAlignment="Left" VerticalAlignment="Top" >
+                <Button Content="Thêm lịch nha sĩ" Width="364" Height="49" IsDefault="True" FontSize="24" Background="#FFB6D7F4" Click="addSchedule" Canvas.Left="33" Canvas.Top="506" HorizontalAlignment="Left" VerticalAlignment="Top" >
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="20"/>
