@@ -150,8 +150,23 @@ namespace DentalClinicManagement.Dentist
 
                         command.ExecuteNonQuery();
                     }
-                    return true;
                 }
+                //using (SqlConnection connection = dB.Connection)
+                //{
+                //    // Thực hiện cập nhật dữ liệu vào database
+                //    string query = "UPDATE [Payment] SET Status = @Status " +
+                //                   "WHERE @PayDetailID = PaymentID";
+
+                //    using (SqlCommand command = new SqlCommand(query, connection))
+                //    {
+                //        command.Parameters.AddWithValue("@Status", "Đã hoàn thành");
+                //        command.Parameters.AddWithValue("@PayDetailID", paymentDetail.PayDetailID);
+
+                //        command.ExecuteNonQuery();
+                //    }
+                //}
+                return true;
+
             }
             catch (Exception ex)
             {

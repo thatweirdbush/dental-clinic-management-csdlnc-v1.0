@@ -1080,19 +1080,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dell\\.nuget\\packages\\": {}
+    "C:\\Users\\huyph\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dell\\Desktop\\CSDLNC\\dental-clinic-management-csdlnc-v1.0\\DentalClinicManagement\\DentalClinicManagement.csproj",
+      "projectUniqueName": "D:\\Visual Studio Solutions\\CSDL NC\\dental-clinic-management-csdlnc_ver1_branch_huy\\dental-clinic-management-csdlnc-v1.0\\DentalClinicManagement\\DentalClinicManagement.csproj",
       "projectName": "DentalClinicManagement",
-      "projectPath": "C:\\Users\\Dell\\Desktop\\CSDLNC\\dental-clinic-management-csdlnc-v1.0\\DentalClinicManagement\\DentalClinicManagement.csproj",
-      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dell\\Desktop\\CSDLNC\\dental-clinic-management-csdlnc-v1.0\\DentalClinicManagement\\obj\\",
+      "projectPath": "D:\\Visual Studio Solutions\\CSDL NC\\dental-clinic-management-csdlnc_ver1_branch_huy\\dental-clinic-management-csdlnc-v1.0\\DentalClinicManagement\\DentalClinicManagement.csproj",
+      "packagesPath": "C:\\Users\\huyph\\.nuget\\packages\\",
+      "outputPath": "D:\\Visual Studio Solutions\\CSDL NC\\dental-clinic-management-csdlnc_ver1_branch_huy\\dental-clinic-management-csdlnc-v1.0\\DentalClinicManagement\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\huyph\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1146,7 +1146,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
