@@ -39,7 +39,12 @@ namespace DentalClinicManagement.Dentist
 
         private void AddNewTreatmentPlanButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Thêm kế hoạch đièue trị.");
+            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+
+            if (mainWindow != null && mainWindow.MainFrame != null)
+            {
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTreatment());
+            }
         }
 
         private void HomeButton_Click(object sender, RoutedEventArgs e)
