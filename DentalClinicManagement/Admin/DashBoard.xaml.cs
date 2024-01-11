@@ -69,17 +69,6 @@ namespace DentalClinicManagement.Admin
            
         }
 
-        private void checkAppointment(object sender, RoutedEventArgs e)
-        {
-            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
-
-
-            if (mainWindow != null && mainWindow.MainFrame != null)
-            {
-                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.CheckAppointment(admin));
-            }
-        }
-
         private void ViewPatient(object sender, RoutedEventArgs e)
         {
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
