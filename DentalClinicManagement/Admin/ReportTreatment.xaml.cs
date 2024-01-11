@@ -46,26 +46,32 @@ namespace DentalClinicManagement.Admin
 
     public partial class ReportTreatment : Page
     {
-        private Victim victim;
-        public ObservableCollection<ReportTreat> treatmentList { get; set; } = new ObservableCollection<ReportTreat>();
+        public ObservableCollection<ReportTreat> reportTreatmentList { get; set; } = new ObservableCollection<ReportTreat>();
 
-        public ReportTreatment(Victim victim)
+        public ReportTreatment()
         {
             InitializeComponent();
-            this.victim = new Victim(victim);
-            LoadTreatmentList(victim);
-
+            LoadReportTreat();
         }
 
-        private void LoadTreatmentList(Victim victim)
+        private void viewHome(object sender, RoutedEventArgs e)
         {
-            int? patientID = victim.PatientID;
+            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+
+
+            if (mainWindow != null && mainWindow.MainFrame != null)
+            {
+                mainWindow.MainFrame.Navigate(new DentalClinicManagement.Admin.DashBoard());
+            }
+        }
+
+        private void LoadReportTreat()
+        {
+
             try
             {
-                // Câu truy vấn SQL để lấy thông tin Detailed Treatment Plan từ database
-                string query = "SELECT * FROM [Detailed Treatment Plan]" +
-                    "WHERE @PatientID = PatientID";
-
+                // Câu truy vấn SQL để lấy thông tin AppointmentRequest từ database
+                string query = "SELECT dtl.ConductedTreatmentID, dtl.Date, [Patient].Name, dtl.Status\r\nFROM [Detailed Treatment Plan] dtl, [Patient]\r\nWHERE dtl.PatientID = [Patient].PatientID";
                 // Tạo và mở kết nối
                 DB dB = new DB();
                 using (SqlConnection connection = dB.Connection)
@@ -73,17 +79,16 @@ namespace DentalClinicManagement.Admin
                     // Tạo đối tượng SqlCommand
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@PatientID", patientID);
                         // Thực hiện truy vấn SQL và lấy dữ liệu
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                ReportTreat report = new ReportTreat(reader);
-                                treatmentList.Add(report);
+                                ReportTreat reportTreat = new ReportTreat(reader);
+                                reportTreatmentList.Add(reportTreat);
                             }
                             // Gán ObservableCollection làm nguồn dữ liệu cho DataGrid
-                            ReportTreatmentListDataGrid.ItemsSource = treatmentList;
+                            ReportTreatListView.ItemsSource = reportTreatmentList;
                         }
                     }
                 }
@@ -104,9 +109,35 @@ namespace DentalClinicManagement.Admin
             }
         }
 
+        private void FilterDataGrid()
+        {
+            DateTime? fromDate = fromDatePicker.SelectedDate;
+            DateTime? toDate = toDatePicker.SelectedDate;
+
+            string selectPatient = PatientSearch.Text;
+
+            // Kiểm tra nếu cả hai DatePicker đều đã được chọn và một trạng thái đã được chọn
+            if (fromDate.HasValue && toDate.HasValue && selectPatient != null)
+            {
+                if (fromDate.Value > toDate.Value)
+                {
+                    MessageBox.Show("Vui lòng chọn ngày bắt đầu và kết thúc hợp lệ", "Ngày không hợp lệ", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+
+                    // Lọc dữ liệu trong khoảng từ fromDate đến toDate và theo trạng thái
+                    ReportTreatListView.ItemsSource = reportTreatmentList.Where(c => c.Date >= fromDate && c.Date <= toDate && (c.Name.Contains(selectPatient) == true));
+                }
+            }
+            if (!fromDate.HasValue && !toDate.HasValue && selectPatient != null)
+            {
+                ReportTreatListView.ItemsSource = reportTreatmentList.Where(c => c.Name.Contains(selectPatient));
+            }
+        }
         private void FilterButton_Click(object sender, RoutedEventArgs e)
         {
-
+            FilterDataGrid();
         }
     }
 }

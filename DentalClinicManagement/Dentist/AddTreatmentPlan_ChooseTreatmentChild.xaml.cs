@@ -68,10 +68,11 @@ namespace DentalClinicManagement.Dentist
             try
             {
                 // Câu truy vấn SQL để lấy thông tin TreatmentChild từ database
-                string query = "SELECT * " +
-                               "FROM [Treatment Child List] tcl" +
-                               "INNER JOIN [Treatment] t ON tcl.TreatmentChildID = t.TreatmentID " +
-                               "WHERE @TreatmentID = t.TreatmentID";
+                string query = "SELECT [Treatment].TreatmentID, [Treatment Child List].TreatmentChildID, [Treatment].Name " +
+                               "FROM [Treatment Child List], [Treatment] " +
+                               "WHERE @TreatmentID = [Treatment].TreatmentID " +
+                               "AND [Treatment Child List].TreatmentChildID = [Treatment].TreatmentID";
+                               
 
                 // Tạo và mở kết nối
                 DB dB = new DB();
@@ -98,6 +99,19 @@ namespace DentalClinicManagement.Dentist
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void TreatmentChildListDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (sender is DataGrid dataGrid && dataGrid.SelectedItem is TreatmentChild treatmentChild)
+            {
+                MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+
+                if (mainWindow != null && mainWindow.MainFrame != null)
+                {
+                    mainWindow.MainFrame.Navigate(new DentalClinicManagement.Dentist.AddTreatmentPlan_ChooseTeeth());
+                }
             }
         }
     }

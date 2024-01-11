@@ -14,18 +14,28 @@
     <Canvas Background="White">
         <StackPanel Orientation="Vertical">
             <Canvas Height="100" Width="1200" Background="#39A7FF">
-                <TextBlock Text="Báo cáo các điều trị" FontSize="40" FontWeight="Bold" HorizontalAlignment="Left" Height="53" Canvas.Left="69" Foreground="White" Canvas.Top="23" VerticalAlignment="Center" Width="463"/>
+                <TextBlock Text="Báo cáo các cuộc hẹn" FontSize="40" FontWeight="Bold" HorizontalAlignment="Left" Height="53" Canvas.Left="69" Foreground="White" Canvas.Top="23" VerticalAlignment="Center" Width="463"/>
                 <Image Source="../images/teeth.jpg" Width="127" Height="112" Canvas.Left="1063" Canvas.Top="-6"/>
             </Canvas>
             <StackPanel Orientation="Horizontal">
                 <Canvas Height="621" Width="1199" Background="White">
-                    <TextBlock Name="Date" Text="Từ Ngày" FontSize="20" Height="33" Canvas.Left="23" Foreground="Black" Canvas.Top="34" Width="106" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <DatePicker Name="datePicker" Width="242" Height="30" Canvas.Left="23" Canvas.Top="67" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBlock Name="fromDate" Text="Từ Ngày" FontSize="20" Height="33" Canvas.Left="23" Foreground="Black" Canvas.Top="34" Width="106" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <DatePicker Name="fromDatePicker" Width="242" Height="30" Canvas.Left="23" Canvas.Top="67" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
-                    <TextBlock Name="Schedule" Text="Nha sĩ" FontSize="20" Height="31" Canvas.Left="26" Foreground="Black" Canvas.Top="136" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <DatePicker x:Name="datePicker_Copy" Width="300" Height="30" Canvas.Left="359" Canvas.Top="67" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                    <TextBlock x:Name="Date_Copy" Text="Đến ngày" FontSize="20" Height="33" Canvas.Left="359" Foreground="Black" Canvas.Top="34" Width="106" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                    <TextBox Name="DentistSearch" Canvas.Left="26" TextWrapping="Wrap" Canvas.Top="172" Width="174" HorizontalAlignment="Left" VerticalAlignment="Top" Height="37" FontSize="22"/>
+                    <TextBlock Name="Patient" Text="Bệnh nhân" FontSize="20" Height="31" Canvas.Left="26" Foreground="Black" Canvas.Top="136" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <ListView Name="ReportTreatListView" Height="325" Width="754" Canvas.Left="222" Canvas.Top="245" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Mã điều trị" Width="150" DisplayMemberBinding="{Binding ConductedTreatmentID}"/>
+                                <GridViewColumn Header="Ngày điều trị" Width="150" DisplayMemberBinding="{Binding Date}"/>
+                                <GridViewColumn Header="Tên bệnh nhân" Width="300" DisplayMemberBinding="{Binding Name}"/>
+                                <GridViewColumn Header="Trạng thái" Width="150" DisplayMemberBinding="{Binding Status}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <DatePicker x:Name="toDatePicker" Width="300" Height="30" Canvas.Left="359" Canvas.Top="67" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBlock x:Name="toDate" Text="Đến ngày" FontSize="20" Height="33" Canvas.Left="359" Foreground="Black" Canvas.Top="34" Width="106" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBox Name="PatientSearch" Canvas.Left="26" TextWrapping="Wrap" Canvas.Top="172" Width="304" HorizontalAlignment="Left" VerticalAlignment="Center" Height="37" FontSize="22"/>
                     <Button x:Name="FilterButton" Content="Lọc" Width="176" Height="49" IsDefault="True" FontSize="24" Background="#FF39A7FF" Click="FilterButton_Click" Canvas.Left="987" Canvas.Top="141" HorizontalAlignment="Center" VerticalAlignment="Center" >
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
@@ -33,38 +43,6 @@
                             </Style>
                         </Button.Resources>
                     </Button>
-                    <DataGrid x:Name="ReportTreatmentListDataGrid" AutoGenerateColumns="False" Canvas.Left="26" Canvas.Top="240" HorizontalAlignment="Left" Height="315" VerticalAlignment="Center" Width="1137" HorizontalScrollBarVisibility="Disabled" FontSize="14" FontWeight="Medium">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Mã điều trị" Binding="{Binding ConductedTreatmentID}" Width="*">
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style>
-                                        <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
-                            <DataGridTextColumn Header="Ngày điều trị" Binding="{Binding Date}" Width="*">
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style>
-                                        <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
-                            <DataGridTextColumn Header="Tên bệnh nhân" Binding="{Binding PatientID}" Width="*">
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style>
-                                        <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
-                            <DataGridTextColumn Header="Trạng thái" Binding="{Binding Status}" Width="*">
-                                <DataGridTextColumn.ElementStyle>
-                                    <Style>
-                                        <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
-                                    </Style>
-                                </DataGridTextColumn.ElementStyle>
-                            </DataGridTextColumn>
-                        </DataGrid.Columns>
-                    </DataGrid>
                 </Canvas>
             </StackPanel>
         </StackPanel>
