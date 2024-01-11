@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DentalClinicManagement.Admin.Class;
+using DentalClinicManagement.Dentist.Class;
 
 namespace DentalClinicManagement.Admin
 {
@@ -105,7 +107,6 @@ namespace DentalClinicManagement.Admin
         private void reportTreatment(object sender, RoutedEventArgs e)
         {
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
-
 
             if (mainWindow != null && mainWindow.MainFrame != null)
             {

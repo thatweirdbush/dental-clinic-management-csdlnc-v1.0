@@ -27,6 +27,7 @@ namespace DentalClinicManagement.Dentist
         {
             InitializeComponent();
             this.dentist = new DentistClass(dentist);
+            MainCanvas.DataContext = this.dentist;
         }
 
         private void view_appointment_btn_Click(object sender, RoutedEventArgs e)
